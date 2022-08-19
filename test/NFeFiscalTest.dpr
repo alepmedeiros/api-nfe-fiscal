@@ -14,7 +14,8 @@ uses
   {$ENDIF }
   DUnitX.TestFramework,
   nfefiscal.test in 'nfefiscal.test.pas',
-  nfefiscal.nfe.interfaces in '..\nfe\src\nfefiscal.nfe.interfaces.pas';
+  nfefiscal.nfe.interfaces in '..\nfe\src\nfefiscal.nfe.interfaces.pas',
+  nfefiscal.nfe_.interfaces in '..\nfe\src\nfefiscal.nfe_.interfaces.pas';
 
 {$IFNDEF TESTINSIGHT}
 var

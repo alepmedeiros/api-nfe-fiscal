@@ -35,11 +35,45 @@ type
   iICMS00 = interface;
   iICMS10 = interface;
   iSeqXMLGrpOp<T> = interface;
+  iseqXMLGrpOpN12_1 = interface;
+  iseqXMLGrpOpN17_1 = interface;
+  iseqXMLGrpOpN27_1 = interface;
+  iseqXMLGrpOpN25_1 = interface;
   iICMS30 = interface;
   iICMS40 = interface;
   iICMS51 = interface;
   iICMS60 = interface;
   iICMS70 = interface;
+  iGrupoPartilhaICMS = interface;
+  iGrupoRepasseICMSST = interface;
+  iGrupoCRT1 = interface;
+  iICMSSN101 = interface;
+  iICMSSN102 = interface;
+  iIPI = interface;
+  iIPITrib = interface;
+  iseqXMLAliquota = interface;
+  iseqXMLValor = interface;
+  iIPINT = interface;
+  iImpostoImportacao = interface;
+  iPISAliq = interface;
+  iPISQtde = interface;
+  iPISNT = interface;
+  iPISOutr = interface;
+  iseqXMLGrpOPPISP = interface;
+  iseqXMLGrpOPPISV = interface;
+  iPISST = interface;
+  iseqXMLRPISp = interface;
+  iseqXMLRPISv = interface;
+  iCOFINS = interface;
+  iCOFINSQtde = interface;
+  iCofinsNT = interface;
+  iCofinsOutr = interface;
+  iSeqXMLCofinsp = interface;
+  iSeqXMLCofinsv = interface;
+  iCofinsST = interface;
+  iseqXMLCofinsSTp = interface;
+  iseqXMLCofinsSTv = interface;
+  iISSQN = interface;
 
   iNFe = interface{Raiz}
     function InfNFe: iDadosNFe;{A01}
@@ -574,6 +608,12 @@ type
     function vTotTrib(Value: String): iTrubutosIncidentesProdutoServico; overload;
     function vTotTrib: String; overload;
     function ICMS: iICMS;{N01}
+    function IPI: iIPI;{O01}
+    function II: iImpostoImportacao;{P01}
+    function PISST: iPISST;
+    function COFINS: iCOFINS;
+    function CofinsST: iCofinsST;
+    function ISSQN: iISSQN;
     function &End: iDetalhamentoProdutosServicosNFe;{H01}
   end;
 
@@ -585,6 +625,9 @@ type
     function ICMS51: iICMS51;{N07}
     function ICMS60: iICMS60;{N08}
     function ICMS70: iICMS70;{n09}
+    function ICMSPart: iGrupoPartilhaICMS;{N10a}
+    function ICMSST: iGrupoRepasseICMSST;{N10b}
+    function ICMSSN101: iGrupoCRT1;{N10c}
     function &End: iTrubutosIncidentesProdutoServico;{M01}
   end;
 
@@ -742,20 +785,492 @@ type
     function orig: String; overload;
     function CST(Value: String): iICMS90; overload;
     function CST: String; overload;
-    function X_SeqXMLGrpOp: iSeqXMLGrpOp<iICMS90>;
-    function modBC(Value: String): iICMS90; overload;
-    function modBC: String; overload;
-    function pRedBC(Value: String): iICMS90; overload;
-    function pRedBC: String; overload;
-    function pICMS(Value: String): iICMS90; overload;
-    function pICMS: String; overload;
-    function vICMS(Value: String): iICMS90; overload;
-    function vICMS: String; overload;
+    function SeqXMLGrpOp: iSeqXMLGrpOp<iICMS90>;
+    function SeqXMLGrpOpST: iSeqXMLGrpOp<iICMS90>;
+    function SeqXMLGrpOpDes: iSeqXMLGrpOp<iICMS90>;
     function &End: iICMS;{N01}
   end;
 
-  {pagina 200 do Manual_de_Orientacao_Contribuinte_v_6.00.pdf}
+  iGrupoPartilhaICMS = interface{N10a}
+    function orig(Value: String): iGrupoPartilhaICMS; overload;
+    function orig: String; overload;
+    function CST(Value: String): iGrupoPartilhaICMS; overload;
+    function CST: String; overload;
+    function modBC(Value: String): iGrupoPartilhaICMS; overload;
+    function modBC: String; overload;
+    function vBC(Value: String): iGrupoPartilhaICMS; overload;
+    function vBC: String; overload;
+    function pRedBC(Value: String): iGrupoPartilhaICMS; overload;
+    function pRedBC: String; overload;
+    function pICMS(Value: String): iGrupoPartilhaICMS; overload;
+    function pICMS: String; overload;
+    function vICMS(Value: String): iGrupoPartilhaICMS; overload;
+    function vICMS: String; overload;
+    function modBCST(Value: String): iGrupoPartilhaICMS; overload;
+    function modBCST: String; overload;
+    function pMVAST(Value: String): iGrupoPartilhaICMS; overload;
+    function pMVAST: String; overload;
+    function pRedBCST(Value: String): iGrupoPartilhaICMS; overload;
+    function pRedBCST: String; overload;
+    function vBCST(Value: String): iGrupoPartilhaICMS; overload;
+    function vBCST: String; overload;
+    function pICMSST(Value: String): iGrupoPartilhaICMS; overload;
+    function pICMSST: String; overload;
+    function vICMSST(Value: String): iGrupoPartilhaICMS; overload;
+    function vICMSST: String; overload;
+    function pBCOp(Value: String): iGrupoPartilhaICMS; overload;
+    function pBCOp: String; overload;
+    function UFST(Value: String): iGrupoPartilhaICMS; overload;
+    function UFST: String; overload;
+    function &End: iICMS;{N01}
+  end;
 
+  iGrupoRepasseICMSST = interface {N10b}
+    function orig(Value: String): iGrupoRepasseICMSST; overload;
+    function orig: String; overload;
+    function CST(Value: String): iGrupoRepasseICMSST; overload;
+    function CST: String; overload;
+    function vBCSTRet(Value: String): iGrupoRepasseICMSST; overload;
+    function vBCSTRet: String; overload;
+    function vICMSSTRet(Value: String): iGrupoRepasseICMSST; overload;
+    function vICMSSTRet: String; overload;
+    function vBCSTDest(Value: String): iGrupoRepasseICMSST; overload;
+    function vBCSTDest: String; overload;
+    function vICMSSTDest(Value: String): iGrupoRepasseICMSST; overload;
+    function vICMSSTDest: String; overload;
+    function &End: iICMS;{N01}
+  end;
+
+  iGrupoCRT1 = interface
+    function ICMSSN101: iICMSSN101;
+    function ICMSSN102: iICMSSN102;
+    function &End: iICMS;{N01}
+  end;
+
+  iICMSSN101 = interface{N10c}
+    function orig(Value: String): iICMSSN101; overload;
+    function orig: String; overload;
+    function CSOSN(Value: String): iICMSSN101; overload;
+    function CSOSN: String; overload;
+    function pCredSN(Value: String): iICMSSN101; overload;
+    function pCredSN: String; overload;
+    function vCredICMSSN(Value: String): iICMSSN101; overload;
+    function vCredICMSSN: String; overload;
+    function &End: iGrupoCRT1;
+  end;
+
+  iICMSSN102 = interface{N10d}
+    function orig(Value: String): iICMSSN102; overload;
+    function orig: String; overload;
+    function CSOSN(Value: String): iICMSSN102; overload;
+    function CSOSN: String; overload;
+    function &End: iGrupoCRT1;
+  end;
+
+  iICMSSN201 = interface{N10e}
+    function orig(Value: String): iICMSSN201; overload;
+    function orig: String; overload;
+    function CSOSN(Value: String): iICMSSN201; overload;
+    function CSOSN: String; overload;
+    function modBCST(Value: String): iICMSSN201; overload;
+    function modBCST: String; overload;
+    function pMVAST(Value: String): iICMSSN201; overload;
+    function pMVAST: String; overload;
+    function pRedBCST(Value: String): iICMSSN201; overload;
+    function pRedBCST: String; overload;
+    function vBCST(Value: String): iICMSSN201; overload;
+    function vBCST: String; overload;
+    function pICMSST(Value: String): iICMSSN201; overload;
+    function pICMSST: String; overload;
+    function vICMSST(Value: String): iICMSSN201; overload;
+    function vICMSST: String; overload;
+    function pCredSN(Value: String): iICMSSN201; overload;
+    function pCredSN: String; overload;
+    function vCredICMSSN(Value: String): iICMSSN201; overload;
+    function vCredICMSSN: String; overload;
+    function &End: iGrupoCRT1;
+  end;
+
+  iICMSSN202 = interface{N10f}
+    function orig(Value: String): iICMSSN202; overload;
+    function orig: String; overload;
+    function CSOSN(Value: String): iICMSSN202; overload;
+    function CSOSN: String; overload;
+    function modBCST(Value: String): iICMSSN202; overload;
+    function modBCST: String; overload;
+    function pMVAST(Value: String): iICMSSN202; overload;
+    function pMVAST: String; overload;
+    function pRedBCST(Value: String): iICMSSN202; overload;
+    function pRedBCST: String; overload;
+    function vBCST(Value: String): iICMSSN202; overload;
+    function vBCST: String; overload;
+    function pICMSST(Value: String): iICMSSN202; overload;
+    function pICMSST: String; overload;
+    function vICMSST(Value: String): iICMSSN202; overload;
+    function vICMSST: String; overload;
+    function &End: iGrupoCRT1;
+  end;
+
+  iICMSSN500 = interface{N10g}
+    function orig(Value: String): iICMSSN500; overload;
+    function orig: String; overload;
+    function CSOSN(Value: String): iICMSSN500; overload;
+    function CSOSN: String; overload;
+    function seqXMLGrpOp: iseqXMLGrpOpN25_1;
+    function modBCST(Value: String): iICMSSN500; overload;
+    function modBCST: String; overload;
+    function pMVAST(Value: String): iICMSSN500; overload;
+    function pMVAST: String; overload;
+    function pRedBCST(Value: String): iICMSSN500; overload;
+    function pRedBCST: String; overload;
+    function vBCST(Value: String): iICMSSN500; overload;
+    function vBCST: String; overload;
+    function pICMSST(Value: String): iICMSSN500; overload;
+    function pICMSST: String; overload;
+    function vICMSST(Value: String): iICMSSN500; overload;
+    function vICMSST: String; overload;
+    function &End: iGrupoCRT1;
+  end;
+
+  iseqXMLGrpOpN25_1 = interface
+    function vBCSTRet(Value: String): iseqXMLGrpOpN25_1; overload;
+    function vBCSETRet: String; overload;
+    function vICMSSTRet(Value: String): iseqXMLGrpOpN25_1; overload;
+    function vICMSSTRet: String; overload;
+    function &End: iICMSSN500;
+  end;
+
+  iICMSSN900 = interface{N10h}
+    function orig(Value: String): iICMSSN900; overload;
+    function orig: String; overload;
+    function CSOSN(Value: String): iICMSSN900; overload;
+    function CSOSN: String; overload;
+    function seqXMLGrpOp12_1: iseqXMLGrpOpN12_1;
+    function seqXMLGrpOp17_1: iseqXMLGrpOpN17_1;
+    function seqXMLGrpOp27_1: iseqXMLGrpOpN27_1;
+    function modBCST(Value: String): iICMSSN900; overload;
+    function modBCST: String; overload;
+    function pMVAST(Value: String): iICMSSN900; overload;
+    function pMVAST: String; overload;
+    function pRedBCST(Value: String): iICMSSN900; overload;
+    function pRedBCST: String; overload;
+    function vBCST(Value: String): iICMSSN900; overload;
+    function vBCST: String; overload;
+    function pICMSST(Value: String): iICMSSN900; overload;
+    function pICMSST: String; overload;
+    function vICMSST(Value: String): iICMSSN900; overload;
+    function vICMSST: String; overload;
+    function &End: iGrupoCRT1;
+  end;
+
+  iseqXMLGrpOpN12_1 = interface
+    function modBC(Value: String): iseqXMLGrpOpN12_1; overload;
+    function modBC: String; overload;
+    function vBC(Value: String): iseqXMLGrpOpN12_1; overload;
+    function vBC: String; overload;
+    function pRedBC(Value: String): iseqXMLGrpOpN12_1; overload;
+    function pRedBC: String; overload;
+    function pICMS(Value: String): iseqXMLGrpOpN12_1; overload;
+    function pICMS: String; overload;
+    function vICMS(Value: String): iseqXMLGrpOpN12_1; overload;
+    function vICMS: String; overload;
+    function &End: iICMSSN900;
+  end;
+
+  iseqXMLGrpOpN17_1 = interface
+    function modBCST(Value: String): iseqXMLGrpOpN17_1; overload;
+    function modBCST: String; overload;
+    function pMVAST(Value: String): iseqXMLGrpOpN17_1; overload;
+    function pMVAST: String; overload;
+    function pRedBCST(Value: String): iseqXMLGrpOpN17_1; overload;
+    function vBCST: String; overload;
+    function pICMSST(Value: String): iseqXMLGrpOpN17_1; overload;
+    function pICMSST: String; overload;
+    function vICMSST(Value: String): iseqXMLGrpOpN17_1; overload;
+    function vICMSST: String; overload;
+    function &End: iICMSSN900;
+  end;
+
+  iseqXMLGrpOpN27_1 = interface
+    function pCredSN(Value: String): iseqXMLGrpOpN27_1; overload;
+    function pCredSN: String; overload;
+    function vCredICMSSN(Value: String): iseqXMLGrpOpN27_1; overload;
+    function vCredICMSSN: String; overload;
+    function &End: iICMSSN900;
+  end;
+
+  iIPI = interface{O01}
+    function clEnq(Value: string): iIPI; overload;
+    function clEnq: String; overload;
+    function CNPJProd(Value: string): iIPI; overload;
+    function CNPJProd: String; overload;
+    function cSelo(Value: string): iIPI; overload;
+    function cSelo: String; overload;
+    function qSelo(Value: string): iIPI; overload;
+    function qSelo: String; overload;
+    function cEnq(Value: string): iIPI; overload;
+    function cEnq: String; overload;
+    function IPITrib: iIPITrib;
+    function IPINT: iIPINT;
+    function &End: iTrubutosIncidentesProdutoServico;
+  end;
+
+  iIPITrib = interface
+    function CST(Value: String): iIPITrib; overload;
+    function CST: String; overload;
+    function seqXMLAliquota: iseqXMLAliquota;
+    function &End: iIPI;
+  end;
+
+  iseqXMLAliquota = interface
+    function vBC(Value: string): iseqXMLAliquota; overload;
+    function vBC: String; overload;
+    function pIPI(Value: String): iseqXMLAliquota; overload;
+    function pIPI: String; overload;
+    function seqXMLValor: iseqXMLValor;
+    function &End: iIPITrib;
+  end;
+
+  iseqXMLValor = interface
+    function qUnid(Value: String): iseqXMLValor; overload;
+    function qUnid: String; overload;
+    function vUnid(Value: String): iseqXMLValor; overload;
+    function vUnid: String; overload;
+    function vIPI(Value: String): iseqXMLValor; overload;
+    function vIPI: String; overload;
+    function &End: iseqXMLAliquota;
+  end;
+
+  iIPINT = interface
+    function CST(Value: String): iIPINT; overload;
+    function CST: String; overload;
+    function &End: iIPI;
+  end;
+
+  iImpostoImportacao = interface {P01}
+    function vBC(Value: String): iImpostoImportacao; overload;
+    function vBC: String; overload;
+    function vDespAdu(Value: String): iImpostoImportacao; overload;
+    function vDespAdu: String; overload;
+    function vII(Value: String): iImpostoImportacao; overload;
+    function vII: String; overload;
+    function vIOF(Value: String): iImpostoImportacao; overload;
+    function vIOF: String; overload;
+    function &End: iTrubutosIncidentesProdutoServico;
+  end;
+
+  iPIS = interface{Q01}
+    function PISAliq: iPISAliq;
+    function PISQtde: iPISQtde;
+    function PISNT: iPISNT;
+    function PISOutr: iPISOutr;
+    function &End: iTrubutosIncidentesProdutoServico;
+  end;
+
+  iPISAliq = interface
+    function CST(Value: String): iPISAliq; overload;
+    function CST: String; overload;
+    function vBC(Value: String): iPISAliq; overload;
+    function vBC: String; overload;
+    function pPIS(Value: String): iPISAliq; overload;
+    function pPIS: String; overload;
+    function &End: iPIS;
+  end;
+
+  iPISQtde = interface
+    function CST(Value: String): iPISQtde; overload;
+    function CST: String; overload;
+    function qBCProd(Value: String): iPISQtde; overload;
+    function qBCProd: String; overload;
+    function vAliqProd(Value: String): iPISQtde; overload;
+    function vAliqProd: String; overload;
+    function vPis(Value: String): iPISQtde; overload;
+    function vPis: String; overload;
+    function &End: iPIS;
+  end;
+
+  iPISNT = interface
+    function CST(Value: String): iPISNT; overload;
+    function CST: String; overload;
+    function &End: iPIS;
+  end;
+
+  iPISOutr = interface
+    function CST(Value: String): iPISOutr; overload;
+    function CST: String; overload;
+    function seqXMLGrpOPp: iseqXMLGrpOPPISP; overload;
+    function seqXMLGrpOPv: iseqXMLGrpOPPISV; overload;
+    function &End: iPIS;
+  end;
+
+  iseqXMLGrpOPPISP = interface
+    function vBC(Value: String): iseqXMLGrpOPPISP; overload;
+    function vBC: String; overload;
+    function pPIS(Value: String): iseqXMLGrpOPPISP; overload;
+    function pPIS: String; overload;
+    function &End: iPISOutr;
+  end;
+
+  iseqXMLGrpOPPISV = interface
+    function aBCProd(Value: String): iseqXMLGrpOPPISV; overload;
+    function aBCProd: String; overload;
+    function vAliqProd(Value: String): iseqXMLGrpOPPISV; overload;
+    function vAliqProd: String; overload;
+    function vPIS(Value: String): iseqXMLGrpOPPISV; overload;
+    function vPIS: String; overload;
+    function &End: iPISOutr;
+  end;
+
+  iPISST = interface
+    function SeqXMLRPISp: iseqXMLRPISp;
+    function SeqXMLRPISv: iseqXMLRPISv;
+    function &End: iTrubutosIncidentesProdutoServico;
+  end;
+
+  iseqXMLRPISp = interface
+    function vBC(Value: String): iseqXMLRPISp; overload;
+    function vBC: String; overload;
+    function pPIS(Value: String): iseqXMLRPISp; overload;
+    function pPIS: String; overload;
+    function &End: iPISST;
+  end;
+
+  iseqXMLRPISv = interface
+    function qBCProd(Value: String): iseqXMLRPISv; overload;
+    function qBCProd: String; overload;
+    function vAliqProd(Value: String): iseqXMLRPISv; overload;
+    function vAliqProd: String; overload;
+    function vPIS(Value: String): iseqXMLRPISv; overload;
+    function vPIS: String; overload;
+    function &End: iPISST;
+  end;
+
+  iCOFINS = interface
+    function CST(Value: String): iCOFINS; overload;
+    function CST: String; overload;
+    function vBC(Value: String): iCOFINS; overload;
+    function vBC: String; overload;
+    function pCOFINS(Value: String): iCOFINS; overload;
+    function pCOFINS: String; overload;
+    function vCOFINS(Value: String): iCOFINS; overload;
+    function vCOFINS: String; overload;
+    function COFINSQtde: iCOFINSQtde;
+    function CofinsNT: iCofinsNT;
+    function CofinsOutr: iCofinsOutr;
+    function &End: iTrubutosIncidentesProdutoServico;
+  end;
+
+  iCOFINSQtde = interface
+    function CST(Value: String): iCOFINSQtde; overload;
+    function CST: String; overload;
+    function qBCProd(Value: String): iCOFINSQtde; overload;
+    function qBCProd: String; overload;
+    function vAliqProd(Value: String): iCOFINSQtde; overload;
+    function vAliqProd: String; overload;
+    function vCofins(Value: String): iCOFINSQtde; overload;
+    function vCofins: String; overload;
+    function &End: iCOFINS;
+  end;
+
+  iCofinsNT = interface
+    function CST(Value: String): iCofinsNT; overload;
+    function CST: String; overload;
+    function &End: iCOFINS;
+  end;
+
+  iCofinsOutr = interface
+    function CST(Value: String): iCofinsOutr; overload;
+    function CST: String; overload;
+    function seqXMLp: iSeqXMLCofinsp;
+    function seqXMLv: iSeqXMLCofinsv;
+    function &End: iCofins;
+  end;
+
+  iSeqXMLCofinsp = interface
+    function vBC(Value: String): iSeqXMLCofinsp; overload;
+    function vBC: String; overload;
+    function pCofins(Value: String): iSeqXMLCofinsp; overload;
+    function pCofins: String; overload;
+    function &End: iCofinsOutr;
+  end;
+
+  iSeqXMLCofinsv = interface
+    function qBCProd(Value: String): iSeqXMLCofinsv; overload;
+    function qBCProd: String; overload;
+    function vAliqProd(Value: String): iSeqXMLCofinsv; overload;
+    function vAliqProd: String; overload;
+    function vCofins(Value: String): iSeqXMLCofinsv; overload;
+    function vCofins: String; overload;
+    function &End: iCofinsOutr;
+  end;
+
+  iCofinsST = interface
+    function seqXMLCofinsSTp: iseqXMLCofinsSTp;
+    function seqXMLCofinsSTv: iseqXMLCofinsSTv;
+    function &End: iTrubutosIncidentesProdutoServico;
+  end;
+
+  iseqXMLCofinsSTp = interface
+    function vBC(Value: String): iseqXMLCofinsSTp; overload;
+    function vBC: String; overload;
+    function pCofins(Value: String): iseqXMLCofinsSTp; overload;
+    function pCofins: String; overload;
+    function &End: iCofinsST;  
+  end;
+
+  iseqXMLCofinsSTv = interface
+    function qBCProd(Value: String): iseqXMLCofinsSTv; overload;
+    function qBCProd: String; overload;
+    function vAliqProd(Value: String): iseqXMLCofinsSTv; overload;
+    function vAliqProd: String; overload;
+    function vCofins(Value: String): iseqXMLCofinsSTv; overload;
+    function vCofins: String; overload;
+    function &End: iCofinsST;
+  end;
+
+  iISSQN = interface
+    function vBC(Value: String): iISSQN; overload;
+    function vBC: String; overload;
+    function vAliq(Value: String): iISSQN; overload;
+    function vAliq: String; overload;
+    function vISSQN(Value: String): iISSQN; overload;
+    function vISSQN: String; overload;
+    function cMunFG(Value: String): iISSQN; overload;
+    function cMunFG: String; overload;
+    function cListServ(Value: String): iISSQN; overload;
+    function cListServ: String; overload;
+    function vDeducao(Value: String): iISSQN; overload;
+    function vDeducao: String; overload;
+    function vOutro(Value: String): iISSQN; overload;
+    function vOutro: String; overload;
+    function vDescIncond(Value: String): iISSQN; overload;
+    function vDescIncond: String; overload;
+    function vDescCond(Value: String): iISSQN; overload;
+    function vDescCond: String; overload;
+    function vISSRet(Value: String): iISSQN; overload;
+    function vISSRet: String; overload;
+    function indISS(Value: String): iISSQN; overload;
+    function indISS: String; overload;
+    function cService(Value: String): iISSQN; overload;
+    function cService: String; overload;
+    function cMun(Value: String): iISSQN; overload;
+    function cMun: String; overload;
+    function cPais(Value: String): iISSQN; overload;
+    function cPais: String; overload;
+    function nProcesso(Value: String): iISSQN; overload;
+    function nProcesso: String; overload;
+    function impostoDevol(Value: String): iISSQN; overload;
+    function impostoDevol: String; overload;
+    function pDevol(Value: String): iISSQN; overload;
+    function pDevol: String; overload;
+    function IPI(Value: String): iISSQN; overload;
+    function IPI: String; overload;
+    function vIPIdeVol(Value: String): iISSQN; overload;
+    function vIPIdeVol: String; overload;
+    
+    function &End: iTrubutosIncidentesProdutoServico;
+  end;
+  
 implementation
 
 end.
