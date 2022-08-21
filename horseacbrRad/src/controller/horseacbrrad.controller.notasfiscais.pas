@@ -20,7 +20,7 @@ type
   TControllerNotaFiscal = class(THorseGBSwagger)
   private
   public
-    [SwagPOST('Emitir NFe')]
+    [SwagPOST('Emitir NFCe')]
     [SwagParamBody('body', TPedido)]
     [SwagResponse(201, TPedido)]
     [SwagResponse(400)]

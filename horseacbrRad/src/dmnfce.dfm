@@ -13,7 +13,7 @@ object dmnfe: Tdmnfe
     Configuracoes.WebServices.AguardarConsultaRet = 0
     Configuracoes.WebServices.QuebradeLinha = '|'
     Configuracoes.RespTec.IdCSRT = 0
-    DANFE = ACBrNFeDANFCeFortes1
+    DANFE = ACBrNFeDANFeRL1
     Left = 56
     Top = 24
   end
@@ -34,6 +34,7 @@ object dmnfe: Tdmnfe
     CasasDecimais.vUnCom = 2
     CasasDecimais.MaskqCom = ',0.00'
     CasasDecimais.MaskvUnCom = ',0.00'
+    TipoDANFE = tiSemGeracao
     Left = 72
     Top = 120
   end
@@ -54,7 +55,7 @@ object dmnfe: Tdmnfe
     CasasDecimais.vUnCom = 2
     CasasDecimais.MaskqCom = ',0.00'
     CasasDecimais.MaskvUnCom = ',0.00'
-    ACBrNFe = ACBrNFe1
+    TipoDANFE = tiSemGeracao
     FonteLinhaItem.Charset = DEFAULT_CHARSET
     FonteLinhaItem.Color = clWindowText
     FonteLinhaItem.Height = -9
@@ -74,5 +75,28 @@ object dmnfe: Tdmnfe
     LinhasEntreCupons = 0
     Left = 216
     Top = 40
+  end
+  object ACBrNFeDANFeRL1: TACBrNFeDANFeRL
+    MostraPreview = False
+    MostraStatus = False
+    Sistema = 'Projeto ACBr - www.projetoacbr.com.br'
+    MargemInferior = 8.000000000000000000
+    MargemSuperior = 8.000000000000000000
+    MargemEsquerda = 6.000000000000000000
+    MargemDireita = 5.100000000000000000
+    ExpandeLogoMarcaConfig.Altura = 0
+    ExpandeLogoMarcaConfig.Esquerda = 0
+    ExpandeLogoMarcaConfig.Topo = 0
+    ExpandeLogoMarcaConfig.Largura = 0
+    ExpandeLogoMarcaConfig.Dimensionar = False
+    ExpandeLogoMarcaConfig.Esticar = True
+    CasasDecimais.Formato = tdetInteger
+    CasasDecimais.qCom = 2
+    CasasDecimais.vUnCom = 2
+    CasasDecimais.MaskqCom = ',0.00'
+    CasasDecimais.MaskvUnCom = ',0.00'
+    ACBrNFe = ACBrNFe1
+    Left = 128
+    Top = 80
   end
 end
