@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="1cjm5mozpibhthyyi_v">
+    <property name="$defaultDiagram" value="true" />
+    <property name="$metaclass" value="Package Diagram" />
+    <property name="$name" value="default" />
+    <reference referencedUin="design:view:::o1t830qkq6ct2sjmt_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="design:view:::1zh4f03wllnue90nj_v" />
+      <reference referencedUin="design:view:::ciik45qc6mnzj7ore_v" />
+    </reference>
+    <reference referencedUin="design:view:::694d8e22loc1su1qq_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Regras.Factory.TModelFiscalNFeRegrasFactory" />
+      <reference referencedUin="delphi:e_class:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Regras.Factory.@unitclass" />
+    </reference>
+    <reference referencedUin="design:view:::jdkxlbvorxco79aws_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Regras.Interfaces.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Regras.Interfaces.iModelNfeRegrasFactory" />
+      <reference referencedUin="delphi:e_class:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Regras.Interfaces.iVisitable" />
+      <reference referencedUin="delphi:e_class:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Regras.Interfaces.iModelNfeRegras" />
+      <reference referencedUin="delphi:e_class:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Regras.Interfaces.iModelNFeRegrasImposto" />
+    </reference>
+    <reference referencedUin="design:view:::jcho0dxcdgchfgpvg_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Regras.Helpers.TpcnCRTHelper" />
+      <reference referencedUin="delphi:e_class:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Regras.Helpers.TpcnCSTIcmsHelper" />
+      <reference referencedUin="delphi:e_class:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Regras.Helpers.TpcnCSOSNIcmsHelper" />
+      <reference referencedUin="delphi:e_class:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Regras.Helpers.@unitclass" />
+    </reference>
+  </view>
+</nodeSet>

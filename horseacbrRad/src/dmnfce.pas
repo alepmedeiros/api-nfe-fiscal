@@ -19,15 +19,16 @@ uses
   ACBrDFeSSL,
   blcksock,
   pcnAuxiliar,
-  ActiveX,ACBrDFeUtil,
-  pcnNfe, horseacbrrad.model.pedido, ACBrNFeNotasFiscais, ACBrNFeDANFeRLClass;
+//  ActiveX,
+  ACBrDFeUtil,
+  pcnNfe,
+  horseacbrrad.model.pedido,
+  ACBrNFeNotasFiscais,
+  ACBrNFeDANFeRLClass;
 
 type
   Tdmnfe = class(TDataModule)
     ACBrNFe1: TACBrNFe;
-    ACBrNFeDANFeESCPOS1: TACBrNFeDANFeESCPOS;
-    ACBrNFeDANFCeFortes1: TACBrNFeDANFCeFortes;
-    ACBrPosPrinter1: TACBrPosPrinter;
     ACBrNFeDANFeRL1: TACBrNFeDANFeRL;
   private
     procedure Configurar;
@@ -50,7 +51,7 @@ var
   lPathSchemas: String;
   lPathTmp: String;
 begin
-  CoInitialize(nil);
+  // CoInitialize(nil);
   // caminho das pastas gerais
   lPathApp := IncludeTrailingPathDelimiter(ExtractFilePath(ParamStr(0)));
 
@@ -153,54 +154,35 @@ begin
   aNFe.Serie := 1;
 
   ACBrNFe1.NotasFiscais.Clear;
-  lNfe := ACBrNFe1.NotasFiscais.Add.NFe;
+  lNFe := ACBrNFe1.NotasFiscais.Add.NFe;
 
-  //Ambiente
+  // Ambiente
   lNFe.Ide.tpAmb := ACBrNFe1.Configuracoes.WebServices.Ambiente;
   lNFe.Ide.verProc := '1.0.0.0';
   lNFe.Ide.tpImp := ACBrNFe1.DANFE.TipoDANFE;
 
-  //identificacao da nota fiscal eletronica
-  lNFe.Ide.natOp     := 'VENDA PRODUCAO DO ESTAB.';
-  lNFe.Ide.indPag    := ipVista;
-  lNFe.Ide.modelo    := 55;
-  lNFe.Ide.serie     := 1;
-  lNFe.Ide.nNF       := 123;
-  lNFe.Ide.cNF       := GerarCodigoDFe(lNFe.Ide.nNF);
-  lNFe.Ide.dEmi      := Date;
-  lNFe.Ide.dSaiEnt   := Date;
-  lNFe.Ide.hSaiEnt   := Now;
-  lNFe.Ide.tpNF      := tnSaida;
-  lNFe.Ide.tpEmis    := TpcnTipoEmissao.teNormal;
-  lNFe.Ide.tpAmb     := taHomologacao;  //Lembre-se de trocar esta variável quando for para ambiente de produção
-  lNFe.Ide.verProc   := '1.0.0.0'; //Versão do seu sistema
-  lNFe.Ide.cUF       := UFtoCUF('AM');
-  lNFe.Ide.cMunFG    := 1302603;
-  lNFe.Ide.finNFe    := fnNormal;
+  // identificacao da nota fiscal eletronica
+  lNFe.Ide.natOp := 'VENDA PRODUCAO DO ESTAB.';
+  lNFe.Ide.indPag := ipVista;
+  lNFe.Ide.modelo := 55;
+  lNFe.Ide.Serie := 1;
+  lNFe.Ide.nNF := 123;
+  lNFe.Ide.cNF := GerarCodigoDFe(lNFe.Ide.nNF);
+  lNFe.Ide.dEmi := Date;
+  lNFe.Ide.dSaiEnt := Date;
+  lNFe.Ide.hSaiEnt := Now;
+  lNFe.Ide.tpNF := tnSaida;
+  lNFe.Ide.tpEmis := TpcnTipoEmissao.teNormal;
+  lNFe.Ide.tpAmb := taHomologacao;
+  // Lembre-se de trocar esta variável quando for para ambiente de produção
+  lNFe.Ide.verProc := '1.0.0.0'; // Versão do seu sistema
+  lNFe.Ide.cUF := UFtoCUF('AM');
+  lNFe.Ide.cMunFG := 1302603;
+  lNFe.Ide.finNFe := fnNormal;
 
   lNFe.Ide.indIntermed := iiSemOperacao;
 
-//  lNFe.Ide.modelo := 55;
-//  lNFe.Ide.tpNF := tnSaida;
-//  lNFe.Ide.finNFe := fnNormal;
-//  lNFe.Ide.indFinal := cfConsumidorFinal;
-//  lNFe.Ide.nNf := aNFe.Numero;
-//  lNFe.Ide.serie := aNFe.Serie;
-//  lNFe.Ide.natOp := 'VENDA A CONSUMIDOR FINAL';
-//  lNFe.Ide.dEmi := now;
-//  lNFe.Ide.dSaiEnt := lNFe.Ide.dEmi;
-//  lNFe.Ide.cUF := UFtoCUF('AM');
-//  lNFe.Ide.cMunFG := 1302603;
-
-  //deixar o acbr gerar um numero randomico conforme manual da nfe
-//  lNfe.Ide.cNF := 0;
-
-  //entrar em contigencia quando configurado
-//  lNFe.Ide.tpEmis := teNormal;
-//  lNFe.Ide.dhCont := now;
-//  lNFe.Ide.xJust := 'teste de emissao';
-
-  //identificacao do emitente
+  // identificacao do emitente
   lNFe.Emit.xNome := 'Emissor teste';
   lNFe.Emit.xFant := 'Emissor teste';
   lNFe.Emit.CNPJCPF := '07193169000154';
@@ -220,66 +202,52 @@ begin
   lNFe.Emit.EnderEmit.xPais := 'Brasil';
   lNFe.Emit.CRT := crtSimplesNacional;
 
-  lNFe.Emit.IEST              := '';
-  lNFe.Emit.IM                := '2648800';
-  lNFe.Emit.CNAE              := '6201500';
+  lNFe.Emit.IEST := '';
+  lNFe.Emit.IM := '2648800';
+  lNFe.Emit.CNAE := '6201500';
 
+  lNFe.Dest.CNPJCPF := '05481336000137';
+  lNFe.Dest.IE := '687138770110';
+  lNFe.Dest.ISUF := '';
+  lNFe.Dest.xNome := 'D.J. COM. E LOCAÇÃO DE SOFTWARES LTDA - ME';
 
-  lNFe.Dest.CNPJCPF           := '05481336000137';
-  lNFe.Dest.IE                := '687138770110';
-  lNFe.Dest.ISUF              := '';
-  lNFe.Dest.xNome             := 'D.J. COM. E LOCAÇÃO DE SOFTWARES LTDA - ME';
-
-  lNFe.Dest.EnderDest.Fone    := '1532599600';
-  lNFe.Dest.EnderDest.CEP     := 18270170;
-  lNFe.Dest.EnderDest.xLgr    := 'Rua Coronel Aureliano de Camargo';
-  lNFe.Dest.EnderDest.nro     := '973';
-  lNFe.Dest.EnderDest.xCpl    := '';
+  lNFe.Dest.EnderDest.fone := '1532599600';
+  lNFe.Dest.EnderDest.CEP := 18270170;
+  lNFe.Dest.EnderDest.xLgr := 'Rua Coronel Aureliano de Camargo';
+  lNFe.Dest.EnderDest.nro := '973';
+  lNFe.Dest.EnderDest.xCpl := '';
   lNFe.Dest.EnderDest.xBairro := 'Centro';
-  lNFe.Dest.EnderDest.cMun    := 3554003;
-  lNFe.Dest.EnderDest.xMun    := 'Tatui';
-  lNFe.Dest.EnderDest.UF      := 'SP';
-  lNFe.Dest.EnderDest.cPais   := 1058;
-  lNFe.Dest.EnderDest.xPais   := 'BRASIL';
-  //informacoes do destinatario da nota fiscal
-//  lNFe.Dest.CNPJCPF := aNFe.Cpf;
-//  lNFe.Dest.xNome := aNFe.Nome;
-//
-//  lNFe.Dest.EnderDest.fone := '';
-//  lNFe.Dest.EnderDest.xLgr := 'Endereco teste';
-//  lNFe.Dest.EnderDest.nro := '1';
-//  lNFe.Dest.EnderDest.xCpl := '';
-//  lNFe.Dest.EnderDest.xBairro := 'Bairro';
-//  lNFe.Dest.EnderDest.xMun := 'Manaus';
-//  lNFe.Dest.EnderDest.cMun := 1302603;
-//  lNFe.Dest.EnderDest.UF := CUFtoUF(13);
-//  lNFe.Dest.EnderDest.CEP := 11222333;
-//  lNFe.Dest.EnderDest.cPais := 1058;
-//  lNFe.Dest.EnderDest.xPais := 'Brasil';
+  lNFe.Dest.EnderDest.cMun := 3554003;
+  lNFe.Dest.EnderDest.xMun := 'Tatui';
+  lNFe.Dest.EnderDest.UF := 'SP';
+  lNFe.Dest.EnderDest.cPais := 1058;
+  lNFe.Dest.EnderDest.xPais := 'BRASIL';
 
-  //----------------------------------------------------------------------------
+  // ----------------------------------------------------------------------------
   lItemNota := lNFe.Det.New;
-  lItemNota.Prod.nItem    := 1; // Número sequencial, para cada item deve ser incrementado
-  lItemNota.Prod.cProd    := '123456';
-  lItemNota.Prod.cEAN     := '7896523206646';
-  lItemNota.Prod.xProd    := 'TESTE DE PRODUTO';
-  lItemNota.Prod.NCM      := '94051010'; // Tabela NCM disponível em  http://www.receita.fazenda.gov.br/Aliquotas/DownloadArqTIPI.htm
-  lItemNota.Prod.EXTIPI   := '';
-  lItemNota.Prod.CFOP     := '5101';
-  lItemNota.Prod.uCom     := 'UN';
-  lItemNota.Prod.qCom     := 1;
-  lItemNota.Prod.vUnCom   := 100;
-  lItemNota.Prod.vProd    := 100;
+  lItemNota.Prod.nItem := 1;
+  // Número sequencial, para cada item deve ser incrementado
+  lItemNota.Prod.cProd := '123456';
+  lItemNota.Prod.cEAN := '7896523206646';
+  lItemNota.Prod.xProd := 'TESTE DE PRODUTO';
+  lItemNota.Prod.NCM := '94051010';
+  // Tabela NCM disponível em  http://www.receita.fazenda.gov.br/Aliquotas/DownloadArqTIPI.htm
+  lItemNota.Prod.EXTIPI := '';
+  lItemNota.Prod.CFOP := '5101';
+  lItemNota.Prod.uCom := 'UN';
+  lItemNota.Prod.qCom := 1;
+  lItemNota.Prod.vUnCom := 100;
+  lItemNota.Prod.vProd := 100;
 
-  lItemNota.Prod.cEANTrib  := '7896523206646';
-  lItemNota.Prod.uTrib     := 'UN';
-  lItemNota.Prod.qTrib     := 1;
-  lItemNota.Prod.vUnTrib   := 100;
+  lItemNota.Prod.cEANTrib := '7896523206646';
+  lItemNota.Prod.uTrib := 'UN';
+  lItemNota.Prod.qTrib := 1;
+  lItemNota.Prod.vUnTrib := 100;
 
-  lItemNota.Prod.vOutro    := 0;
-  lItemNota.Prod.vFrete    := 0;
-  lItemNota.Prod.vSeg      := 0;
-  lItemNota.Prod.vDesc     := 0;
+  lItemNota.Prod.vOutro := 0;
+  lItemNota.Prod.vFrete := 0;
+  lItemNota.Prod.vSeg := 0;
+  lItemNota.Prod.vDesc := 0;
 
   lItemNota.Prod.CEST := '1111111';
 
@@ -292,131 +260,57 @@ begin
   // por exemplo: código de barras de catálogo, partnumber, etc
   lItemNota.Prod.cBarra := 'ABC123456';
   // Opcional - Preencher com o Código de Barras próprio ou de terceiros que seja diferente do padrão GTIN
-  //  correspondente àquele da menor unidade comercializável identificado por Código de Barras
+  // correspondente àquele da menor unidade comercializável identificado por Código de Barras
   // por exemplo: código de barras de catálogo, partnumber, etc
   lItemNota.Prod.cBarraTrib := 'ABC123456';
 
-  // Declaração de Importação. Pode ser adicionada várias através do comando Prod.DI.Add
-  (*
-  DI := lItemNota.Prod.DI.Add;
-  DI.nDi         := '';
-  DI.dDi         := now;
-  DI.xLocDesemb  := '';
-  DI.UFDesemb    := '';
-  DI.dDesemb     := now;
-  {
-    tvMaritima, tvFluvial, tvLacustre, tvAerea, tvPostal, tvFerroviaria, tvRodoviaria,
+  // Campos para venda de veículos novos
 
-    abaixo os novos valores incluidos a partir da NT 2020/005
-
-    tvConduto, tvMeiosProprios, tvEntradaSaidaFicta, tvCourier, tvEmMaos, tvPorReboque
-  }
-  DI.tpViaTransp := tvRodoviaria;
-  DI.vAFRMM := 0;
-  {
-    tiContaPropria, tiContaOrdem, tiEncomenda
-  }
-  DI.tpIntermedio := tiContaPropria;
-  DI.CNPJ := '';
-  DI.UFTerceiro := '';
-  DI.cExportador := '';
-
-  Adicao := DI.adi.Add;
-  Adicao.nAdicao     := 1;
-  Adicao.nSeqAdi     := 1;
-  Adicao.cFabricante := '';
-  Adicao.vDescDI     := 0;
-  Adicao.nDraw       := '';
-  *)
-
-//Campos para venda de veículos novos
-
-  lItemNota.Prod.veicProd.tpOP    := toVendaConcessionaria;
-  lItemNota.Prod.veicProd.chassi  := '';
-  lItemNota.Prod.veicProd.cCor    := '';
-  lItemNota.Prod.veicProd.xCor    := '';
-  lItemNota.Prod.veicProd.pot     := '';
-  lItemNota.Prod.veicProd.Cilin   := '';
-  lItemNota.Prod.veicProd.pesoL   := '';
-  lItemNota.Prod.veicProd.pesoB   := '';
-  lItemNota.Prod.veicProd.nSerie  := '';
-  lItemNota.Prod.veicProd.tpComb  := '';
-  lItemNota.Prod.veicProd.nMotor  := '';
-  lItemNota.Prod.veicProd.CMT     := '';
-  lItemNota.Prod.veicProd.dist    := '';
-  lItemNota.Prod.veicProd.anoMod  := 0;
-  lItemNota.Prod.veicProd.anoFab  := 0;
-  lItemNota.Prod.veicProd.tpPint  := '';
-  lItemNota.Prod.veicProd.tpVeic  := 0;
+  lItemNota.Prod.veicProd.tpOP := toVendaConcessionaria;
+  lItemNota.Prod.veicProd.chassi := '';
+  lItemNota.Prod.veicProd.cCor := '';
+  lItemNota.Prod.veicProd.xCor := '';
+  lItemNota.Prod.veicProd.pot := '';
+  lItemNota.Prod.veicProd.Cilin := '';
+  lItemNota.Prod.veicProd.pesoL := '';
+  lItemNota.Prod.veicProd.pesoB := '';
+  lItemNota.Prod.veicProd.nSerie := '';
+  lItemNota.Prod.veicProd.tpComb := '';
+  lItemNota.Prod.veicProd.nMotor := '';
+  lItemNota.Prod.veicProd.CMT := '';
+  lItemNota.Prod.veicProd.dist := '';
+  lItemNota.Prod.veicProd.anoMod := 0;
+  lItemNota.Prod.veicProd.anoFab := 0;
+  lItemNota.Prod.veicProd.tpPint := '';
+  lItemNota.Prod.veicProd.tpVeic := 0;
   lItemNota.Prod.veicProd.espVeic := 0;
-  lItemNota.Prod.veicProd.VIN     := '';
+  lItemNota.Prod.veicProd.VIN := '';
   lItemNota.Prod.veicProd.condVeic := cvAcabado;
-  lItemNota.Prod.veicProd.cMod    := '';
+  lItemNota.Prod.veicProd.cMod := '';
 
-// Campos de Rastreabilidade do lItemNota
-  {
-  O grupo <rastro> permiti a rastreabilidade de qualquer lItemNota sujeito a
-  regulações sanitárias, casos de recolhimento/recall, além de defensivos agrícolas,
-  produtos veterinários, odontológicos, medicamentos, bebidas, águas envasadas,
-  embalagens, etc., a partir da indicação de informações de número de lote,
-  data de fabricação/produção, data de validade, etc.
-  Obrigatório o preenchimento deste grupo no caso de medicamentos e
-  produtos farmacêuticos.
-  }
 
-  // Ocorrências: 0 - 500
-  (*
-  Rastro := lItemNota.Prod.rastro.Add;
-
-  Rastro.nLote  := '17H8F5';
-  Rastro.qLote  := 1;
-  Rastro.dFab   := StrToDate('01/08/2017');
-  Rastro.dVal   := StrToDate('01/08/2019');
-  Rastro.cAgreg := ''; // Código de Agregação (opcional) de 1 até 20 dígitos
-  *)
-
-//Campos específicos para venda de medicamentos
-
-  // Ocorrências: 1 - 500 ==> 1 - 1 (4.00)
-  (*
-  Medicamento := lItemNota.Prod.med.Add;
-
-  Medicamento.cProdANVISA := '1256802470029';
-  Medicamento.vPMC        := 100.00; // Preço máximo consumidor
-  *)
-
-//Campos específicos para venda de armamento
-  (*
-  Arma := lItemNota.Prod.arma.Add;
-  Arma.nSerie := 0;
-  Arma.tpArma := taUsoPermitido;
-  Arma.nCano  := 0;
-  Arma.descr  := '';
-  *)
-
-//Campos específicos para venda de combustível(distribuidoras)
+  // Campos específicos para venda de combustível(distribuidoras)
 
   lItemNota.Prod.comb.cProdANP := 0;
-  lItemNota.Prod.comb.CODIF    := '';
-  lItemNota.Prod.comb.qTemp    := 0;
-  lItemNota.Prod.comb.UFcons   := '';
+  lItemNota.Prod.comb.CODIF := '';
+  lItemNota.Prod.comb.qTemp := 0;
+  lItemNota.Prod.comb.UFcons := '';
 
-  lItemNota.Prod.comb.CIDE.qBCprod   := 0;
+  lItemNota.Prod.comb.CIDE.qBCprod := 0;
   lItemNota.Prod.comb.CIDE.vAliqProd := 0;
-  lItemNota.Prod.comb.CIDE.vCIDE     := 0;
+  lItemNota.Prod.comb.CIDE.vCIDE := 0;
 
-  lItemNota.Prod.comb.ICMS.vBCICMS   := 0;
-  lItemNota.Prod.comb.ICMS.vICMS     := 0;
+  lItemNota.Prod.comb.ICMS.vBCICMS := 0;
+  lItemNota.Prod.comb.ICMS.vICMS := 0;
   lItemNota.Prod.comb.ICMS.vBCICMSST := 0;
-  lItemNota.Prod.comb.ICMS.vICMSST   := 0;
+  lItemNota.Prod.comb.ICMS.vICMSST := 0;
 
   lItemNota.Prod.comb.ICMSInter.vBCICMSSTDest := 0;
-  lItemNota.Prod.comb.ICMSInter.vICMSSTDest   := 0;
+  lItemNota.Prod.comb.ICMSInter.vICMSSTDest := 0;
 
   lItemNota.Prod.comb.ICMSCons.vBCICMSSTCons := 0;
-  lItemNota.Prod.comb.ICMSCons.vICMSSTCons   := 0;
-  lItemNota.Prod.comb.ICMSCons.UFcons        := '';
-
+  lItemNota.Prod.comb.ICMSCons.vICMSSTCons := 0;
+  lItemNota.Prod.comb.ICMSCons.UFcons := '';
 
   with lItemNota.Imposto do
   begin
@@ -445,32 +339,32 @@ begin
 
       if lNFe.Emit.CRT in [crtSimplesExcessoReceita, crtRegimeNormal] then
       begin
-        CST     := cst00;
-        modBC   := dbiPrecoTabelado;
-        vBC     := 100;
-        pICMS   := 18;
-        vICMS   := 18;
+        CST := cst00;
+        modBC := dbiPrecoTabelado;
+        vBC := 100;
+        pICMS := 18;
+        vICMS := 18;
         modBCST := dbisMargemValorAgregado;
-        pMVAST  := 0;
-        pRedBCST:= 0;
-        vBCST   := 0;
+        pMVAST := 0;
+        pRedBCST := 0;
+        vBCST := 0;
         pICMSST := 0;
         vICMSST := 0;
-        pRedBC  := 0;
+        pRedBC := 0;
       end
       else
       begin
-        CSOSN   := csosn101;
-        modBC   := dbiValorOperacao;
+        CSOSN := csosn101;
+        modBC := dbiValorOperacao;
         pCredSN := 5;
         vCredICMSSN := 100 * pCredSN / 100;;
-        vBC     := 0;
-        pICMS   := 0;
-        vICMS   := 0;
+        vBC := 0;
+        pICMS := 0;
+        vICMS := 0;
         modBCST := dbisListaNeutra;
-        pMVAST  := 0;
-        pRedBCST:= 0;
-        vBCST   := 0;
+        pMVAST := 0;
+        pRedBCST := 0;
+        vBCST := 0;
         pICMSST := 0;
         vICMSST := 0;
       end;
@@ -515,20 +409,20 @@ begin
     with ICMSUFDest do
     begin
       // partilha do ICMS e fundo de probreza
-      vBCUFDest      := 0.00;
-      pFCPUFDest     := 0.00;
-      pICMSUFDest    := 0.00;
-      pICMSInter     := 0.00;
+      vBCUFDest := 0.00;
+      pFCPUFDest := 0.00;
+      pICMSUFDest := 0.00;
+      pICMSInter := 0.00;
       pICMSInterPart := 0.00;
-      vFCPUFDest     := 0.00;
-      vICMSUFDest    := 0.00;
-      vICMSUFRemet   := 0.00;
+      vFCPUFDest := 0.00;
+      vICMSUFDest := 0.00;
+      vICMSUFRemet := 0.00;
     end;
 
     (*
-    // IPI, se hpouver...
-    with IPI do
-    begin
+      // IPI, se hpouver...
+      with IPI do
+      begin
       CST      := ipi99;
       clEnq    := '999';
       CNPJProd := '';
@@ -541,36 +435,36 @@ begin
       vUnid  := 0;
       pIPI   := 5;
       vIPI   := 5;
-    end;
+      end;
     *)
 
     with II do
     begin
-      II.vBc      := 0;
+      II.vBC := 0;
       II.vDespAdu := 0;
-      II.vII      := 0;
-      II.vIOF     := 0;
+      II.vII := 0;
+      II.vIOF := 0;
     end;
 
     with PIS do
     begin
-      CST  := pis99;
-      vBC  := 0;
+      CST := pis99;
+      vBC := 0;
       pPIS := 0;
       vPIS := 0;
 
-      qBCProd   := 0;
+      qBCprod := 0;
       vAliqProd := 0;
-      vPIS      := 0;
+      vPIS := 0;
     end;
 
     with PISST do
     begin
-      vBc       := 0;
-      pPis      := 0;
-      qBCProd   := 0;
+      vBC := 0;
+      pPIS := 0;
+      qBCprod := 0;
       vAliqProd := 0;
-      vPIS      := 0;
+      vPIS := 0;
       {
         abaixo o campo incluido no layout a partir da NT 2020/005
       }
@@ -579,26 +473,26 @@ begin
         ispNenhum, ispPISSTNaoCompoe, ispPISSTCompoe
       }
       // Indica se o valor do PISST compõe o valor total da NF-e
-      IndSomaPISST :=  ispNenhum;
+      IndSomaPISST := ispNenhum;
     end;
 
     with COFINS do
     begin
-      CST     := cof99;
-      vBC     := 0;
+      CST := cof99;
+      vBC := 0;
       pCOFINS := 0;
       vCOFINS := 0;
-      qBCProd   := 0;
+      qBCprod := 0;
       vAliqProd := 0;
     end;
 
     with COFINSST do
     begin
-      vBC       := 0;
-      pCOFINS   := 0;
-      qBCProd   := 0;
+      vBC := 0;
+      pCOFINS := 0;
+      qBCprod := 0;
       vAliqProd := 0;
-      vCOFINS   := 0;
+      vCOFINS := 0;
       {
         abaixo o campo incluido no layout a partir da NT 2020/005
       }
@@ -607,7 +501,7 @@ begin
         iscNenhum, iscCOFINSSTNaoCompoe, iscCOFINSSTCompoe
       }
       // Indica se o valor da COFINS ST compõe o valor total da NF-e
-      indSomaCOFINSST :=  iscNenhum;
+      indSomaCOFINSST := iscNenhum;
     end;
   end;
 
@@ -622,142 +516,142 @@ begin
     lNFe.Total.ICMSTot.vICMS := 0;
   end;
 
-  lNFe.Total.ICMSTot.vBCST   := 0;
-  lNFe.Total.ICMSTot.vST     := 0;
-  lNFe.Total.ICMSTot.vProd   := 100;
-  lNFe.Total.ICMSTot.vFrete  := 0;
-  lNFe.Total.ICMSTot.vSeg    := 0;
-  lNFe.Total.ICMSTot.vDesc   := 0;
-  lNFe.Total.ICMSTot.vII     := 0;
-  lNFe.Total.ICMSTot.vIPI    := 0;
-  lNFe.Total.ICMSTot.vPIS    := 0;
+  lNFe.Total.ICMSTot.vBCST := 0;
+  lNFe.Total.ICMSTot.vST := 0;
+  lNFe.Total.ICMSTot.vProd := 100;
+  lNFe.Total.ICMSTot.vFrete := 0;
+  lNFe.Total.ICMSTot.vSeg := 0;
+  lNFe.Total.ICMSTot.vDesc := 0;
+  lNFe.Total.ICMSTot.vII := 0;
+  lNFe.Total.ICMSTot.vIPI := 0;
+  lNFe.Total.ICMSTot.vPIS := 0;
   lNFe.Total.ICMSTot.vCOFINS := 0;
-  lNFe.Total.ICMSTot.vOutro  := 0;
-  lNFe.Total.ICMSTot.vNF     := 100;
+  lNFe.Total.ICMSTot.vOutro := 0;
+  lNFe.Total.ICMSTot.vNF := 100;
 
   // lei da transparencia de impostos
   lNFe.Total.ICMSTot.vTotTrib := 0;
 
   // partilha do icms e fundo de probreza
-  lNFe.Total.ICMSTot.vFCPUFDest   := 0.00;
-  lNFe.Total.ICMSTot.vICMSUFDest  := 0.00;
+  lNFe.Total.ICMSTot.vFCPUFDest := 0.00;
+  lNFe.Total.ICMSTot.vICMSUFDest := 0.00;
   lNFe.Total.ICMSTot.vICMSUFRemet := 0.00;
 
-  lNFe.Total.ICMSTot.vFCPST     := 0;
-  lNFe.Total.ICMSTot.vFCPSTRet  := 0;
+  lNFe.Total.ICMSTot.vFCPST := 0;
+  lNFe.Total.ICMSTot.vFCPSTRet := 0;
 
-  lNFe.Total.retTrib.vRetPIS    := 0;
+  lNFe.Total.retTrib.vRetPIS := 0;
   lNFe.Total.retTrib.vRetCOFINS := 0;
-  lNFe.Total.retTrib.vRetCSLL   := 0;
-  lNFe.Total.retTrib.vBCIRRF    := 0;
-  lNFe.Total.retTrib.vIRRF      := 0;
+  lNFe.Total.retTrib.vRetCSLL := 0;
+  lNFe.Total.retTrib.vBCIRRF := 0;
+  lNFe.Total.retTrib.vIRRF := 0;
   lNFe.Total.retTrib.vBCRetPrev := 0;
-  lNFe.Total.retTrib.vRetPrev   := 0;
+  lNFe.Total.retTrib.vRetPrev := 0;
 
   lNFe.Transp.modFrete := mfContaEmitente;
-  lNFe.Transp.Transporta.CNPJCPF  := '';
-  lNFe.Transp.Transporta.xNome    := '';
-  lNFe.Transp.Transporta.IE       := '';
-  lNFe.Transp.Transporta.xEnder   := '';
-  lNFe.Transp.Transporta.xMun     := '';
-  lNFe.Transp.Transporta.UF       := '';
+  lNFe.Transp.Transporta.CNPJCPF := '';
+  lNFe.Transp.Transporta.xNome := '';
+  lNFe.Transp.Transporta.IE := '';
+  lNFe.Transp.Transporta.xEnder := '';
+  lNFe.Transp.Transporta.xMun := '';
+  lNFe.Transp.Transporta.UF := '';
 
-  lNFe.Transp.retTransp.vServ    := 0;
-  lNFe.Transp.retTransp.vBCRet   := 0;
+  lNFe.Transp.retTransp.vServ := 0;
+  lNFe.Transp.retTransp.vBCRet := 0;
   lNFe.Transp.retTransp.pICMSRet := 0;
   lNFe.Transp.retTransp.vICMSRet := 0;
-  lNFe.Transp.retTransp.CFOP     := '';
-  lNFe.Transp.retTransp.cMunFG   := 0;
+  lNFe.Transp.retTransp.CFOP := '';
+  lNFe.Transp.retTransp.cMunFG := 0;
 
   Volume := lNFe.Transp.Vol.New;
-  Volume.qVol  := 1;
-  Volume.esp   := 'Especie';
+  Volume.qVol := 1;
+  Volume.esp := 'Especie';
   Volume.marca := 'Marca';
-  Volume.nVol  := 'Numero';
+  Volume.nVol := 'Numero';
   Volume.pesoL := 100;
   Volume.pesoB := 110;
 
-  //Lacres do volume. Pode ser adicionado vários
+  // Lacres do volume. Pode ser adicionado vários
   (*
-  Lacre := Volume.Lacres.Add;
-  Lacre.nLacre := '';
+    Lacre := Volume.Lacres.Add;
+    Lacre.nLacre := '';
   *)
 
-  lNFe.Cobr.Fat.nFat  := '1001'; // 'Numero da Fatura'
+  lNFe.Cobr.Fat.nFat := '1001'; // 'Numero da Fatura'
   lNFe.Cobr.Fat.vOrig := 100;
   lNFe.Cobr.Fat.vDesc := 0;
-  lNFe.Cobr.Fat.vLiq  := 100;
+  lNFe.Cobr.Fat.vLiq := 100;
 
   Duplicata := lNFe.Cobr.Dup.New;
-  Duplicata.nDup  := '001';
-  Duplicata.dVenc := now+10;
-  Duplicata.vDup  := 50;
+  Duplicata.nDup := '001';
+  Duplicata.dVenc := Now + 10;
+  Duplicata.vDup := 50;
 
   Duplicata := lNFe.Cobr.Dup.New;
-  Duplicata.nDup  := '002';
-  Duplicata.dVenc := now+20;
-  Duplicata.vDup  := 50;
+  Duplicata.nDup := '002';
+  Duplicata.dVenc := Now + 20;
+  Duplicata.vDup := 50;
 
-    // O grupo infIntermed só deve ser gerado nos casos de operação não presencial
-    // pela internet em site de terceiros (Intermediadores).
-//  NotaF.NFe.infIntermed.CNPJ := '';
-//  NotaF.NFe.infIntermed.idCadIntTran := '';
+  // O grupo infIntermed só deve ser gerado nos casos de operação não presencial
+  // pela internet em site de terceiros (Intermediadores).
+  // NotaF.NFe.infIntermed.CNPJ := '';
+  // NotaF.NFe.infIntermed.idCadIntTran := '';
 
-  lNFe.InfAdic.infCpl     :=  '';
-  lNFe.InfAdic.infAdFisco :=  '';
+  lNFe.InfAdic.infCpl := '';
+  lNFe.InfAdic.infAdFisco := '';
 
   ObsComplementar := lNFe.InfAdic.obsCont.New;
   ObsComplementar.xCampo := 'ObsCont';
   ObsComplementar.xTexto := 'Texto';
 
-  ObsFisco := lNFe.InfAdic.obsFisco.New;
+  ObsFisco := lNFe.InfAdic.ObsFisco.New;
   ObsFisco.xCampo := 'ObsFisco';
   ObsFisco.xTexto := 'Texto';
 
-//Processo referenciado
+  // Processo referenciado
   (*
-  ProcReferenciado := NotaF.Nfe.InfAdic.procRef.Add;
-  ProcReferenciado.nProc := '';
-  ProcReferenciado.indProc := ipSEFAZ;
+    ProcReferenciado := NotaF.Nfe.InfAdic.procRef.Add;
+    ProcReferenciado.nProc := '';
+    ProcReferenciado.indProc := ipSEFAZ;
   *)
 
-  lNFe.exporta.UFembarq   := '';;
+  lNFe.exporta.UFembarq := '';;
   lNFe.exporta.xLocEmbarq := '';
 
   lNFe.compra.xNEmp := '';
-  lNFe.compra.xPed  := '';
+  lNFe.compra.xPed := '';
   lNFe.compra.xCont := '';
 
-// YA. Informações de pagamento
+  // YA. Informações de pagamento
 
   lPagto := lNFe.pag.New;
   lPagto.indPag := ipVista;
-  lPagto.tPag   := fpDinheiro;
-  lPagto.vPag   := 50;
+  lPagto.tPag := fpDinheiro;
+  lPagto.vPag := 50;
 
-// Exemplo de pagamento integrado.
+  // Exemplo de pagamento integrado.
 
   lPagto := lNFe.pag.New;
   lPagto.indPag := ipVista;
-  lPagto.tPag   := fpCartaoCredito;
+  lPagto.tPag := fpCartaoCredito;
 
   {
     abaixo o campo incluido no layout a partir da NT 2020/006
   }
   {
     se tPag for fpOutro devemos incluir o campo xPag
-  InfoPgto.xPag := 'Caderneta';
+    InfoPgto.xPag := 'Caderneta';
   }
-  lPagto.vPag   := 50;
+  lPagto.vPag := 50;
   lPagto.tpIntegra := tiPagIntegrado;
-  lPagto.CNPJ      := '05481336000137';
-  lPagto.tBand     := bcVisa;
-  lPagto.cAut      := '1234567890123456';
+  lPagto.CNPJ := '05481336000137';
+  lPagto.tBand := bcVisa;
+  lPagto.cAut := '1234567890123456';
 
-// YA09 Troco
-// Regra opcional: Informar se valor dos pagamentos maior que valor da nota.
-// Regra obrigatória: Se informado, Não pode diferir de "(+) vPag (id:YA03) (-) vNF (id:W16)"
-//  NotaF.NFe.pag.vTroco := 75;
+  // YA09 Troco
+  // Regra opcional: Informar se valor dos pagamentos maior que valor da nota.
+  // Regra obrigatória: Se informado, Não pode diferir de "(+) vPag (id:YA03) (-) vNF (id:W16)"
+  // NotaF.NFe.pag.vTroco := 75;
 
   {
     abaixo o campo incluido no layout a partir da NT 2020/006
@@ -771,101 +665,8 @@ begin
   lNFe.infIntermed.idCadIntTran := '';
 
   ACBrNFe1.NotasFiscais.GerarNFe;
-  lItemNota := lNFe.Det.New;
-  lItemNota.Prod.nItem := 1;
-  lItemNota.Prod.cProd := '123';
-  lItemNota.Prod.xProd := 'Produto X';
-  lItemNota.Prod.NCM := '10061092';
-  lItemNota.Prod.CFOP := '5102';
-  lItemNota.Prod.CEST := '';
-
-  lItemNota.Prod.cEAN := 'sem gtin';
-  lItemNota.Prod.uCom := 'UN';
-  lItemNota.Prod.qCom := 1;
-  lItemNota.Prod.vUnCom := 10;
-  lItemNota.Prod.vProd := lItemNota.Prod.qCom * lItemNota.Prod.vUnCom;
-
-  lItemNota.Prod.cEANTrib := lItemNota.Prod.cEAN;
-  lItemNota.Prod.uTrib := lItemNota.Prod.uCom;
-  lItemNota.Prod.qTrib := lItemNota.Prod.qCom;
-  lItemNota.Prod.vUnTrib := lItemNota.Prod.vUnCom;
-
-  lItemNota.Prod.vOutro    := 0;
-  lItemNota.Prod.vFrete    := 0;
-  lItemNota.Prod.vSeg      := 0;
-  lItemNota.Prod.vDesc     := 0;
-
-  //origem da mercadoria (fixo por enquanto)
-  lItemNota.Imposto.ICMS.orig := TpcnOrigemMercadoria.oeNacional;
-
-  //ICMS
-  lItemNota.Imposto.ICMS.CSOSN := TpcnCSOSNIcms.csosn102;
-  lItemNota.Imposto.ICMS.pCredSN := 0;
-  lItemNota.Imposto.ICMS.vCredICMSSN := 0;
-
-  //PIS
-  lItemNota.Imposto.PIS.CST := TpcnCstPis.pis07;
-  lItemNota.Imposto.PIS.vBC := 0;
-  lItemNota.Imposto.PIS.pPIS := 0;
-  lItemNota.Imposto.PIS.vPIS := 0;
-  lItemNota.Imposto.PIS.qBCProd := 0;
-  lItemNota.Imposto.PIS.vAliqProd := 0;
-
-  //COFINS
-  lItemNota.Imposto.COFINS.CST := TpcnCstCofins.cof07;
-  lItemNota.Imposto.COFINS.vBC := 0;
-  lItemNota.Imposto.COFINS.pCOFINS := 0;
-  lItemNota.Imposto.COFINS.vCOFINS := 0;
-  lItemNota.Imposto.COFINS.qBCProd := 0;
-  lItemNota.Imposto.COFINS.vAliqProd := 0;
-
-  //----------------------------------------------------------------------------
-
-  //somente se tiver troco
-  lNfe.pag.vTroco := 0.00;
-
-  //pagamento
-  lPagto := lNFe.pag.new;
-  lPagto.tPag := TpcnFormaPagamento.fpDinheiro;
-  lPagto.vPag := ValorTotalNf;
-  lPagto.tpIntegra := tiPagNaoIntegrado;
-
-  //somente quando é cartão
-  //lPagto.CNPJ
-  //lPagto.tBand
-  //lPagto.CAut
-
-  //totais da nota fiscal
-  lNFe.Total.ICMSTot.vBC := 0.00;
-  lNFe.Total.ICMSTot.vICMS := 0.00;
-  lNFe.Total.ICMSTot.vBCST := 0.00;
-  lNFe.Total.ICMSTot.vST := 0.00;
-  lNFe.Total.ICMSTot.vProd := ValorTotalNF;
-  lNFe.Total.ICMSTot.vFrete := 0.00;
-  lNFe.Total.ICMSTot.vSeg := 0.00;
-  lNFe.Total.ICMSTot.vDesc := 0.00;
-  lNFe.Total.ICMSTot.vII := 0.00;
-  lNFe.Total.ICMSTot.vIPI := 0.00;
-  lNFe.Total.ICMSTot.vPIS := 0.00;
-  lNFe.Total.ICMSTot.vCOFINS := 0.00;
-  lNFe.Total.ICMSTot.vOutro := 0.00;
-  lNFe.Total.ICMSTot.vFCP := 0.00;
-  lNFe.Total.ICMSTot.vNF := ValorTotalNf;
-  lNFe.Total.ICMSTot.vTotTrib := 0.00;
-
-  //servicos (não exite na NFC-e)
-  lNFe.Total.ISSQNtot.vServ := 0.00;
-  lNFe.Total.ISSQNtot.vBC := 0.00;
-  lNFe.Total.ISSQNtot.vISS := 0.00;
-  lNFe.Total.ISSQNtot.vPIS := 0.00;
-  lNFe.Total.ISSQNtot.vCOFINS := 0.00;
-
-  //transporte (frete), no caso de nfc-e não poder ter frete
-  lNFe.Transp.modFrete := mfSemFrete;
-
-
-  ACBrNFe1.NotasFiscais.GerarNFe;
-  ACBrNFe1.NotasFiscais[0].GravarXML(ExtractFilePath(ParamStr(0))+'notafiscal.xml');
+  ACBrNFe1.NotasFiscais[0].GravarXML(ExtractFilePath(ParamStr(0)) +
+    'notafiscal.xml');
   ACBrNFe1.NotasFiscais.ImprimirPDF;
 
   Result := aNFe;

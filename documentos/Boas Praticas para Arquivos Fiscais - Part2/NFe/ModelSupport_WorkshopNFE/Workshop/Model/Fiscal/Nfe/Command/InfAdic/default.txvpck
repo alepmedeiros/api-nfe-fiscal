@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="35qxt86478nylpjuf_v">
+    <property name="$defaultDiagram" value="true" />
+    <property name="$metaclass" value="Package Diagram" />
+    <property name="$name" value="default" />
+    <reference referencedUin="design:view:::h9t5m2fuifnfuuyeh_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Command.InfAdic.ObsComp.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Command.InfAdic.ObsComp.TModelFiscalNfeCommandInfAdicObsComp" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Command.InfAdic.TModelFiscalNfeCommandInfAdic">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_field:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Command.InfAdic.TModelFiscalNfeCommandInfAdic.FParent" />
+      <reference referencedUin="delphi:e_method:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Command.InfAdic.TModelFiscalNfeCommandInfAdic.Create(Workshop.Model.Fiscal.Nfe.Interfaces.iModelFiscalNfe)" />
+      <reference referencedUin="delphi:e_method:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Command.InfAdic.TModelFiscalNfeCommandInfAdic.Destroy()" />
+      <reference referencedUin="delphi:e_method:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Command.InfAdic.TModelFiscalNfeCommandInfAdic.New(Workshop.Model.Fiscal.Nfe.Interfaces.iModelFiscalNfe)" />
+      <reference referencedUin="delphi:e_method:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Command.InfAdic.TModelFiscalNfeCommandInfAdic.Execute()" />
+    </reference>
+    <reference referencedUin="design:view:::g2aroy4w4gnw53m8l_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Command.InfAdic.ObsFisco.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Command.InfAdic.ObsFisco.TModelFiscalNfeCommandInfAdicObsFisco" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Command.InfAdic.@unitclass">
+      <property name="$shortcutReference" value="true" />
+    </reference>
+  </view>
+</nodeSet>

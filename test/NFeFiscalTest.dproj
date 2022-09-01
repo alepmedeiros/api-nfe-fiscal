@@ -138,6 +138,15 @@
         <DCCReference Include="nfefiscal.test.pas"/>
         <DCCReference Include="..\nfe\src\nfefiscal.nfe.interfaces.pas"/>
         <DCCReference Include="..\nfe\src\nfefiscal.nfe_.interfaces.pas"/>
+        <DCCReference Include="..\nfe\src\nfefiscal.nfeDefault.interfaces.pas"/>
+        <DCCReference Include="..\nfe\src\nfefiscal.nfe.arquivos.pas"/>
+        <DCCReference Include="..\nfe\src\nfefiscal.nfe.geral.pas"/>
+        <DCCReference Include="..\nfe\src\nfefiscal.nfe.timezoneconf.pas"/>
+        <DCCReference Include="..\nfe\src\nfefiscal.nfe.webservice.pas"/>
+        <DCCReference Include="..\nfe\src\nfefiscal.nfe.ssl.pas"/>
+        <DCCReference Include="..\nfe\src\nfefiscal.nfe.danfe.pas"/>
+        <DCCReference Include="..\nfe\src\nfefiscal.nfe.configuracao.pas"/>
+        <DCCReference Include="..\nfe\src\nfefiscal.nfe.ide.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

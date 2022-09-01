@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="0mst3jobmlee75gin_v">
+    <property name="$defaultDiagram" value="true" />
+    <property name="$metaclass" value="Package Diagram" />
+    <property name="$name" value="default" />
+    <reference referencedUin="delphi:e_class:src:WorkshopNFE:Workshop.View.Principal.@unitclass">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:l_ast:src:WorkshopNFE:Workshop.View.Principal.@unitclass.Form6" />
+      <reference referencedUin="delphi:e_field:src:WorkshopNFE:Workshop.View.Principal.@unitclass.Form6" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:WorkshopNFE:Workshop.View.Principal.TForm6">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_field:src:WorkshopNFE:Workshop.View.Principal.TForm6.Button1" />
+      <reference referencedUin="delphi:e_method:src:WorkshopNFE:Workshop.View.Principal.TForm6.FormCreate(System.TObject)" />
+      <reference referencedUin="delphi:e_method:src:WorkshopNFE:Workshop.View.Principal.TForm6.Button1Click(System.TObject)" />
+      <reference referencedUin="delphi:e_field:src:WorkshopNFE:Workshop.View.Principal.TForm6.FNfe" />
+    </reference>
+  </view>
+</nodeSet>

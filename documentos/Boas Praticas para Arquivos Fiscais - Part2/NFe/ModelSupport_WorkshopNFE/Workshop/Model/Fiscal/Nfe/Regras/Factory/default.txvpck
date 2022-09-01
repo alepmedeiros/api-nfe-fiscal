@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="694d8e22loc1su1qq_v">
+    <property name="$defaultDiagram" value="true" />
+    <property name="$metaclass" value="Package Diagram" />
+    <property name="$name" value="default" />
+    <reference referencedUin="delphi:e_class:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Regras.Factory.TModelFiscalNFeRegrasFactory">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_method:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Regras.Factory.TModelFiscalNFeRegrasFactory.Create()" />
+      <reference referencedUin="delphi:e_method:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Regras.Factory.TModelFiscalNFeRegrasFactory.Destroy()" />
+      <reference referencedUin="delphi:e_method:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Regras.Factory.TModelFiscalNFeRegrasFactory.New()" />
+      <reference referencedUin="delphi:e_method:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Regras.Factory.TModelFiscalNFeRegrasFactory.RegimeNormal()" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Regras.Factory.@unitclass">
+      <property name="$shortcutReference" value="true" />
+    </reference>
+  </view>
+</nodeSet>

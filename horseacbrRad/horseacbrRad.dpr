@@ -47,9 +47,9 @@ begin
   THorseGBSwaggerRegister.RegisterPath(TControllerNotaFiscal);
 
   THorse.Listen(9000,
-    procedure (Horse:THorse)
-    begin
-      System.Writeln(Format('Servidor Horse com ACBr rodando, porta %d',[Horse.Port]));
-      System.Readln;
-    end);
+  procedure (Horse:THorse)
+  begin
+    System.Writeln(Format('Servidor Horse com ACBr rodando, porta %d',[Horse.Port]));
+    System.Readln;
+  end);
 end.

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="qiwax5hl6lel58adj_v">
+    <property name="$defaultDiagram" value="true" />
+    <property name="$metaclass" value="Package Diagram" />
+    <property name="$name" value="default" />
+    <reference referencedUin="design:view:::0mst3jobmlee75gin_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:WorkshopNFE:Workshop.View.Principal.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:WorkshopNFE:Workshop.View.Principal.TForm6" />
+    </reference>
+  </view>
+</nodeSet>

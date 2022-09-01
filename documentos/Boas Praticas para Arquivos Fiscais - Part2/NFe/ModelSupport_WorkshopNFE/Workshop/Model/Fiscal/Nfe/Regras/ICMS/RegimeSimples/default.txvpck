@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="ciik45qc6mnzj7ore_v">
+    <property name="$defaultDiagram" value="true" />
+    <property name="$metaclass" value="Package Diagram" />
+    <property name="$name" value="default" />
+    <reference referencedUin="delphi:e_class:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Regras.ICMS.RegimeSimples.@unitclass">
+      <property name="$shortcutReference" value="true" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Regras.ICMS.RegimeSimples.TModelFiscalNFeRegrasRegimSimples">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_field:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Regras.ICMS.RegimeSimples.TModelFiscalNFeRegrasRegimSimples.FParent" />
+      <reference referencedUin="delphi:e_field:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Regras.ICMS.RegimeSimples.TModelFiscalNFeRegrasRegimSimples.FRegrasCST" />
+      <reference referencedUin="delphi:e_method:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Regras.ICMS.RegimeSimples.TModelFiscalNFeRegrasRegimSimples.Create()" />
+      <reference referencedUin="delphi:e_method:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Regras.ICMS.RegimeSimples.TModelFiscalNFeRegrasRegimSimples.Destroy()" />
+      <reference referencedUin="delphi:e_method:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Regras.ICMS.RegimeSimples.TModelFiscalNFeRegrasRegimSimples.New()" />
+      <reference referencedUin="delphi:e_method:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Regras.ICMS.RegimeSimples.TModelFiscalNFeRegrasRegimSimples.ProdutoImpostoICMS()" />
+      <reference referencedUin="delphi:e_method:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Regras.ICMS.RegimeSimples.TModelFiscalNFeRegrasRegimSimples.ProdutoFundoCombateaProbreza()" />
+      <reference referencedUin="delphi:e_method:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Regras.ICMS.RegimeSimples.TModelFiscalNFeRegrasRegimSimples.Visit(Workshop.Model.Fiscal.Nfe.Interfaces.iModelFiscalNfe)" />
+      <reference referencedUin="delphi:e_method:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Regras.ICMS.RegimeSimples.TModelFiscalNFeRegrasRegimSimples.AcceptRegraCST(Workshop.Model.Fiscal.Nfe.Regras.Interfaces.iModelNFeRegrasImposto)" />
+    </reference>
+  </view>
+</nodeSet>

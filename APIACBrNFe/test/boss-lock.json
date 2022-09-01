@@ -1,0 +1,14 @@
+{
+	"hash": "d41d8cd98f00b204e9800998ecf8427e",
+	"updated": "2022-08-31T09:00:48.5459117-03:00",
+	"installedModules": {
+		"https://github.com/alepmedeiros/delphiscal": {
+			"name": "delphiscal",
+			"version": "master",
+			"hash": "840dc450a233dc0b882caa01f8cd93cc",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		}
+	}
+}

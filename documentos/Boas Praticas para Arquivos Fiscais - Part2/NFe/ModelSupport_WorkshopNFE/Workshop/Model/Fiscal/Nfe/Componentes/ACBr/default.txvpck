@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="5ze9wsyqnenfge61h_v">
+    <property name="$defaultDiagram" value="true" />
+    <property name="$metaclass" value="Package Diagram" />
+    <property name="$name" value="default" />
+    <reference referencedUin="delphi:e_class:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Componentes.ACBr.TdmACBrNFe">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_field:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Componentes.ACBr.TdmACBrNFe.ACBrNFe1" />
+      <reference referencedUin="delphi:e_field:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Componentes.ACBr.TdmACBrNFe.ACBrNFeDANFeRL1" />
+      <reference referencedUin="delphi:e_field:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Componentes.ACBr.TdmACBrNFe.FNotaFiscal" />
+      <reference referencedUin="delphi:e_field:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Componentes.ACBr.TdmACBrNFe.FProduto" />
+      <reference referencedUin="delphi:e_field:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Componentes.ACBr.TdmACBrNFe.FTranspVol" />
+      <reference referencedUin="delphi:e_field:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Componentes.ACBr.TdmACBrNFe.FDuplicata" />
+      <reference referencedUin="delphi:e_field:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Componentes.ACBr.TdmACBrNFe.FObsCont" />
+      <reference referencedUin="delphi:e_field:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Componentes.ACBr.TdmACBrNFe.FObsFisco" />
+      <reference referencedUin="delphi:e_field:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Componentes.ACBr.TdmACBrNFe.FPagamento" />
+      <reference referencedUin="delphi:e_method:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Componentes.ACBr.TdmACBrNFe.New()" />
+      <reference referencedUin="delphi:e_method:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Componentes.ACBr.TdmACBrNFe._this()" />
+      <reference referencedUin="delphi:e_method:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Componentes.ACBr.TdmACBrNFe.AddNotaFiscal()" />
+      <reference referencedUin="delphi:e_method:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Componentes.ACBr.TdmACBrNFe.NotaFiscal()" />
+      <reference referencedUin="delphi:e_method:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Componentes.ACBr.TdmACBrNFe.AddProduto()" />
+      <reference referencedUin="delphi:e_method:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Componentes.ACBr.TdmACBrNFe.Produto()" />
+      <reference referencedUin="delphi:e_method:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Componentes.ACBr.TdmACBrNFe.AddTranspVol()" />
+      <reference referencedUin="delphi:e_method:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Componentes.ACBr.TdmACBrNFe.TranspVol()" />
+      <reference referencedUin="delphi:e_method:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Componentes.ACBr.TdmACBrNFe.AddDuplicata()" />
+      <reference referencedUin="delphi:e_method:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Componentes.ACBr.TdmACBrNFe.Duplicata()" />
+      <reference referencedUin="delphi:e_method:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Componentes.ACBr.TdmACBrNFe.AddObsComp()" />
+      <reference referencedUin="delphi:e_method:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Componentes.ACBr.TdmACBrNFe.ObsComp()" />
+      <reference referencedUin="delphi:e_method:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Componentes.ACBr.TdmACBrNFe.AddObsFisco()" />
+      <reference referencedUin="delphi:e_method:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Componentes.ACBr.TdmACBrNFe.ObsFisco()" />
+      <reference referencedUin="delphi:e_method:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Componentes.ACBr.TdmACBrNFe.AddPagamento()" />
+      <reference referencedUin="delphi:e_method:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Componentes.ACBr.TdmACBrNFe.Pagamento()" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Componentes.ACBr.@unitclass">
+      <property name="$shortcutReference" value="true" />
+    </reference>
+  </view>
+</nodeSet>

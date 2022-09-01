@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="z60bfhy4ynnko7w0g_v">
+    <property name="$defaultDiagram" value="true" />
+    <property name="$metaclass" value="Package Diagram" />
+    <property name="$name" value="default" />
+    <reference referencedUin="delphi:e_class:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Regras.ICMS.RegimeNormal.CSOSN101.@unitclass">
+      <property name="$shortcutReference" value="true" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Regras.ICMS.RegimeNormal.CSOSN101.TModelFiscalNFeRegrasICMSRegimeNormalCSOSN101">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_field:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Regras.ICMS.RegimeNormal.CSOSN101.TModelFiscalNFeRegrasICMSRegimeNormalCSOSN101.FParent" />
+      <reference referencedUin="delphi:e_method:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Regras.ICMS.RegimeNormal.CSOSN101.TModelFiscalNFeRegrasICMSRegimeNormalCSOSN101.Create()" />
+      <reference referencedUin="delphi:e_method:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Regras.ICMS.RegimeNormal.CSOSN101.TModelFiscalNFeRegrasICMSRegimeNormalCSOSN101.Destroy()" />
+      <reference referencedUin="delphi:e_method:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Regras.ICMS.RegimeNormal.CSOSN101.TModelFiscalNFeRegrasICMSRegimeNormalCSOSN101.New()" />
+      <reference referencedUin="delphi:e_method:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Regras.ICMS.RegimeNormal.CSOSN101.TModelFiscalNFeRegrasICMSRegimeNormalCSOSN101.CalculoICMSProduto()" />
+      <reference referencedUin="delphi:e_method:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Regras.ICMS.RegimeNormal.CSOSN101.TModelFiscalNFeRegrasICMSRegimeNormalCSOSN101.Visit(Workshop.Model.Fiscal.Nfe.Interfaces.iModelFiscalNfe)" />
+    </reference>
+  </view>
+</nodeSet>

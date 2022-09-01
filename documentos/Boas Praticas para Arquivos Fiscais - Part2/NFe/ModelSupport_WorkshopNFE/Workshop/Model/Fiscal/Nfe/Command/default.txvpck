@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="pblvie3i06n0nvdzq_v">
+    <property name="$defaultDiagram" value="true" />
+    <property name="$metaclass" value="Package Diagram" />
+    <property name="$name" value="default" />
+    <reference referencedUin="design:view:::5t1do2dkd7n4pg67f_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Command.Factory.TModelFiscalNfeCommandFactory" />
+      <reference referencedUin="delphi:e_class:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Command.Factory.@unitclass" />
+    </reference>
+    <reference referencedUin="design:view:::3q7t8vuxs7n03ycql_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Command.Pagamento.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Command.Pagamento.TModelFiscalNfeCommandPagamento" />
+    </reference>
+    <reference referencedUin="design:view:::35qxt86478nylpjuf_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="design:view:::h9t5m2fuifnfuuyeh_v" />
+      <reference referencedUin="delphi:e_class:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Command.InfAdic.TModelFiscalNfeCommandInfAdic" />
+      <reference referencedUin="design:view:::g2aroy4w4gnw53m8l_v" />
+      <reference referencedUin="delphi:e_class:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Command.InfAdic.@unitclass" />
+    </reference>
+    <reference referencedUin="design:view:::e8a7b4m3k8ntiqhyh_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Command.Emitente.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Command.Emitente.TModelFiscalNfeCommandEmitente" />
+    </reference>
+    <reference referencedUin="design:view:::47lz5skvx8nfdxkfn_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Command.Total.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Command.Total.TModelFiscalNfeCommandTotal" />
+    </reference>
+    <reference referencedUin="design:view:::x64wlk9ga9n5tzsmo_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Command.Configuracao.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Command.Configuracao.TModelFiscalNfeCommandConfiguracao" />
+    </reference>
+    <reference referencedUin="design:view:::2clsoe9ks9n0f7wdg_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="design:view:::0p00iv7zngn34c4aq_v" />
+      <reference referencedUin="delphi:e_class:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Command.Transp.TModelFiscalNfeCommandTransp" />
+      <reference referencedUin="delphi:e_class:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Command.Transp.@unitclass" />
+    </reference>
+    <reference referencedUin="design:view:::ie2olyl8d0n0b045m_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Command.Dest.TModelFiscalNfeCommandDest" />
+      <reference referencedUin="delphi:e_class:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Command.Dest.@unitclass" />
+    </reference>
+    <reference referencedUin="design:view:::3kt17s4oz0nehzxmt_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Command.Exporta.TModelFiscalNfeCommandExporta" />
+      <reference referencedUin="delphi:e_class:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Command.Exporta.@unitclass" />
+    </reference>
+    <reference referencedUin="design:view:::6660xtug0bnfobu8j_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Command.Ide.TModelFiscalNfeCommandIde" />
+      <reference referencedUin="delphi:e_class:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Command.Ide.@unitclass" />
+    </reference>
+    <reference referencedUin="design:view:::mgvls785lbnip5pzs_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Command.Compra.TModelFiscalNfeCommandCompra" />
+      <reference referencedUin="delphi:e_class:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Command.Compra.@unitclass" />
+    </reference>
+    <reference referencedUin="design:view:::fr4dt4gh0cn39o0qi_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Command.Interfaces.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Command.Interfaces.iModelFiscalNFeCommandFactory" />
+    </reference>
+    <reference referencedUin="design:view:::hbdbqmo8gcnxj3fyp_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_class:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Command.Prod.@unitclass" />
+      <reference referencedUin="delphi:e_class:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Command.Prod.TModelFiscalNfeCommandProd" />
+    </reference>
+    <reference referencedUin="design:view:::h46ww1wrwcnlhsx5h_v">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="design:view:::tzug9x7rdhnkkswpr_v" />
+      <reference referencedUin="design:view:::dqorl84y3inue2pmt_v" />
+    </reference>
+  </view>
+</nodeSet>

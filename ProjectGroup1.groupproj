@@ -1,0 +1,72 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{01EA8C42-08B1-4BC4-B39F-26261C077A0A}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="documentos\Boas Praticas para Arquivos Fiscais - Part3\WorkshopNfe.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="APIACBrNFe\test\APIACBrNFeTest.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="horseacbrRad\horseacbrRad.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="APIACBrNFe\APIACBrNFe.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="WorkshopNfe">
+        <MSBuild Projects="documentos\Boas Praticas para Arquivos Fiscais - Part3\WorkshopNfe.dproj"/>
+    </Target>
+    <Target Name="WorkshopNfe:Clean">
+        <MSBuild Projects="documentos\Boas Praticas para Arquivos Fiscais - Part3\WorkshopNfe.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="WorkshopNfe:Make">
+        <MSBuild Projects="documentos\Boas Praticas para Arquivos Fiscais - Part3\WorkshopNfe.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="APIACBrNFeTest">
+        <MSBuild Projects="APIACBrNFe\test\APIACBrNFeTest.dproj"/>
+    </Target>
+    <Target Name="APIACBrNFeTest:Clean">
+        <MSBuild Projects="APIACBrNFe\test\APIACBrNFeTest.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="APIACBrNFeTest:Make">
+        <MSBuild Projects="APIACBrNFe\test\APIACBrNFeTest.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="horseacbrRad">
+        <MSBuild Projects="horseacbrRad\horseacbrRad.dproj"/>
+    </Target>
+    <Target Name="horseacbrRad:Clean">
+        <MSBuild Projects="horseacbrRad\horseacbrRad.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="horseacbrRad:Make">
+        <MSBuild Projects="horseacbrRad\horseacbrRad.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="APIACBrNFe">
+        <MSBuild Projects="APIACBrNFe\APIACBrNFe.dproj"/>
+    </Target>
+    <Target Name="APIACBrNFe:Clean">
+        <MSBuild Projects="APIACBrNFe\APIACBrNFe.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="APIACBrNFe:Make">
+        <MSBuild Projects="APIACBrNFe\APIACBrNFe.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="WorkshopNfe;APIACBrNFeTest;horseacbrRad;APIACBrNFe"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="WorkshopNfe:Clean;APIACBrNFeTest:Clean;horseacbrRad:Clean;APIACBrNFe:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="WorkshopNfe:Make;APIACBrNFeTest:Make;horseacbrRad:Make;APIACBrNFe:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

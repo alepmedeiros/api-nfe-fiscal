@@ -15,7 +15,16 @@ uses
   DUnitX.TestFramework,
   nfefiscal.test in 'nfefiscal.test.pas',
   nfefiscal.nfe.interfaces in '..\nfe\src\nfefiscal.nfe.interfaces.pas',
-  nfefiscal.nfe_.interfaces in '..\nfe\src\nfefiscal.nfe_.interfaces.pas';
+  nfefiscal.nfe_.interfaces in '..\nfe\src\nfefiscal.nfe_.interfaces.pas',
+  nfefiscal.nfeDefault.interfaces in '..\nfe\src\nfefiscal.nfeDefault.interfaces.pas',
+  nfefiscal.nfe.arquivos in '..\nfe\src\nfefiscal.nfe.arquivos.pas',
+  nfefiscal.nfe.geral in '..\nfe\src\nfefiscal.nfe.geral.pas',
+  nfefiscal.nfe.timezoneconf in '..\nfe\src\nfefiscal.nfe.timezoneconf.pas',
+  nfefiscal.nfe.webservice in '..\nfe\src\nfefiscal.nfe.webservice.pas',
+  nfefiscal.nfe.ssl in '..\nfe\src\nfefiscal.nfe.ssl.pas',
+  nfefiscal.nfe.danfe in '..\nfe\src\nfefiscal.nfe.danfe.pas',
+  nfefiscal.nfe.configuracao in '..\nfe\src\nfefiscal.nfe.configuracao.pas',
+  nfefiscal.nfe.ide in '..\nfe\src\nfefiscal.nfe.ide.pas';
 
 {$IFNDEF TESTINSIGHT}
 var

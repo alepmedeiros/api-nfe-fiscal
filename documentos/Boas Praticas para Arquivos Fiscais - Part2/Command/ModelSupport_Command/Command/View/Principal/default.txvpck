@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="ysf5dq8azab5nnl6g_v">
+    <property name="$defaultDiagram" value="true" />
+    <property name="$metaclass" value="Package Diagram" />
+    <property name="$name" value="default" />
+    <reference referencedUin="delphi:e_class:src:Command:Command.View.Principal.TForm2">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="10,10,89,81" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:Command:Command.View.Principal.@unitclass">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_field:src:Command:Command.View.Principal.@unitclass.Form2" />
+      <reference referencedUin="delphi:l_ast:src:Command:Command.View.Principal.@unitclass.Form2" />
+    </reference>
+  </view>
+</nodeSet>

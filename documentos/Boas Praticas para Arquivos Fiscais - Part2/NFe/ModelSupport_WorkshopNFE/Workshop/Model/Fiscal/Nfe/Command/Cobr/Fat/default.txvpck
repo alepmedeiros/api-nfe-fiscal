@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="tzug9x7rdhnkkswpr_v">
+    <property name="$defaultDiagram" value="true" />
+    <property name="$metaclass" value="Package Diagram" />
+    <property name="$name" value="default" />
+    <reference referencedUin="delphi:e_class:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Command.Cobr.Fat.TModelFiscalNfeCommandCobrFat">
+      <property name="$shortcutReference" value="true" />
+      <reference referencedUin="delphi:e_field:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Command.Cobr.Fat.TModelFiscalNfeCommandCobrFat.FParent" />
+      <reference referencedUin="delphi:e_method:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Command.Cobr.Fat.TModelFiscalNfeCommandCobrFat.Create(Workshop.Model.Fiscal.Nfe.Interfaces.iModelFiscalNfe)" />
+      <reference referencedUin="delphi:e_method:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Command.Cobr.Fat.TModelFiscalNfeCommandCobrFat.Destroy()" />
+      <reference referencedUin="delphi:e_method:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Command.Cobr.Fat.TModelFiscalNfeCommandCobrFat.New(Workshop.Model.Fiscal.Nfe.Interfaces.iModelFiscalNfe)" />
+      <reference referencedUin="delphi:e_method:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Command.Cobr.Fat.TModelFiscalNfeCommandCobrFat.Execute()" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:WorkshopNFE:Workshop.Model.Fiscal.Nfe.Command.Cobr.Fat.@unitclass">
+      <property name="$shortcutReference" value="true" />
+    </reference>
+  </view>
+</nodeSet>
