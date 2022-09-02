@@ -27,12 +27,13 @@ type
     function TranspVol: TVolCollectionItem;
   end;
 
-  iComponentFactory = interface
-    function ACBr: iComponent<TACbrNFe>;
+  iAWSS3 = interface
+    function Push(Value: String): String;
   end;
 
-  iAWSS3 = interface
-    function Push(Value: TStream): iAWSS3;
+  iComponentFactory = interface
+    function ACBr: iComponent<TACbrNFe>;
+    function AWS: iAWSS3;
   end;
 
 implementation

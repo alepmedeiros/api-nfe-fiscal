@@ -3,9 +3,6 @@
         <ProjectGuid>{01EA8C42-08B1-4BC4-B39F-26261C077A0A}</ProjectGuid>
     </PropertyGroup>
     <ItemGroup>
-        <Projects Include="documentos\Boas Praticas para Arquivos Fiscais - Part3\WorkshopNfe.dproj">
-            <Dependencies/>
-        </Projects>
         <Projects Include="APIACBrNFe\test\APIACBrNFeTest.dproj">
             <Dependencies/>
         </Projects>
@@ -18,7 +15,7 @@
         <Projects Include="APINFe\APINFe.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="..\ProjectHorseSimpleORM\ServidorHorse.dproj">
+        <Projects Include="documentos\Boas Praticas para Arquivos Fiscais - Part3\WorkshopNfe.dproj">
             <Dependencies/>
         </Projects>
     </ItemGroup>
@@ -29,15 +26,6 @@
             <Default.Personality/>
         </BorlandProject>
     </ProjectExtensions>
-    <Target Name="WorkshopNfe">
-        <MSBuild Projects="documentos\Boas Praticas para Arquivos Fiscais - Part3\WorkshopNfe.dproj"/>
-    </Target>
-    <Target Name="WorkshopNfe:Clean">
-        <MSBuild Projects="documentos\Boas Praticas para Arquivos Fiscais - Part3\WorkshopNfe.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="WorkshopNfe:Make">
-        <MSBuild Projects="documentos\Boas Praticas para Arquivos Fiscais - Part3\WorkshopNfe.dproj" Targets="Make"/>
-    </Target>
     <Target Name="APIACBrNFeTest">
         <MSBuild Projects="APIACBrNFe\test\APIACBrNFeTest.dproj"/>
     </Target>
@@ -74,23 +62,23 @@
     <Target Name="APINFe:Make">
         <MSBuild Projects="APINFe\APINFe.dproj" Targets="Make"/>
     </Target>
-    <Target Name="ServidorHorse">
-        <MSBuild Projects="..\ProjectHorseSimpleORM\ServidorHorse.dproj"/>
+    <Target Name="WorkshopNfe">
+        <MSBuild Projects="documentos\Boas Praticas para Arquivos Fiscais - Part3\WorkshopNfe.dproj"/>
     </Target>
-    <Target Name="ServidorHorse:Clean">
-        <MSBuild Projects="..\ProjectHorseSimpleORM\ServidorHorse.dproj" Targets="Clean"/>
+    <Target Name="WorkshopNfe:Clean">
+        <MSBuild Projects="documentos\Boas Praticas para Arquivos Fiscais - Part3\WorkshopNfe.dproj" Targets="Clean"/>
     </Target>
-    <Target Name="ServidorHorse:Make">
-        <MSBuild Projects="..\ProjectHorseSimpleORM\ServidorHorse.dproj" Targets="Make"/>
+    <Target Name="WorkshopNfe:Make">
+        <MSBuild Projects="documentos\Boas Praticas para Arquivos Fiscais - Part3\WorkshopNfe.dproj" Targets="Make"/>
     </Target>
     <Target Name="Build">
-        <CallTarget Targets="WorkshopNfe;APIACBrNFeTest;horseacbrRad;APIACBrNFe;APINFe;ServidorHorse"/>
+        <CallTarget Targets="APIACBrNFeTest;horseacbrRad;APIACBrNFe;APINFe;WorkshopNfe"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="WorkshopNfe:Clean;APIACBrNFeTest:Clean;horseacbrRad:Clean;APIACBrNFe:Clean;APINFe:Clean;ServidorHorse:Clean"/>
+        <CallTarget Targets="APIACBrNFeTest:Clean;horseacbrRad:Clean;APIACBrNFe:Clean;APINFe:Clean;WorkshopNfe:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="WorkshopNfe:Make;APIACBrNFeTest:Make;horseacbrRad:Make;APIACBrNFe:Make;APINFe:Make;ServidorHorse:Make"/>
+        <CallTarget Targets="APIACBrNFeTest:Make;horseacbrRad:Make;APIACBrNFe:Make;APINFe:Make;WorkshopNfe:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>

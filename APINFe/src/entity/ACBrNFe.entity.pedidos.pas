@@ -34,28 +34,52 @@ type
     FCompra: TCompra;
     FPagamento: TObjectList<TPagamento>;
     FInfIntermed: TInfIntermed;
+    FSerie: Integer;
   public
+    constructor Create;
+    destructor Destroy;
     property NatOp: String read FNatOp write FNatOp;
     property IndPag: String read FIndPag write FIndPag;
+    property Serie: Integer read FSerie write FSerie;
     property TipoNfe: String read FTipoNfe write FTipoNfe;
     property TipoEmis: String read FTipoEmis write FTipoEmis;
     property Destinatario: TDestinatario read FDestinatario write FDestinatario;
     property Produto: TObjectList<TProduto> read FProduto write FProduto;
     property Total: TTotal read FTotal write FTotal;
-    property Transportadora: TTransportadora read FTransportadora
-      write FTransportadora;
+//    property Transportadora: TTransportadora read FTransportadora write FTransportadora;
     property CobrancaFat: TCobrancaFat read FCobrancaFat write FCobrancaFat;
     property CobrancaDuplicata: TObjectList<TCobrancaDuplicata>
       read FCobrancaDuplicata write FCobrancaDuplicata;
-    property InfAdicional: TInfAdicionais read FInfAdicional
-      write FInfAdicional;
-    property exporta: TExporta read FExporta write FExporta;
-    property Compra: TCompra read FCompra write FCompra;
+//    property InfAdicional: TInfAdicionais read FInfAdicional
+//      write FInfAdicional;
+//     property exporta: TExporta read FExporta write FExporta;
+//    property Compra: TCompra read FCompra write FCompra;
     property Pagamento: TObjectList<TPagamento> read FPagamento
       write FPagamento;
-    property InfIntermed: TInfIntermed read FInfIntermed write FInfIntermed;
+//     property InfIntermed: TInfIntermed read FInfIntermed write FInfIntermed;
   end;
 
 implementation
+
+{ TPedido }
+
+constructor TPedido.Create;
+begin
+  FProduto := TObjectList<TProduto>.Create;
+  FCobrancaDuplicata := TObjectList<TCobrancaDuplicata>.Create;
+  FPagamento := TObjectList<TPagamento>.Create;
+  FDestinatario := TDestinatario.Create;
+  FCobrancaFat := TCobrancaFat.Create;
+  Total := TTotal.Create;
+end;
+
+destructor TPedido.Destroy;
+begin
+  FProduto.DisposeOf;
+  FCobrancaDuplicata.DisposeOf;
+  FDestinatario.DisposeOf;
+  FCobrancaFat.DisposeOf;
+  Total.DisposeOf;
+end;
 
 end.

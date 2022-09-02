@@ -6,24 +6,26 @@ uses
   ACBrNFe.usecase.interfaces,
   ACBrNFe.Component.interfaces,
   ACBrNFe.utils.acbrhelper,
-  System.SysUtils;
+  System.SysUtils, ACBrNFe.entity.pedidos;
 
 type
   TRepositoryIde = class(TInterfacedObject, iCommand)
   private
     FConf: iActionNFe;
+    FPedido: TPedido;
   public
-    constructor Create(Conf: iActionNFe);
+    constructor Create(Conf: iActionNFe; Pedido: TPedido);
     destructor Destroy; override;
-    class function New(Conf: iActionNFe): iCommand;
+    class function New(Conf: iActionNFe; Pedido: TPedido): iCommand;
     function Execute: iCommand;
   end;
 
 implementation
 
-constructor TRepositoryIde.Create(Conf: iActionNFe);
+constructor TRepositoryIde.Create(Conf: iActionNFe; Pedido: TPedido);
 begin
   FConf := Conf;
+  FPedido := Pedido;
 end;
 
 destructor TRepositoryIde.Destroy;
@@ -35,40 +37,19 @@ end;
 function TRepositoryIde.Execute: iCommand;
 begin
   Result := Self;
-//  FConf.Component.ACBr.NotaFiscal.NFe.Ide.tpAmb :=
-//    TAcbrUtils.StrToEnumTipoAmbiente(FEntity.Configuracao.WebService.Ambiente);
-//  FConf.Component.ACBr.NotaFiscal.NFe.Ide.verProc := FEntity.Ide.verProc;
-//  FConf.Component.ACBr.NotaFiscal.NFe.Ide.tpImp :=
-//    FConf.Component.ACBr.this.DANFE.TipoDANFE;
-//  FConf.Component.ACBr.NotaFiscal.NFe.Ide.natOp := FEntity.Ide.natOp;
-//  FConf.Component.ACBr.NotaFiscal.NFe.Ide.indPag :=
-//    TAcbrUtils.StrToEnumIndPagamento(FEntity.Ide.indPag);
-//  FConf.Component.ACBr.NotaFiscal.NFe.Ide.modelo := FEntity.Ide.modelo;
-//  FConf.Component.ACBr.NotaFiscal.NFe.Ide.Serie := FEntity.Ide.Serie;
-//  FConf.Component.ACBr.NotaFiscal.NFe.Ide.nNF := FEntity.Ide.nNF;
-//  FConf.Component.ACBr.NotaFiscal.NFe.Ide.cNF :=
-//    TAcbrUtils.GerarCodigoDanfe(FConf.Component.ACBr.NotaFiscal.NFe.Ide.nNF);
-//  FConf.Component.ACBr.NotaFiscal.NFe.Ide.dEmi := Date;
-//  FConf.Component.ACBr.NotaFiscal.NFe.Ide.dSaiEnt := Date;
-//  FConf.Component.ACBr.NotaFiscal.NFe.Ide.hSaiEnt := Now;
-//  FConf.Component.ACBr.NotaFiscal.NFe.Ide.tpNF :=
-//    TAcbrUtils.StrToEnumTipoNFe(FEntity.Ide.tpNF);
-//  FConf.Component.ACBr.NotaFiscal.NFe.Ide.tpEmis :=
-//    TAcbrUtils.StrToEnumEmissao(FEntity.Ide.tpEmis);
-//  FConf.Component.ACBr.NotaFiscal.NFe.Ide.tpAmb :=
-//    TAcbrUtils.StrToEnumTipoAmbiente(FEntity.Ide.tpAmb);
-//  FConf.Component.ACBr.NotaFiscal.NFe.Ide.verProc := FEntity.Ide.verProc;
-//  FConf.Component.ACBr.NotaFiscal.NFe.Ide.cUF := FEntity.Ide.cUF;
-//  FConf.Component.ACBr.NotaFiscal.NFe.Ide.cMunFG := FEntity.Ide.cMunFG;
-//  FConf.Component.ACBr.NotaFiscal.NFe.Ide.finNFe :=
-//    TAcbrUtils.StrToEnumFinalidadeNFe(FEntity.Ide.finNFe);
-//  FConf.Component.ACBr.NotaFiscal.NFe.Ide.indIntermed :=
-//    TAcbrUtils.StrToEnumIndIntermed(FEntity.Ide.indIntermed);
+
+  FConf.Component.ACBr.NotaFiscal.NFe.Ide.natOp := FPedido.NatOp;
+  FConf.Component.ACBr.NotaFiscal.NFe.Ide.indPag :=
+    TAcbrUtils.StrToEnumIndPagamento(FPedido.indPag);
+  FConf.Component.ACBr.NotaFiscal.NFe.Ide.modelo := 55;
+  FConf.Component.ACBr.NotaFiscal.NFe.Ide.Serie := FPedido.Serie;
+  FConf.Component.ACBr.NotaFiscal.NFe.Ide.tpNF :=
+    TAcbrUtils.StrToEnumTipoNFe(FPedido.TipoNfe);
 end;
 
-class function TRepositoryIde.New(Conf: iActionNFe): iCommand;
+class function TRepositoryIde.New(Conf: iActionNFe; Pedido: TPedido): iCommand;
 begin
-  Result := Self.Create(Conf);
+  Result := Self.Create(Conf, Pedido);
 end;
 
 end.

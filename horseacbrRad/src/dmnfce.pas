@@ -227,7 +227,7 @@ begin
   lNFe.Dest.EnderDest.nro := '973';
   lNFe.Dest.EnderDest.xCpl := '';
   lNFe.Dest.EnderDest.xBairro := 'Centro';
-  lNFe.Dest.EnderDest.cMun := 3554003;
+  lNFe.Dest.EnderDest.cMun := UFtoCUF('São Paulo'); //3554003;
   lNFe.Dest.EnderDest.xMun := 'Tatui';
   lNFe.Dest.EnderDest.UF := 'SP';
   lNFe.Dest.EnderDest.cPais := 1058;
@@ -276,51 +276,51 @@ begin
 
   // Campos para venda de veículos novos
 
-  lItemNota.Prod.veicProd.tpOP := toVendaConcessionaria;
-  lItemNota.Prod.veicProd.chassi := '';
-  lItemNota.Prod.veicProd.cCor := '';
-  lItemNota.Prod.veicProd.xCor := '';
-  lItemNota.Prod.veicProd.pot := '';
-  lItemNota.Prod.veicProd.Cilin := '';
-  lItemNota.Prod.veicProd.pesoL := '';
-  lItemNota.Prod.veicProd.pesoB := '';
-  lItemNota.Prod.veicProd.nSerie := '';
-  lItemNota.Prod.veicProd.tpComb := '';
-  lItemNota.Prod.veicProd.nMotor := '';
-  lItemNota.Prod.veicProd.CMT := '';
-  lItemNota.Prod.veicProd.dist := '';
-  lItemNota.Prod.veicProd.anoMod := 0;
-  lItemNota.Prod.veicProd.anoFab := 0;
-  lItemNota.Prod.veicProd.tpPint := '';
-  lItemNota.Prod.veicProd.tpVeic := 0;
-  lItemNota.Prod.veicProd.espVeic := 0;
-  lItemNota.Prod.veicProd.VIN := '';
-  lItemNota.Prod.veicProd.condVeic := cvAcabado;
-  lItemNota.Prod.veicProd.cMod := '';
+//  lItemNota.Prod.veicProd.tpOP := toVendaConcessionaria;
+//  lItemNota.Prod.veicProd.chassi := '';
+//  lItemNota.Prod.veicProd.cCor := '';
+//  lItemNota.Prod.veicProd.xCor := '';
+//  lItemNota.Prod.veicProd.pot := '';
+//  lItemNota.Prod.veicProd.Cilin := '';
+//  lItemNota.Prod.veicProd.pesoL := '';
+//  lItemNota.Prod.veicProd.pesoB := '';
+//  lItemNota.Prod.veicProd.nSerie := '';
+//  lItemNota.Prod.veicProd.tpComb := '';
+//  lItemNota.Prod.veicProd.nMotor := '';
+//  lItemNota.Prod.veicProd.CMT := '';
+//  lItemNota.Prod.veicProd.dist := '';
+//  lItemNota.Prod.veicProd.anoMod := 0;
+//  lItemNota.Prod.veicProd.anoFab := 0;
+//  lItemNota.Prod.veicProd.tpPint := '';
+//  lItemNota.Prod.veicProd.tpVeic := 0;
+//  lItemNota.Prod.veicProd.espVeic := 0;
+//  lItemNota.Prod.veicProd.VIN := '';
+//  lItemNota.Prod.veicProd.condVeic := cvAcabado;
+//  lItemNota.Prod.veicProd.cMod := '';
 
 
   // Campos específicos para venda de combustível(distribuidoras)
 
-  lItemNota.Prod.comb.cProdANP := 0;
-  lItemNota.Prod.comb.CODIF := '';
-  lItemNota.Prod.comb.qTemp := 0;
-  lItemNota.Prod.comb.UFcons := '';
-
-  lItemNota.Prod.comb.CIDE.qBCprod := 0;
-  lItemNota.Prod.comb.CIDE.vAliqProd := 0;
-  lItemNota.Prod.comb.CIDE.vCIDE := 0;
-
-  lItemNota.Prod.comb.ICMS.vBCICMS := 0;
-  lItemNota.Prod.comb.ICMS.vICMS := 0;
-  lItemNota.Prod.comb.ICMS.vBCICMSST := 0;
-  lItemNota.Prod.comb.ICMS.vICMSST := 0;
-
-  lItemNota.Prod.comb.ICMSInter.vBCICMSSTDest := 0;
-  lItemNota.Prod.comb.ICMSInter.vICMSSTDest := 0;
-
-  lItemNota.Prod.comb.ICMSCons.vBCICMSSTCons := 0;
-  lItemNota.Prod.comb.ICMSCons.vICMSSTCons := 0;
-  lItemNota.Prod.comb.ICMSCons.UFcons := '';
+//  lItemNota.Prod.comb.cProdANP := 0;
+//  lItemNota.Prod.comb.CODIF := '';
+//  lItemNota.Prod.comb.qTemp := 0;
+//  lItemNota.Prod.comb.UFcons := '';
+//
+//  lItemNota.Prod.comb.CIDE.qBCprod := 0;
+//  lItemNota.Prod.comb.CIDE.vAliqProd := 0;
+//  lItemNota.Prod.comb.CIDE.vCIDE := 0;
+//
+//  lItemNota.Prod.comb.ICMS.vBCICMS := 0;
+//  lItemNota.Prod.comb.ICMS.vICMS := 0;
+//  lItemNota.Prod.comb.ICMS.vBCICMSST := 0;
+//  lItemNota.Prod.comb.ICMS.vICMSST := 0;
+//
+//  lItemNota.Prod.comb.ICMSInter.vBCICMSSTDest := 0;
+//  lItemNota.Prod.comb.ICMSInter.vICMSSTDest := 0;
+//
+//  lItemNota.Prod.comb.ICMSCons.vBCICMSSTCons := 0;
+//  lItemNota.Prod.comb.ICMSCons.vICMSSTCons := 0;
+//  lItemNota.Prod.comb.ICMSCons.UFcons := '';
 
   with lItemNota.Imposto do
   begin
@@ -558,28 +558,28 @@ begin
   lNFe.Total.retTrib.vBCRetPrev := 0;
   lNFe.Total.retTrib.vRetPrev := 0;
 
-  lNFe.Transp.modFrete := mfContaEmitente;
-  lNFe.Transp.Transporta.CNPJCPF := '';
-  lNFe.Transp.Transporta.xNome := '';
-  lNFe.Transp.Transporta.IE := '';
-  lNFe.Transp.Transporta.xEnder := '';
-  lNFe.Transp.Transporta.xMun := '';
-  lNFe.Transp.Transporta.UF := '';
-
-  lNFe.Transp.retTransp.vServ := 0;
-  lNFe.Transp.retTransp.vBCRet := 0;
-  lNFe.Transp.retTransp.pICMSRet := 0;
-  lNFe.Transp.retTransp.vICMSRet := 0;
-  lNFe.Transp.retTransp.CFOP := '';
-  lNFe.Transp.retTransp.cMunFG := 0;
-
-  Volume := lNFe.Transp.Vol.New;
-  Volume.qVol := 1;
-  Volume.esp := 'Especie';
-  Volume.marca := 'Marca';
-  Volume.nVol := 'Numero';
-  Volume.pesoL := 100;
-  Volume.pesoB := 110;
+//  lNFe.Transp.modFrete := mfContaEmitente;
+//  lNFe.Transp.Transporta.CNPJCPF := '';
+//  lNFe.Transp.Transporta.xNome := '';
+//  lNFe.Transp.Transporta.IE := '';
+//  lNFe.Transp.Transporta.xEnder := '';
+//  lNFe.Transp.Transporta.xMun := '';
+//  lNFe.Transp.Transporta.UF := '';
+//
+//  lNFe.Transp.retTransp.vServ := 0;
+//  lNFe.Transp.retTransp.vBCRet := 0;
+//  lNFe.Transp.retTransp.pICMSRet := 0;
+//  lNFe.Transp.retTransp.vICMSRet := 0;
+//  lNFe.Transp.retTransp.CFOP := '';
+//  lNFe.Transp.retTransp.cMunFG := 0;
+//
+//  Volume := lNFe.Transp.Vol.New;
+//  Volume.qVol := 1;
+//  Volume.esp := 'Especie';
+//  Volume.marca := 'Marca';
+//  Volume.nVol := 'Numero';
+//  Volume.pesoL := 100;
+//  Volume.pesoB := 110;
 
   // Lacres do volume. Pode ser adicionado vários
   (*
@@ -607,16 +607,16 @@ begin
   // NotaF.NFe.infIntermed.CNPJ := '';
   // NotaF.NFe.infIntermed.idCadIntTran := '';
 
-  lNFe.InfAdic.infCpl := '';
-  lNFe.InfAdic.infAdFisco := '';
+//  lNFe.InfAdic.infCpl := '';
+//  lNFe.InfAdic.infAdFisco := '';
 
-  ObsComplementar := lNFe.InfAdic.obsCont.New;
-  ObsComplementar.xCampo := 'ObsCont';
-  ObsComplementar.xTexto := 'Texto';
-
-  ObsFisco := lNFe.InfAdic.ObsFisco.New;
-  ObsFisco.xCampo := 'ObsFisco';
-  ObsFisco.xTexto := 'Texto';
+//  ObsComplementar := lNFe.InfAdic.obsCont.New;
+//  ObsComplementar.xCampo := 'ObsCont';
+//  ObsComplementar.xTexto := 'Texto';
+//
+//  ObsFisco := lNFe.InfAdic.ObsFisco.New;
+//  ObsFisco.xCampo := 'ObsFisco';
+//  ObsFisco.xTexto := 'Texto';
 
   // Processo referenciado
   (*
@@ -625,12 +625,12 @@ begin
     ProcReferenciado.indProc := ipSEFAZ;
   *)
 
-  lNFe.exporta.UFembarq := '';;
-  lNFe.exporta.xLocEmbarq := '';
-
-  lNFe.compra.xNEmp := '';
-  lNFe.compra.xPed := '';
-  lNFe.compra.xCont := '';
+//  lNFe.exporta.UFembarq := '';;
+//  lNFe.exporta.xLocEmbarq := '';
+//
+//  lNFe.compra.xNEmp := '';
+//  lNFe.compra.xPed := '';
+//  lNFe.compra.xCont := '';
 
   // YA. Informações de pagamento
 
@@ -668,15 +668,15 @@ begin
   }
   // CNPJ do Intermediador da Transação (agenciador, plataforma de delivery,
   // marketplace e similar) de serviços e de negócios.
-  lNFe.infIntermed.CNPJ := '';
+//  lNFe.infIntermed.CNPJ := '';
   // Nome do usuário ou identificação do perfil do vendedor no site do intermediador
   // (agenciador, plataforma de delivery, marketplace e similar) de serviços e de
   // negócios.
-  lNFe.infIntermed.idCadIntTran := '';
+//  lNFe.infIntermed.idCadIntTran := '';
 
   ACBrNFe1.NotasFiscais.GerarNFe;
-  ACBrNFe1.NotasFiscais[0].GravarXML(ExtractFilePath(ParamStr(0)) +
-    'notafiscal.xml');
+//  ACBrNFe1.NotasFiscais[0].GravarXML(ExtractFilePath(ParamStr(0)) +
+//    'notafiscal.xml');
 
   try
     ACBrNFe1.NotasFiscais.ImprimirPDF;

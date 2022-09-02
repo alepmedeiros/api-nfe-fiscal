@@ -14,6 +14,8 @@ type
     FNome: String;
     FEndereco: TEndDest;
   public
+    constructor Create;
+    destructor Destroy;
     property CNPJCPF: String read FCNPJCPF write FCNPJCPF;
     property IE: String read FIE write FIE;
     property ISUF: String read FISUF write FISUF;
@@ -22,5 +24,17 @@ type
   end;
 
 implementation
+
+{ TDestinatario }
+
+constructor TDestinatario.Create;
+begin
+  FEndereco := TEndDest.Create;
+end;
+
+destructor TDestinatario.Destroy;
+begin
+  FEndereco.DisposeOf;
+end;
 
 end.

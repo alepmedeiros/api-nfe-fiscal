@@ -211,7 +211,6 @@
         <DCCReference Include="src\component\impl\ACBrNFe.Component.impl.FactoryNFe.pas"/>
         <DCCReference Include="src\component\impl\ACBrNFe.Component.impl.NFe.pas"/>
         <DCCReference Include="src\usecase\ACBrNFe.usecase.interfaces.pas"/>
-        <DCCReference Include="src\usecase\impl\ACBrNFe.usecase.ActionNFe.pas"/>
         <DCCReference Include="src\usecase\impl\ACBrNFe.usecase.invoker.pas"/>
         <DCCReference Include="src\usecase\impl\repository\ACBrNFe.usecase.RepositoryCobFat.pas"/>
         <DCCReference Include="src\usecase\impl\repository\ACBrNFe.usecase.RepositoryCompra.pas"/>
@@ -243,6 +242,9 @@
         <DCCReference Include="src\entity\ACBrNFe.entity.ResponseNFe.pas"/>
         <DCCReference Include="src\controller\ACBrNFe.controller.notasfiscais.pas"/>
         <DCCReference Include="src\usecase\impl\repository\ACBrNFe.usecase.RepositoryGerarNFe.pas"/>
+        <DCCReference Include="src\component\impl\ACBrNFe.Component.impl.AWSS3.pas"/>
+        <DCCReference Include="src\usecase\impl\ACBrNFe.usecase.ActionNFe.pas"/>
+        <DCCReference Include="src\usecase\impl\repository\ACBrNFe.usecase.RepositoryFactory.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

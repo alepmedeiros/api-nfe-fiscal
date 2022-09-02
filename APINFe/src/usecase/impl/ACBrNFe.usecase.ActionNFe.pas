@@ -8,7 +8,7 @@ uses
   ACBrNFe.Component.impl.FactoryNFe,
   ACBrNFe.usecase.invoker,
   ACBrNFe.entity.pedidos,
-  ACBrNFe.entity.ResponseNFe;
+  ACBrNFe.entity.ResponseNFe, ACBrNFe.usecase.RepositoryFactory;
 
 type
   TActionNFe = class(TInterfacedObject, iActionNFe)
@@ -50,7 +50,19 @@ end;
 
 function TActionNFe.Gerar(Pedido: TPedido): TResponseNFe;
 begin
-
+  Result := TResponseNFe.Create;
+  TInvoker.New
+    .Add(TFactoryCommand.New(Self, Pedido).Conf)
+    .Add(TFactoryCommand.New(Self, Pedido).Ide)
+    .Add(TFactoryCommand.New(Self, Pedido).Emitente)
+    .Add(TFactoryCommand.New(Self, Pedido).Dest)
+    .Add(TFactoryCommand.New(Self, Pedido).Produto)
+    .Add(TFactoryCommand.New(Self, Pedido).Total)
+    .Add(TFactoryCommand.New(Self, Pedido).CobFat)
+    .Add(TFactoryCommand.New(Self, Pedido).Duplicata)
+    .Add(TFactoryCommand.New(Self, Pedido).Pagamento)
+    .Add(TFactoryCommand.New(Self, Pedido).GerarNFe(Result))
+  .Execute;
 end;
 
 function TActionNFe.Gerar: iActionNFe;

@@ -32,6 +32,8 @@ type
     FCombustivel: TCombustivel;
     FImposto: TProdImposto;
   public
+    constructor Create;
+    destructor Destroy;
     property Item: Integer read FItem write FItem;
     property Codigo: String read FCodigo write FCodigo;
     property EAN: String read FEAN write FEAN;
@@ -50,11 +52,23 @@ type
     property CEST: String read FCEST write FCEST;
     property InfAdProd: String read FInfAdProd write FInfAdProd;
     property CodBarra: String read FCodBarra write FCodBarra;
-    property Veiculo: TVeiculo read FVeiculo write FVeiculo;
-    property Combustivel: TCombustivel read FCombustivel write FCombustivel;
+//    property Veiculo: TVeiculo read FVeiculo write FVeiculo;
+//    property Combustivel: TCombustivel read FCombustivel write FCombustivel;
     property Imposto: TProdImposto read FImposto write FImposto;
   end;
 
 implementation
+
+{ TProduto }
+
+constructor TProduto.Create;
+begin
+  FImposto := TProdImposto.Create;
+end;
+
+destructor TProduto.Destroy;
+begin
+  FImposto.DisposeOf;
+end;
 
 end.

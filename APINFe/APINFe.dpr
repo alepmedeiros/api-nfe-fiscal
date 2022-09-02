@@ -6,6 +6,8 @@ program APINFe;
 
 uses
   Horse,
+  horse.cors,
+  Horse.jhonson,
   Horse.GBSwagger,
   System.SysUtils,
   ACBrNFe.entity.CobrancaDuplicata in 'src\entity\ACBrNFe.entity.CobrancaDuplicata.pas',
@@ -46,7 +48,6 @@ uses
   ACBrNFe.Component.impl.FactoryNFe in 'src\component\impl\ACBrNFe.Component.impl.FactoryNFe.pas',
   ACBrNFe.Component.impl.NFe in 'src\component\impl\ACBrNFe.Component.impl.NFe.pas',
   ACBrNFe.usecase.interfaces in 'src\usecase\ACBrNFe.usecase.interfaces.pas',
-  ACBrNFe.usecase.ActionNFe in 'src\usecase\impl\ACBrNFe.usecase.ActionNFe.pas',
   ACBrNFe.usecase.invoker in 'src\usecase\impl\ACBrNFe.usecase.invoker.pas',
   ACBrNFe.usecase.RepositoryCobFat in 'src\usecase\impl\repository\ACBrNFe.usecase.RepositoryCobFat.pas',
   ACBrNFe.usecase.RepositoryCompra in 'src\usecase\impl\repository\ACBrNFe.usecase.RepositoryCompra.pas',
@@ -77,12 +78,19 @@ uses
   ACBrNFe.usecase.RepositoryVeicProd in 'src\usecase\impl\repository\ACBrNFe.usecase.RepositoryVeicProd.pas',
   ACBrNFe.entity.ResponseNFe in 'src\entity\ACBrNFe.entity.ResponseNFe.pas',
   ACBrNFe.controller.notasfiscais in 'src\controller\ACBrNFe.controller.notasfiscais.pas',
-  ACBrNFe.usecase.RepositoryGerarNFe in 'src\usecase\impl\repository\ACBrNFe.usecase.RepositoryGerarNFe.pas';
+  ACBrNFe.usecase.RepositoryGerarNFe in 'src\usecase\impl\repository\ACBrNFe.usecase.RepositoryGerarNFe.pas',
+  ACBrNFe.Component.impl.AWSS3 in 'src\component\impl\ACBrNFe.Component.impl.AWSS3.pas',
+  ACBrNFe.usecase.ActionNFe in 'src\usecase\impl\ACBrNFe.usecase.ActionNFe.pas',
+  ACBrNFe.usecase.RepositoryFactory in 'src\usecase\impl\repository\ACBrNFe.usecase.RepositoryFactory.pas';
 
 procedure IniciaHorse;
 begin
   THorse
+    .use(cors)
+    .use(jhonson)
     .use(HorseSwagger);
+
+  THorseGBSwaggerRegister.RegisterPath(TControllerNotaFiscal);
 
   THorse.Listen(9000,
   procedure (Horse:THorse)
@@ -112,6 +120,6 @@ begin
 end;
 
 begin
-  IniciaHorse;
   InicializaSwagger;
+  IniciaHorse;
 end.

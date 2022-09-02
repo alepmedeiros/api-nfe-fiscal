@@ -95,6 +95,9 @@ constructor TComponentACBrNFe.Create;
 begin
   FACBrNFe:= TACBrNFe.Create(nil);
   FACBrNFeDANFeRL:= TACBrNFeDANFeRL.Create(nil);
+  FACBrNFeDANFeRL.MostraPreview := False;
+  FACBrNFeDANFeRL.MostraSetup := False;
+  FACBrNFeDANFeRL.MostraStatus := False;
 
   FACBrNFe.DANFE := FACBrNFeDANFeRL;
   FACBrNFeDANFeRL.ACBrNFe := FACBrNFe;

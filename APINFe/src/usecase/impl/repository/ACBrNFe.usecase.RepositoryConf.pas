@@ -8,7 +8,8 @@ uses
   System.SysUtils,
   pcnConversaoNFe,
   pcnConversao,
-  ACBrNFe.utils.acbrhelper;
+  ACBrNFe.utils.acbrhelper,
+  ACBrNFe.entity.pedidos;
 
 type
   TRepositoryConf = class(TInterfacedObject, iCommand)
@@ -26,11 +27,11 @@ type
     procedure ConfGeral;
     procedure ConfWebService;
     procedure ConfDanfe;
+    procedure ConfIde;
   public
     constructor Create(Conf: iActionNFe);
     destructor Destroy; override;
-    class function New(Conf: iActionNFe)
-      : iCommand;
+    class function New(Conf: iActionNFe): iCommand;
     function Execute: iCommand;
   end;
 
@@ -56,80 +57,115 @@ begin
   ConfGeral;
   ConfWebService;
   ConfDanfe;
+  ConfIde;
 end;
 
 procedure TRepositoryConf.ConfDanfe;
 begin
-//  FConf.Component.ACBr.this.DANFE.PathPDF := FPathPDF;
-//  FConf.Component.ACBr.this.DANFE.Logo := '';
-//  FConf.Component.ACBr.this.DANFE.Sistema := '';
-//  FConf.Component.ACBr.this.DANFE.Site := '';
-//  FConf.Component.ACBr.this.DANFE.Email := '';
+  FConf.Component.ACBr.this.DANFE.PathPDF := FPathPDF;
+  FConf.Component.ACBr.this.DANFE.Logo := '';
+  FConf.Component.ACBr.this.DANFE.Sistema := '';
+  FConf.Component.ACBr.this.DANFE.Site := '';
+  FConf.Component.ACBr.this.DANFE.Email := '';
 end;
 
 procedure TRepositoryConf.ConfWebService;
 begin
-//  FConf.Component.ACBr.this.Configuracoes.WebServices.UF := FEntity.Configuracao.WebService.UF;
-//  FConf.Component.ACBr.this.Configuracoes.WebServices.Salvar := FEntity.Configuracao.WebService.Salvar;
-//  FConf.Component.ACBr.this.Configuracoes.WebServices.Visualizar := FEntity.Configuracao.WebService.Visualizar;
-//  FConf.Component.ACBr.this.Configuracoes.WebServices.Ambiente := TAcbrUtils.StrToEnumTipoAmbiente(FEntity.Configuracao.WebService.Ambiente);
-//  FConf.Component.ACBr.this.Configuracoes.WebServices.TimeZoneConf.ModoDeteccao := TAcbrUtils.StrToEnumTimeZone(FEntity.Configuracao.WebService.TimeZoneModoDeteccao);
-//  FConf.Component.ACBr.this.Configuracoes.WebServices.TimeOut := FEntity.Configuracao.WebService.TimeOut;
-//  FConf.Component.ACBr.this.Configuracoes.WebServices.AguardarConsultaRet := FEntity.Configuracao.WebService.AguardarConsultaRet;
-//  FConf.Component.ACBr.this.Configuracoes.WebServices.Tentativas := FEntity.Configuracao.WebService.Tentativas;
-//  FConf.Component.ACBr.this.Configuracoes.WebServices.IntervaloTentativas := FEntity.Configuracao.WebService.IntervaloTentativas;
-//  FConf.Component.ACBr.this.Configuracoes.WebServices.AjustaAguardaConsultaRet := FEntity.Configuracao.WebService.AjustaAguardaConsultaRet;
-//  FConf.Component.ACBr.this.Configuracoes.WebServices.ProxyHost := FEntity.Configuracao.WebService.ProxyHost;
-//  FConf.Component.ACBr.this.Configuracoes.WebServices.ProxyPort := FEntity.Configuracao.WebService.ProxyPort;
-//  FConf.Component.ACBr.this.Configuracoes.WebServices.ProxyUser := FEntity.Configuracao.WebService.ProxyUser;
-//  FConf.Component.ACBr.this.Configuracoes.WebServices.ProxyPass := FEntity.Configuracao.WebService.ProxyPass;
+  FConf.Component.ACBr.this.Configuracoes.WebServices.UF := 'AM';
+  FConf.Component.ACBr.this.Configuracoes.WebServices.Salvar := True;
+  FConf.Component.ACBr.this.Configuracoes.WebServices.Visualizar := False;
+  FConf.Component.ACBr.this.Configuracoes.WebServices.Ambiente :=
+    TAcbrUtils.StrToEnumTipoAmbiente('Homologacao');
+  FConf.Component.ACBr.this.Configuracoes.WebServices.TimeZoneConf.ModoDeteccao
+    := TAcbrUtils.StrToEnumTimeZone('Sistema');
+  FConf.Component.ACBr.this.Configuracoes.WebServices.TimeOut := 18000;
+  FConf.Component.ACBr.this.Configuracoes.WebServices.
+    AguardarConsultaRet := 5000;
+  FConf.Component.ACBr.this.Configuracoes.WebServices.Tentativas := 10;
+  FConf.Component.ACBr.this.Configuracoes.WebServices.
+    IntervaloTentativas := 3000;
+  FConf.Component.ACBr.this.Configuracoes.WebServices.
+    AjustaAguardaConsultaRet := True;
+  FConf.Component.ACBr.this.Configuracoes.WebServices.ProxyHost := '';
+  FConf.Component.ACBr.this.Configuracoes.WebServices.ProxyPort := '';
+  FConf.Component.ACBr.this.Configuracoes.WebServices.ProxyUser := '';
+  FConf.Component.ACBr.this.Configuracoes.WebServices.ProxyPass := '';
 end;
 
 procedure TRepositoryConf.ConfGeral;
 begin
-//  FConf.Component.ACBr.this.Configuracoes.Geral.ModeloDF := TAcbrUtils.StrToEnumModeloDF(FEntity.Configuracao.ModeloDF);
-//  FConf.Component.ACBr.this.Configuracoes.Geral.IdCSC := FEntity.Configuracao.Geral.IdCSC;
-//  FConf.Component.ACBr.this.Configuracoes.Geral.CSC := FEntity.Configuracao.Geral.CSC;
-//  FConf.Component.ACBr.this.Configuracoes.Geral.Salvar := FEntity.Configuracao.Geral.Salvar;
-//  FConf.Component.ACBr.this.Configuracoes.Geral.VersaoDF := TAcbrUtils.StrToEnumVersaoDF(FEntity.Configuracao.Geral.VersaoDF);
-//  FConf.Component.ACBr.this.Configuracoes.Geral.VersaoQRCode := TAcbrUtils.StrToEnumVersaoQrCode(FEntity.Configuracao.Geral.VersaoQRCode);
-//  FConf.Component.ACBr.this.Configuracoes.Geral.FormaEmissao := TAcbrUtils.StrToEnumEmissao(FEntity.Configuracao.Geral.FormaEmissao);
-//  FConf.Component.ACBr.this.Configuracoes.Geral.ExibirErroSchema := FEntity.Configuracao.Geral.ExibirErroSchema;
-//  FConf.Component.ACBr.this.Configuracoes.Geral.FormatoAlerta := FEntity.Configuracao.Geral.FormatoAlerta;
+  FConf.Component.ACBr.this.Configuracoes.Geral.ModeloDF :=
+    TAcbrUtils.StrToEnumModeloDF('NFe');
+  FConf.Component.ACBr.this.Configuracoes.Geral.IdCSC := '1';
+  FConf.Component.ACBr.this.Configuracoes.Geral.CSC := '0123456789';
+  FConf.Component.ACBr.this.Configuracoes.Geral.Salvar := True;
+  FConf.Component.ACBr.this.Configuracoes.Geral.VersaoDF :=
+    TAcbrUtils.StrToEnumVersaoDF('200');
+  FConf.Component.ACBr.this.Configuracoes.Geral.VersaoQRCode :=
+    TAcbrUtils.StrToEnumVersaoQrCode('200');
+  FConf.Component.ACBr.this.Configuracoes.Geral.FormaEmissao :=
+    TAcbrUtils.StrToEnumEmissao('Normal');
+  FConf.Component.ACBr.this.Configuracoes.Geral.ExibirErroSchema := False;
+  FConf.Component.ACBr.this.Configuracoes.Geral.FormatoAlerta :=
+    '[%TAGNIVEL% %TAG%] %DESCRICAO% - %MSG%';
+end;
+
+procedure TRepositoryConf.ConfIde;
+begin
+  FConf.Component.ACBr.AddNotaFiscal;
+  FConf.Component.ACBr.NotaFiscal.NFe.Ide.tpAmb :=
+    FConf.Component.ACBr.this.Configuracoes.WebServices.Ambiente;
+  FConf.Component.ACBr.NotaFiscal.NFe.Ide.verProc := '1.0.0.0';
+  FConf.Component.ACBr.NotaFiscal.NFe.Ide.tpEmis :=
+    FConf.Component.ACBr.this.Configuracoes.Geral.FormaEmissao;
+  FConf.Component.ACBr.NotaFiscal.NFe.Ide.tpImp :=
+    FConf.Component.ACBr.this.DANFE.TipoDANFE;
+  FConf.Component.ACBr.NotaFiscal.NFe.Ide.nNF := 1 + Random(100);
+  FConf.Component.ACBr.NotaFiscal.NFe.Ide.cNF :=
+    TAcbrUtils.GerarCodigoDanfe(FConf.Component.ACBr.NotaFiscal.NFe.Ide.nNF);
+  FConf.Component.ACBr.NotaFiscal.NFe.Ide.dEmi := Date;
+  FConf.Component.ACBr.NotaFiscal.NFe.Ide.dSaiEnt := Date;
+  FConf.Component.ACBr.NotaFiscal.NFe.Ide.hSaiEnt := Now;
+  FConf.Component.ACBr.NotaFiscal.NFe.Ide.cUF :=
+    UFtoCUF(FConf.Component.ACBr.this.Configuracoes.WebServices.UF);
+  FConf.Component.ACBr.NotaFiscal.NFe.Ide.cMunFG := 1302603;
+  FConf.Component.ACBr.NotaFiscal.NFe.Ide.finNFe :=
+    TAcbrUtils.StrToEnumFinalidadeNFe('Normal');
+  FConf.Component.ACBr.NotaFiscal.NFe.Ide.indIntermed :=
+    TAcbrUtils.StrToEnumIndIntermed('SemOperacao');
 end;
 
 procedure TRepositoryConf.ConfArquivos;
 begin
-//  FConf.Component.ACBr.this.Configuracoes.Arquivos.AdicionarLiteral := FEntity.Configuracao.AdicionarLiteral;
-//  FConf.Component.ACBr.this.Configuracoes.Arquivos.EmissaoPathNFe := FEntity.Configuracao.EmissaoPathNFe;
-//  FConf.Component.ACBr.this.Configuracoes.Arquivos.SepararPorMes := FEntity.Configuracao.SepararPorMes;
-//  FConf.Component.ACBr.this.Configuracoes.Arquivos.SepararPorModelo := FEntity.Configuracao.SepararPorModelo;
-//  FConf.Component.ACBr.this.Configuracoes.Arquivos.SepararPorCNPJ := FEntity.Configuracao.SepararPorCNPJ;
-//  FConf.Component.ACBr.this.Configuracoes.Arquivos.Salvar := FEntity.Configuracao.Salvar;
-//  FConf.Component.ACBr.this.Configuracoes.Arquivos.SalvarEvento := FEntity.Configuracao.SalvarEvento;
-//  FConf.Component.ACBr.this.Configuracoes.Arquivos.PathNFe := FPathArquivos;
-//  FConf.Component.ACBr.this.Configuracoes.Arquivos.PathInu := FPathArquivos;
-//  FConf.Component.ACBr.this.Configuracoes.Arquivos.PathEvento := FPathArquivos;
-//  FConf.Component.ACBr.this.Configuracoes.Arquivos.PathSalvar := FPathTmp;
+  FConf.Component.ACBr.this.Configuracoes.Arquivos.AdicionarLiteral := False;
+  FConf.Component.ACBr.this.Configuracoes.Arquivos.EmissaoPathNFe := True;
+  FConf.Component.ACBr.this.Configuracoes.Arquivos.SepararPorMes := True;
+  FConf.Component.ACBr.this.Configuracoes.Arquivos.SepararPorModelo := True;
+  FConf.Component.ACBr.this.Configuracoes.Arquivos.SepararPorCNPJ := True;
+  FConf.Component.ACBr.this.Configuracoes.Arquivos.Salvar := True;
+  FConf.Component.ACBr.this.Configuracoes.Arquivos.SalvarEvento := True;
+  FConf.Component.ACBr.this.Configuracoes.Arquivos.PathNFe := FPathArquivos;
+  FConf.Component.ACBr.this.Configuracoes.Arquivos.PathInu := FPathArquivos;
+  FConf.Component.ACBr.this.Configuracoes.Arquivos.PathEvento := FPathArquivos;
+  FConf.Component.ACBr.this.Configuracoes.Arquivos.PathSalvar := FPathTmp;
 end;
 
-class function TRepositoryConf.New(Conf: iActionNFe)
-      : iCommand;
+class function TRepositoryConf.New(Conf: iActionNFe): iCommand;
 begin
   Result := Self.Create(Conf);
 end;
 
 procedure TRepositoryConf.SetPath;
 begin
-//  FPathApp := IncludeTrailingPathDelimiter(ExtractFilePath(ParamStr(0)));
-//  FPathArqDFe := IncludeTrailingPathDelimiter(FPathApp + 'DOCUMENTOS');
-//  FPathPDF := IncludeTrailingPathDelimiter(FPathArqDFe + 'PDF');
-//  FPathArquivos := IncludeTrailingPathDelimiter(FPathArqDFe + 'ARQUIVOS');
-//  FPathTmp := IncludeTrailingPathDelimiter(FPathArqDFe + 'TMP');
-//
-//  ForceDirectories(FPathPDF);
-//  ForceDirectories(FPathArquivos);
-//  ForceDirectories(FPathTmp);
+  FPathApp := IncludeTrailingPathDelimiter(ExtractFilePath(ParamStr(0)));
+  FPathArqDFe := IncludeTrailingPathDelimiter(FPathApp + 'DOCUMENTOS');
+  FPathPDF := IncludeTrailingPathDelimiter(FPathArqDFe + 'PDF');
+  FPathArquivos := IncludeTrailingPathDelimiter(FPathArqDFe + 'ARQUIVOS');
+  FPathTmp := IncludeTrailingPathDelimiter(FPathArqDFe + 'TMP');
+
+  ForceDirectories(FPathPDF);
+  ForceDirectories(FPathArquivos);
+  ForceDirectories(FPathTmp);
 end;
 
 end.

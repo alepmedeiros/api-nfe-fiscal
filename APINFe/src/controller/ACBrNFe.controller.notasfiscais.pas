@@ -11,7 +11,8 @@ uses
   GBSwagger.Path.Attributes,
   GBSwagger.JSON.Interfaces,
   ACBrNFe.entity.ResponseNFe,
-  ACBrNFe.entity.pedidos;
+  ACBrNFe.entity.pedidos,
+  ACBrNFe.usecase.ActionNFe;
 
 type
   [SwagPath('nfe','NFe')]
@@ -20,7 +21,7 @@ type
   public
     [SwagPOST('Emitir NFe')]
     [SwagParamBody('body', TPedido)]
-    [SwagResponse(201, nil, 'Nota Gerada e armazenada')]
+    [SwagResponse(201, TResponseNFe)]
     [SwagResponse(400)]
     procedure EmitirNFe;
   end;
@@ -36,9 +37,9 @@ var
 begin
   lPedido := TGBJSONDefault.Serializer<TPedido>.JsonStringToObject(FRequest.Body);
   try
-
-//    FResponse.Send<TJSONObject>(TGBJSONDefault.Deserializer.ObjectToJsonObject(lRetorno)).Status(201);
-    FResponse.Send('Nota Gerada e armazenada').Status(201);
+    lResponse := TActionNFe.New.Gerar(lPedido);
+    FResponse.Send<TJSONObject>(TGBJSONDefault.Deserializer.ObjectToJsonObject(lResponse)).Status(201);
+//    FResponse.Send('Nota Gerada e armazenada').Status(201);
   finally
     lPedido.Free;
   end;

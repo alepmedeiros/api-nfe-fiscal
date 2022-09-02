@@ -6,7 +6,7 @@ type
   TEndDest = class
   private
     FFone: String;
-    FCEP: String;
+    FCEP: Integer;
     FLogradouro: String;
     FNumero: String;
     FComplemento: String;
@@ -16,7 +16,7 @@ type
     FPais: String;
   public
     property Fone: String read FFone write FFone;
-    property CEP: String read FCEP write FCEP;
+    property CEP: Integer read FCEP write FCEP;
     property Logradouro: String read FLogradouro write FLogradouro;
     property Numero: String read FNumero write FNumero;
     property Complemento: String read FComplemento write FComplemento;

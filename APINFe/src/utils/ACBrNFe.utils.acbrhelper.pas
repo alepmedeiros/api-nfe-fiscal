@@ -46,6 +46,7 @@ type
     class function StrToEnumTipoIntrega(Value: String): TtpIntegra;
     class function StrToEnumBandeiraCartao(Value: String): TpcnBandeiraCartao;
     class function GerarCodigoDanfe(Value: Integer): Integer;
+    class function UFtoCUF(Value: String): Integer;
   end;
 
 implementation
@@ -230,6 +231,11 @@ class function TAcbrUtils.StrToEnumVersaoQrCode(Value: String)
 begin
   Result := TpcnVersaoQrCode(GetEnumValue(TypeInfo(TpcnVersaoQrCode),
     'veqr' + Value))
+end;
+
+class function TAcbrUtils.UFtoCUF(Value: String): Integer;
+begin
+  Result := pcnConversao.UFtoCUF(Value);
 end;
 
 end.

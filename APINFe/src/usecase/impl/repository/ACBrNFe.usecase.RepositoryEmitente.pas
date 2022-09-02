@@ -5,25 +5,27 @@ interface
 uses
   ACBrNFe.usecase.interfaces,
   ACBrNFe.Component.interfaces,
-  ACBrNFe.utils.acbrhelper;
+  ACBrNFe.utils.acbrhelper,
+  ACBrNFe.entity.pedidos;
 
 type
   TRepositoryEmitente = class(TInterfacedObject, iCommand)
   private
     FConf: iActionNFe;
-    procedure ConfEmitente;
+    FPedido: TPedido;
   public
-    constructor Create(Conf: iActionNFe);
+    constructor Create(Conf: iActionNFe; Pedido: TPedido);
     destructor Destroy; override;
-    class function New(Conf: iActionNFe): iCommand;
+    class function New(Conf: iActionNFe; Pedido: TPedido): iCommand;
     function Execute: iCommand;
   end;
 
 implementation
 
-constructor TRepositoryEmitente.Create(Conf: iActionNFe);
+constructor TRepositoryEmitente.Create(Conf: iActionNFe; Pedido: TPedido);
 begin
   FConf := Conf;
+  FPedido := Pedido;
 end;
 
 destructor TRepositoryEmitente.Destroy;
@@ -35,35 +37,31 @@ end;
 function TRepositoryEmitente.Execute: iCommand;
 begin
   Result := Self;
-  ConfEmitente;
+
+  FConf.Component.ACBr.NotaFiscal.NFe.Emit.xNome := 'Emissor teste';
+  FConf.Component.ACBr.NotaFiscal.NFe.Emit.xFant := 'Emissor teste';
+  FConf.Component.ACBr.NotaFiscal.NFe.Emit.CNPJCPF := '07193169000154';
+  FConf.Component.ACBr.NotaFiscal.NFe.Emit.IE := '1234567890';
+  FConf.Component.ACBr.NotaFiscal.NFe.Emit.IEST := '';
+  FConf.Component.ACBr.NotaFiscal.NFe.Emit.CNAE := '6201500';
+  FConf.Component.ACBr.NotaFiscal.NFe.Emit.EnderEmit.fone := '(11)2222-4444';
+  FConf.Component.ACBr.NotaFiscal.NFe.Emit.EnderEmit.xLgr := 'Endereco teste';
+  FConf.Component.ACBr.NotaFiscal.NFe.Emit.EnderEmit.nro := '1';
+  FConf.Component.ACBr.NotaFiscal.NFe.Emit.EnderEmit.xCpl := '';
+  FConf.Component.ACBr.NotaFiscal.NFe.Emit.EnderEmit.xBairro := 'Bairro';
+  FConf.Component.ACBr.NotaFiscal.NFe.Emit.EnderEmit.xMun := 'Manaus';
+  FConf.Component.ACBr.NotaFiscal.NFe.Emit.EnderEmit.cMun := 1302603;
+  FConf.Component.ACBr.NotaFiscal.NFe.Emit.EnderEmit.UF := 'AM';
+  FConf.Component.ACBr.NotaFiscal.NFe.Emit.EnderEmit.CEP := 11222333;
+  FConf.Component.ACBr.NotaFiscal.NFe.Emit.EnderEmit.cPais := 1058;
+  FConf.Component.ACBr.NotaFiscal.NFe.Emit.EnderEmit.xPais := 'Brasil';
+  FConf.Component.ACBr.NotaFiscal.NFe.Emit.CRT := TAcbrUtils.StrToEnumCRT('SimplesNacional');
+  FConf.Component.ACBr.NotaFiscal.NFe.Emit.IM := '2648800';
 end;
 
-procedure TRepositoryEmitente.ConfEmitente;
+class function TRepositoryEmitente.New(Conf: iActionNFe; Pedido: TPedido): iCommand;
 begin
-//  FConf.Component.ACBr.NotaFiscal.NFe.Emit.xNome := FEntity.Emitente.xNome;
-//  FConf.Component.ACBr.NotaFiscal.NFe.Emit.xFant := FEntity.Emitente.xFant;
-//  FConf.Component.ACBr.NotaFiscal.NFe.Emit.CNPJCPF := FEntity.Emitente.CNPJCPF;
-//  FConf.Component.ACBr.NotaFiscal.NFe.Emit.IE := FEntity.Emitente.IE;
-//  FConf.Component.ACBr.NotaFiscal.NFe.Emit.IEST := FEntity.Emitente.IEST;
-//  FConf.Component.ACBr.NotaFiscal.NFe.Emit.CNAE := FEntity.Emitente.CNAE;
-//  FConf.Component.ACBr.NotaFiscal.NFe.Emit.EnderEmit.fone := FEntity.Emitente.EnderEmit.fone;
-//  FConf.Component.ACBr.NotaFiscal.NFe.Emit.EnderEmit.xLgr := FEntity.Emitente.EnderEmit.xLgr;
-//  FConf.Component.ACBr.NotaFiscal.NFe.Emit.EnderEmit.nro := FEntity.Emitente.EnderEmit.nro;
-//  FConf.Component.ACBr.NotaFiscal.NFe.Emit.EnderEmit.xCpl := FEntity.Emitente.EnderEmit.xCpl;
-//  FConf.Component.ACBr.NotaFiscal.NFe.Emit.EnderEmit.xBairro := FEntity.Emitente.EnderEmit.xBairro;
-//  FConf.Component.ACBr.NotaFiscal.NFe.Emit.EnderEmit.xMun := FEntity.Emitente.EnderEmit.xMun;
-//  FConf.Component.ACBr.NotaFiscal.NFe.Emit.EnderEmit.cMun := FEntity.Emitente.EnderEmit.cMun;
-//  FConf.Component.ACBr.NotaFiscal.NFe.Emit.EnderEmit.UF := FEntity.Emitente.EnderEmit.UF;
-//  FConf.Component.ACBr.NotaFiscal.NFe.Emit.EnderEmit.CEP := FEntity.Emitente.EnderEmit.CEP;
-//  FConf.Component.ACBr.NotaFiscal.NFe.Emit.EnderEmit.cPais := FEntity.Emitente.EnderEmit.cPais;
-//  FConf.Component.ACBr.NotaFiscal.NFe.Emit.EnderEmit.xPais := FEntity.Emitente.EnderEmit.xPais;
-//  FConf.Component.ACBr.NotaFiscal.NFe.Emit.CRT := TAcbrUtils.StrToEnumCRT(FEntity.Emitente.CRT);
-//  FConf.Component.ACBr.NotaFiscal.NFe.Emit.IM := FEntity.Emitente.IM;
-end;
-
-class function TRepositoryEmitente.New(Conf: iActionNFe): iCommand;
-begin
-  Result := Self.Create(Conf);
+  Result := Self.Create(Conf, Pedido);
 end;
 
 end.
