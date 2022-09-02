@@ -15,6 +15,12 @@
         <Projects Include="APIACBrNFe\APIACBrNFe.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="APINFe\APINFe.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\ProjectHorseSimpleORM\ServidorHorse.dproj">
+            <Dependencies/>
+        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -59,14 +65,32 @@
     <Target Name="APIACBrNFe:Make">
         <MSBuild Projects="APIACBrNFe\APIACBrNFe.dproj" Targets="Make"/>
     </Target>
+    <Target Name="APINFe">
+        <MSBuild Projects="APINFe\APINFe.dproj"/>
+    </Target>
+    <Target Name="APINFe:Clean">
+        <MSBuild Projects="APINFe\APINFe.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="APINFe:Make">
+        <MSBuild Projects="APINFe\APINFe.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ServidorHorse">
+        <MSBuild Projects="..\ProjectHorseSimpleORM\ServidorHorse.dproj"/>
+    </Target>
+    <Target Name="ServidorHorse:Clean">
+        <MSBuild Projects="..\ProjectHorseSimpleORM\ServidorHorse.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ServidorHorse:Make">
+        <MSBuild Projects="..\ProjectHorseSimpleORM\ServidorHorse.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="WorkshopNfe;APIACBrNFeTest;horseacbrRad;APIACBrNFe"/>
+        <CallTarget Targets="WorkshopNfe;APIACBrNFeTest;horseacbrRad;APIACBrNFe;APINFe;ServidorHorse"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="WorkshopNfe:Clean;APIACBrNFeTest:Clean;horseacbrRad:Clean;APIACBrNFe:Clean"/>
+        <CallTarget Targets="WorkshopNfe:Clean;APIACBrNFeTest:Clean;horseacbrRad:Clean;APIACBrNFe:Clean;APINFe:Clean;ServidorHorse:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="WorkshopNfe:Make;APIACBrNFeTest:Make;horseacbrRad:Make;APIACBrNFe:Make"/>
+        <CallTarget Targets="WorkshopNfe:Make;APIACBrNFeTest:Make;horseacbrRad:Make;APIACBrNFe:Make;APINFe:Make;ServidorHorse:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>

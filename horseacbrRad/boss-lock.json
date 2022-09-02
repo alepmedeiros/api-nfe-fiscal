@@ -26,6 +26,14 @@
 			"failed": false,
 			"changed": false
 		},
+		"https://github.com/academiadocodigo/aws4d": {
+			"name": "aws4d",
+			"version": "1.0.7",
+			"hash": "12e19c045cd2dc38cc483e2c3cd7c47b",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		},
 		"https://github.com/gabrielbaltazar/gbjson": {
 			"name": "gbjson",
 			"version": "1.0.10",

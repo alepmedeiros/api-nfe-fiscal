@@ -779,6 +779,7 @@ type
     function Compra: iCompra;
     function Pagamento: iPagamento;
     function InfIntermed: iInfIntermed;
+    function Build: iFactoryEntity;
   end;
 
 implementation

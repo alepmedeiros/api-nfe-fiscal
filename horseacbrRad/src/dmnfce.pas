@@ -24,7 +24,8 @@ uses
   pcnNfe,
   horseacbrrad.model.pedido,
   ACBrNFeNotasFiscais,
-  ACBrNFeDANFeRLClass;
+  ACBrNFeDANFeRLClass,
+  AWS4D;
 
 type
   Tdmnfe = class(TDataModule)
@@ -37,6 +38,12 @@ type
   end;
 
 implementation
+
+const
+  AccountKey = 'FjI7Ytui0SAphmcT5SJmprLXGKbISolCZCV1DGP5';
+  AccountName = 'AKIAX6GPXNIQ53ZMHVX2';
+  StorageEndPoint = 's3.sa-east-1.amazonaws.com';
+  Bucket = 'testeawsdelphi';
 
 {%CLASSGROUP 'System.Classes.TPersistent'}
 {$R *.dfm}
@@ -147,6 +154,9 @@ var
   ObsFisco: TobsFiscoCollectionItem;
   ValorTotalNf: Currency;
   lStream: TMemoryStream;
+
+  lFileContent: TBytesStream;
+  lReader : TBinaryReader;
 begin
   Configurar;
 
@@ -667,7 +677,35 @@ begin
   ACBrNFe1.NotasFiscais.GerarNFe;
   ACBrNFe1.NotasFiscais[0].GravarXML(ExtractFilePath(ParamStr(0)) +
     'notafiscal.xml');
-  ACBrNFe1.NotasFiscais.ImprimirPDF;
+
+  try
+    ACBrNFe1.NotasFiscais.ImprimirPDF;
+    lReader := TBinaryReader.Create(ACBrNFe1.DANFE.ArquivoPDF);
+    try
+      lFileContent := TBytesStream.Create(lReader.ReadBytes(lReader.BaseStream.Size));
+    finally
+      lReader.Free;
+    end;
+
+    aNFe.Cpf:=
+    TAWS4D
+      .New
+        .Credential
+            .AccountKey(AccountKey)
+            .AccountName(AccountName)
+            .StorageEndPoint(StorageEndPoint)
+            .Bucket(Bucket)
+          .&End
+        .S3
+          .SendFile
+            .FileName(ExtractFileName(ACBrNFe1.DANFE.ArquivoPDF))
+            .ContentType('application/pdf')
+            .FileStream(lFileContent)
+          .Send
+        .ToString;
+  finally
+    lStream.Free;
+  end;
 
   Result := aNFe;
 end;

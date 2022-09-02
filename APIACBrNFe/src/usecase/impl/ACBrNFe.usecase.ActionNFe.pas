@@ -5,7 +5,7 @@ interface
 uses
   ACBrNFe.usecase.interfaces,
   ACBrNFe.Component.interfaces, ACBrNFe.Component.impl.FactoryNFe,
-  ACBrNFe.usecase.invoker;
+  ACBrNFe.usecase.invoker, ACBrNFe.entity.interfaces, ACBrNFe.adapter.pedidos;
 
 type
   TActionNFe = class(TInterfacedObject, iActionNFe)
@@ -17,7 +17,8 @@ type
     class function New: iActionNFe;
     function Clear: iActionNFe;
     function Component: iComponentFactory;
-    function Gerar: iActionNFe;
+    function Gerar(Entity: iFactoryEntity): iActionNFe; overload;
+    function Gerar(Pedido: TPedido): iActionNFe; overload;
   end;
 
 implementation
@@ -44,7 +45,12 @@ begin
   inherited;
 end;
 
-function TActionNFe.Gerar: iActionNFe;
+function TActionNFe.Gerar(Pedido: TPedido): iActionNFe;
+begin
+  Result := Self;
+end;
+
+function TActionNFe.Gerar(Entity: iFactoryEntity): iActionNFe;
 begin
   Result := Self;
 end;

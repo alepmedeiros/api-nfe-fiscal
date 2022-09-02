@@ -31,7 +31,6 @@ implementation
 procedure TControllerNotaFiscal.EmitirNFe;
 var
   lPedido: TPedido;
-  lRetorno: TPedido;
 begin
   lPedido := TGBJSONDefault.Serializer<TPedido>.JsonStringToObject(FRequest.Body);
   try
