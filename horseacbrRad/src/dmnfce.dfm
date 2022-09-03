@@ -37,7 +37,7 @@ object dmnfe: Tdmnfe
     CasasDecimais.MaskqCom = ',0.00'
     CasasDecimais.MaskvUnCom = ',0.00'
     ACBrNFe = ACBrNFe1
-    Left = 128
-    Top = 80
+    Left = 144
+    Top = 40
   end
 end

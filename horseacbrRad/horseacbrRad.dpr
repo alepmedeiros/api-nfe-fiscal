@@ -25,7 +25,7 @@ end;
 procedure InicializaSwagger;
 begin
   Swagger
-    .Version('1.0')
+    .Version('2.0')
     .AddProtocol(TGBSwaggerProtocol.gbHttp)
       .Config
         .Language('pt-BR')
@@ -43,6 +43,7 @@ end;
 
 begin
   iniciarHorse;
+  InicializaSwagger;
 
   THorseGBSwaggerRegister.RegisterPath(TControllerNotaFiscal);
 

@@ -15,7 +15,7 @@
         <Projects Include="APINFe\APINFe.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="documentos\Boas Praticas para Arquivos Fiscais - Part3\WorkshopNfe.dproj">
+        <Projects Include="..\ACBr\Exemplos\ACBrDFe\ACBrNFe\Delphi\ACBrNFe_Exemplo.dproj">
             <Dependencies/>
         </Projects>
     </ItemGroup>
@@ -62,23 +62,23 @@
     <Target Name="APINFe:Make">
         <MSBuild Projects="APINFe\APINFe.dproj" Targets="Make"/>
     </Target>
-    <Target Name="WorkshopNfe">
-        <MSBuild Projects="documentos\Boas Praticas para Arquivos Fiscais - Part3\WorkshopNfe.dproj"/>
+    <Target Name="ACBrNFe_Exemplo">
+        <MSBuild Projects="..\ACBr\Exemplos\ACBrDFe\ACBrNFe\Delphi\ACBrNFe_Exemplo.dproj"/>
     </Target>
-    <Target Name="WorkshopNfe:Clean">
-        <MSBuild Projects="documentos\Boas Praticas para Arquivos Fiscais - Part3\WorkshopNfe.dproj" Targets="Clean"/>
+    <Target Name="ACBrNFe_Exemplo:Clean">
+        <MSBuild Projects="..\ACBr\Exemplos\ACBrDFe\ACBrNFe\Delphi\ACBrNFe_Exemplo.dproj" Targets="Clean"/>
     </Target>
-    <Target Name="WorkshopNfe:Make">
-        <MSBuild Projects="documentos\Boas Praticas para Arquivos Fiscais - Part3\WorkshopNfe.dproj" Targets="Make"/>
+    <Target Name="ACBrNFe_Exemplo:Make">
+        <MSBuild Projects="..\ACBr\Exemplos\ACBrDFe\ACBrNFe\Delphi\ACBrNFe_Exemplo.dproj" Targets="Make"/>
     </Target>
     <Target Name="Build">
-        <CallTarget Targets="APIACBrNFeTest;horseacbrRad;APIACBrNFe;APINFe;WorkshopNfe"/>
+        <CallTarget Targets="APIACBrNFeTest;horseacbrRad;APIACBrNFe;APINFe;ACBrNFe_Exemplo"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="APIACBrNFeTest:Clean;horseacbrRad:Clean;APIACBrNFe:Clean;APINFe:Clean;WorkshopNfe:Clean"/>
+        <CallTarget Targets="APIACBrNFeTest:Clean;horseacbrRad:Clean;APIACBrNFe:Clean;APINFe:Clean;ACBrNFe_Exemplo:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="APIACBrNFeTest:Make;horseacbrRad:Make;APIACBrNFe:Make;APINFe:Make;WorkshopNfe:Make"/>
+        <CallTarget Targets="APIACBrNFeTest:Make;horseacbrRad:Make;APIACBrNFe:Make;APINFe:Make;ACBrNFe_Exemplo:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>
