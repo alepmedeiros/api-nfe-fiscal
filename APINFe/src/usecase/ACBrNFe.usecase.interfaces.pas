@@ -53,7 +53,7 @@ type
     function ProdImpPISST: iCommand;
     function ProdImpII: iCommand;
     function ProdVeiculo: iCommand;
-    function GerarNFe(Response: TResponseNFe): iCommand;
+    function GerarNFe(var Response: TResponseNFe): iCommand;
   end;
 
 implementation

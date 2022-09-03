@@ -39,7 +39,6 @@ begin
   try
     lResponse := TActionNFe.New.Gerar(lPedido);
     FResponse.Send<TJSONObject>(TGBJSONDefault.Deserializer.ObjectToJsonObject(lResponse)).Status(201);
-//    FResponse.Send('Nota Gerada e armazenada').Status(201);
   finally
     lPedido.Free;
   end;

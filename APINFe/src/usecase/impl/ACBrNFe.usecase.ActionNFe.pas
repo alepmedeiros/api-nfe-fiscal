@@ -50,7 +50,6 @@ end;
 
 function TActionNFe.Gerar(Pedido: TPedido): TResponseNFe;
 begin
-  Result := TResponseNFe.Create;
   TInvoker.New
     .Add(TFactoryCommand.New(Self, Pedido).Conf)
     .Add(TFactoryCommand.New(Self, Pedido).Ide)

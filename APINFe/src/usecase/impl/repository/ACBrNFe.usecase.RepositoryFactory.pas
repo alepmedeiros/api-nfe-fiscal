@@ -48,7 +48,7 @@ type
       function ProdImpPISST: iCommand;
       function ProdImpII: iCommand;
       function ProdVeiculo: iCommand;
-      function GerarNFe(Retorno: TResponseNFe): iCommand;
+      function GerarNFe(var Retorno: TResponseNFe): iCommand;
   end;
 
 implementation
@@ -105,7 +105,7 @@ begin
 
 end;
 
-function TFactoryCommand.GerarNFe(Retorno: TResponseNFe): iCommand;
+function TFactoryCommand.GerarNFe(var Retorno: TResponseNFe): iCommand;
 begin
   Result := TRespositoryGerarNFe.New(FParent, FRetorno);
 end;
