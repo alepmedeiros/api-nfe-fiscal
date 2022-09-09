@@ -10,20 +10,18 @@ type
   TRepositoryDuplicata = class(TInterfacedObject, iCommand)
     private
       FConf: iActionNFe;
-      FPedido: TPedido;
     public
-      constructor Create(Conf: iActionNFe; Pedido: TPedido);
+      constructor Create(Conf: iActionNFe);
       destructor Destroy; override;
-      class function New(Conf: iActionNFe; Pedido: TPedido) : iCommand;
+      class function New(Conf: iActionNFe) : iCommand;
       function Execute: iCommand;
   end;
 
 implementation
 
-constructor TRepositoryDuplicata.Create(Conf: iActionNFe; Pedido: TPedido);
+constructor TRepositoryDuplicata.Create(Conf: iActionNFe);
 begin
   FConf := Conf;
-  FPedido := Pedido;
 end;
 
 destructor TRepositoryDuplicata.Destroy;
@@ -38,18 +36,18 @@ var
 begin
   Result := Self;
 
-  for I := 0 to Pred(FPedido.CobrancaDuplicata.Count) do
+  for I := 0 to Pred(FConf.Entity.Pedido.CobrancaDuplicata.Count) do
   begin
     FConf.Component.ACBr.AddDuplicata;
-    FConf.Component.ACBr.Duplicata.nDup := FPedido.CobrancaDuplicata[I].Numero;
-    FConf.Component.ACBr.Duplicata.dVenc := FPedido.CobrancaDuplicata[I].Vencimento;
-    FConf.Component.ACBr.Duplicata.vDup := FPedido.CobrancaDuplicata[I].Valor;
+    FConf.Component.ACBr.Duplicata.nDup := FConf.Entity.Pedido.CobrancaDuplicata[I].Numero;
+    FConf.Component.ACBr.Duplicata.dVenc := FConf.Entity.Pedido.CobrancaDuplicata[I].Vencimento;
+    FConf.Component.ACBr.Duplicata.vDup := FConf.Entity.Pedido.CobrancaDuplicata[I].Valor;
   end;
 end;
 
-class function TRepositoryDuplicata.New (Conf: iActionNFe; Pedido: TPedido) : iCommand;
+class function TRepositoryDuplicata.New (Conf: iActionNFe) : iCommand;
 begin
-  Result := Self.Create(Conf, Pedido);
+  Result := Self.Create(Conf);
 end;
 
 end.

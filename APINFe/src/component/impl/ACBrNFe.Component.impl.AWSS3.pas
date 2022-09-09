@@ -22,7 +22,7 @@ const
   AccountKey = 'FjI7Ytui0SAphmcT5SJmprLXGKbISolCZCV1DGP5';
   AccountName = 'AKIAX6GPXNIQ53ZMHVX2';
   StorageEndPoint = 's3.sa-east-1.amazonaws.com';
-  Bucket = 'testeawsdelphi';
+  Bucket = 'testeacbrnfe';
 
 constructor TAWSS3.Create;
 begin

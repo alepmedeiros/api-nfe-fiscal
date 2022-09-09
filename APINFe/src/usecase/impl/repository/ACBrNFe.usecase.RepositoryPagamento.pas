@@ -12,20 +12,18 @@ type
   TRepositoryPagamento = class(TInterfacedObject, iCommand)
   private
     FConf: iActionNFe;
-    FPedido: TPedido;
   public
-    constructor Create(Conf: iActionNFe; Pedido: TPedido);
+    constructor Create(Conf: iActionNFe);
     destructor Destroy; override;
-    class function New(Conf: iActionNFe; Pedido: TPedido): iCommand;
+    class function New(Conf: iActionNFe): iCommand;
     function Execute: iCommand;
   end;
 
 implementation
 
-constructor TRepositoryPagamento.Create(Conf: iActionNFe; Pedido: TPedido);
+constructor TRepositoryPagamento.Create(Conf: iActionNFe);
 begin
   FConf := Conf;
-  FPedido := Pedido;
 end;
 
 destructor TRepositoryPagamento.Destroy;
@@ -40,26 +38,26 @@ var
 begin
   Result := Self;
 
-  for I := 0 to Pred(FPedido.Pagamento.Count) do
+  for I := 0 to Pred(FConf.Entity.Pedido.Pagamento.Count) do
   begin
      FConf.Component.ACBr.AddPagamento;
      FConf.Component.ACBr.Pagamento.indPag := TAcbrUtils.StrToEnumIndPagamento
-     (FPedido.Pagamento[I].Identificacao);
+     (FConf.Entity.Pedido.Pagamento[I].Identificacao);
      FConf.Component.ACBr.Pagamento.tPag := TAcbrUtils.StrToEnumFormaPagamento
-     (FPedido.Pagamento[I].Tipo);
-     FConf.Component.ACBr.Pagamento.vPag := FPedido.Pagamento[I].Valor;
+     (FConf.Entity.Pedido.Pagamento[I].Tipo);
+     FConf.Component.ACBr.Pagamento.vPag := FConf.Entity.Pedido.Pagamento[I].Valor;
      FConf.Component.ACBr.Pagamento.tpIntegra := TAcbrUtils.StrToEnumTipoIntrega
-     (FPedido.Pagamento[I].Integrado);
-     FConf.Component.ACBr.Pagamento.CNPJ := FPedido.Pagamento[I].CNPJ;
+     (FConf.Entity.Pedido.Pagamento[I].Integrado);
+     FConf.Component.ACBr.Pagamento.CNPJ := FConf.Entity.Pedido.Pagamento[I].CNPJ;
      FConf.Component.ACBr.Pagamento.tBand := TAcbrUtils.StrToEnumBandeiraCartao
-     (FPedido.Pagamento[I].BandeiraCartao);
-     FConf.Component.ACBr.Pagamento.cAut := FPedido.Pagamento[I].CodAutorizacao;
+     (FConf.Entity.Pedido.Pagamento[I].BandeiraCartao);
+     FConf.Component.ACBr.Pagamento.cAut := FConf.Entity.Pedido.Pagamento[I].CodAutorizacao;
   end;
 end;
 
-class function TRepositoryPagamento.New(Conf: iActionNFe; Pedido: TPedido): iCommand;
+class function TRepositoryPagamento.New(Conf: iActionNFe): iCommand;
 begin
-  Result := Self.Create(Conf, Pedido);
+  Result := Self.Create(Conf);
 end;
 
 end.

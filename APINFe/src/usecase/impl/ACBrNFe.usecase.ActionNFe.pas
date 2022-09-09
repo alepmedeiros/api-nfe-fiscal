@@ -8,18 +8,23 @@ uses
   ACBrNFe.Component.impl.FactoryNFe,
   ACBrNFe.usecase.invoker,
   ACBrNFe.entity.pedidos,
-  ACBrNFe.entity.ResponseNFe, ACBrNFe.usecase.RepositoryFactory;
+  ACBrNFe.entity.ResponseNFe,
+  ACBrNFe.usecase.RepositoryFactory,
+  ACBrNFe.entity.interfaces,
+  ACBrNFe.entity.impl.entityfactory;
 
 type
   TActionNFe = class(TInterfacedObject, iActionNFe)
   private
     FComponent: iComponentFactory;
+    FEntity: iEntityFactory;
   public
     constructor Create;
     destructor Destroy; override;
     class function New: iActionNFe;
     function Clear: iActionNFe;
     function Component: iComponentFactory;
+    function Entity: iEntityFactory;
     function Gerar: iActionNFe; overload;
     function Gerar(Pedido: TPedido): TResponseNFe; overload;
   end;
@@ -40,6 +45,7 @@ end;
 constructor TActionNFe.Create;
 begin
   FComponent := TComponentFactory.New;
+  FEntity := TEntityFactory.New;
 end;
 
 destructor TActionNFe.Destroy;
@@ -48,20 +54,25 @@ begin
   inherited;
 end;
 
+function TActionNFe.Entity: iEntityFactory;
+begin
+  Result := FEntity;
+end;
+
 function TActionNFe.Gerar(Pedido: TPedido): TResponseNFe;
 begin
-  TInvoker.New
-    .Add(TFactoryCommand.New(Self, Pedido).Conf)
-    .Add(TFactoryCommand.New(Self, Pedido).Ide)
-    .Add(TFactoryCommand.New(Self, Pedido).Emitente)
-    .Add(TFactoryCommand.New(Self, Pedido).Dest)
-    .Add(TFactoryCommand.New(Self, Pedido).Produto)
-    .Add(TFactoryCommand.New(Self, Pedido).Total)
-    .Add(TFactoryCommand.New(Self, Pedido).CobFat)
-    .Add(TFactoryCommand.New(Self, Pedido).Duplicata)
-    .Add(TFactoryCommand.New(Self, Pedido).Pagamento)
-    .Add(TFactoryCommand.New(Self, Pedido).GerarNFe(Result))
-  .Execute;
+  FEntity.Pedido(Pedido);
+  TInvoker.New.Add(TFactoryCommand.New(Self).Conf)
+    .Add(TFactoryCommand.New(Self).Ide)
+    .Add(TFactoryCommand.New(Self).Emitente)
+    .Add(TFactoryCommand.New(Self).Dest)
+    .Add(TFactoryCommand.New(Self).Produto)
+    .Add(TFactoryCommand.New(Self).Total)
+    .Add(TFactoryCommand.New(Self).CobFat)
+    .Add(TFactoryCommand.New(Self).Duplicata)
+    .Add(TFactoryCommand.New(Self).Pagamento)
+    .Add(TFactoryCommand.New(Self).GerarNFe(Result)).Execute;
+  Result := FEntity.ResponseNFE;
 end;
 
 function TActionNFe.Gerar: iActionNFe;

@@ -12,20 +12,18 @@ type
   TRepositoryIde = class(TInterfacedObject, iCommand)
   private
     FConf: iActionNFe;
-    FPedido: TPedido;
   public
-    constructor Create(Conf: iActionNFe; Pedido: TPedido);
+    constructor Create(Conf: iActionNFe);
     destructor Destroy; override;
-    class function New(Conf: iActionNFe; Pedido: TPedido): iCommand;
+    class function New(Conf: iActionNFe): iCommand;
     function Execute: iCommand;
   end;
 
 implementation
 
-constructor TRepositoryIde.Create(Conf: iActionNFe; Pedido: TPedido);
+constructor TRepositoryIde.Create(Conf: iActionNFe);
 begin
   FConf := Conf;
-  FPedido := Pedido;
 end;
 
 destructor TRepositoryIde.Destroy;
@@ -38,18 +36,18 @@ function TRepositoryIde.Execute: iCommand;
 begin
   Result := Self;
 
-  FConf.Component.ACBr.NotaFiscal.NFe.Ide.natOp := FPedido.NatOp;
+  FConf.Component.ACBr.NotaFiscal.NFe.Ide.natOp := FConf.Entity.Pedido.NatOp;
   FConf.Component.ACBr.NotaFiscal.NFe.Ide.indPag :=
-    TAcbrUtils.StrToEnumIndPagamento(FPedido.indPag);
+    TAcbrUtils.StrToEnumIndPagamento(FConf.Entity.Pedido.indPag);
   FConf.Component.ACBr.NotaFiscal.NFe.Ide.modelo := 55;
-  FConf.Component.ACBr.NotaFiscal.NFe.Ide.Serie := FPedido.Serie;
+  FConf.Component.ACBr.NotaFiscal.NFe.Ide.Serie := FConf.Entity.Pedido.Serie;
   FConf.Component.ACBr.NotaFiscal.NFe.Ide.tpNF :=
-    TAcbrUtils.StrToEnumTipoNFe(FPedido.TipoNfe);
+    TAcbrUtils.StrToEnumTipoNFe(FConf.Entity.Pedido.TipoNfe);
 end;
 
-class function TRepositoryIde.New(Conf: iActionNFe; Pedido: TPedido): iCommand;
+class function TRepositoryIde.New(Conf: iActionNFe): iCommand;
 begin
-  Result := Self.Create(Conf, Pedido);
+  Result := Self.Create(Conf);
 end;
 
 end.

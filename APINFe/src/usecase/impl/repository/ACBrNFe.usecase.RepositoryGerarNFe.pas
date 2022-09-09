@@ -10,20 +10,18 @@ type
   TRespositoryGerarNFe = class(TInterfacedObject, iCommand)
     private
       FConf: iActionNFe;
-      FResponse: TResponseNFe;
     public
-      constructor Create(Conf: iActionNFe; var Resp: TResponseNFe);
+      constructor Create(Conf: iActionNFe);
       destructor Destroy; override;
-      class function New(Conf: iActionNFe; var Resp: TResponseNFe) : iCommand;
+      class function New(Conf: iActionNFe) : iCommand;
       function Execute: iCommand;
   end;
 
 implementation
 
-constructor TRespositoryGerarNFe.Create(Conf: iActionNFe; var Resp: TResponseNFe);
+constructor TRespositoryGerarNFe.Create(Conf: iActionNFe);
 begin
   FConf := Conf;
-  FResponse := Resp;
 end;
 
 destructor TRespositoryGerarNFe.Destroy;
@@ -42,16 +40,16 @@ begin
   FConf.Component.ACBr.this.NotasFiscais.GerarNFe;
   FConf.Component.ACBr.this.NotasFiscais.ImprimirPDF;
 
-  lResp.Nome := FConf.Component.ACBr.this.DANFE.ArquivoPDF;
+  lResp.Nome := ExtractFileName(FConf.Component.ACBr.this.DANFE.ArquivoPDF);
   lResp.Data := Now;
   lResp.URL := FConf.Component.AWS.Push(FConf.Component.ACBr.this.DANFE.ArquivoPDF);
 
-  FResponse := lResp;
+  FConf.Entity.ResponseNFE(lResp);
 end;
 
-class function TRespositoryGerarNFe.New (Conf: iActionNFe; var Resp: TResponseNFe) : iCommand;
+class function TRespositoryGerarNFe.New (Conf: iActionNFe) : iCommand;
 begin
-  Result := Self.Create(Conf, Resp);
+  Result := Self.Create(Conf);
 end;
 
 end.

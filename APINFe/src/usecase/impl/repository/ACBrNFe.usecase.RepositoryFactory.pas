@@ -18,9 +18,9 @@ type
       FPedido: TPedido;
       FRetorno: TResponseNFe;
     public
-      constructor Create(Parent: iActionNFe; Pedido: TPedido);
+      constructor Create(Parent: iActionNFe);
       destructor Destroy; override;
-      class function New(Parent: iActionNFe; Pedido: TPedido) : iFactoryCommand;
+      class function New(Parent: iActionNFe) : iFactoryCommand;
       function CobFat: iCommand;
       function Compra: iCommand;
       function Conf: iCommand;
@@ -55,7 +55,7 @@ implementation
 
 function TFactoryCommand.CobFat: iCommand;
 begin
-  Result := TRepositoryCobFat.New(FParent, FPedido);
+  Result := TRepositoryCobFat.New(FParent);
 end;
 
 function TFactoryCommand.Combustivel: iCommand;
@@ -73,15 +73,14 @@ begin
   Result := TRepositoryConf.New(FParent);
 end;
 
-constructor TFactoryCommand.Create(Parent: iActionNFe; Pedido: TPedido);
+constructor TFactoryCommand.Create(Parent: iActionNFe);
 begin
   FParent := Parent;
-  FPedido := Pedido;
 end;
 
 function TFactoryCommand.Dest: iCommand;
 begin
-  Result := TRepositoryDest.New(FParent, FPedido);
+  Result := TRepositoryDest.New(FParent);
 end;
 
 destructor TFactoryCommand.Destroy;
@@ -92,12 +91,12 @@ end;
 
 function TFactoryCommand.Duplicata: iCommand;
 begin
-  Result := TRepositoryDuplicata.New(FParent, FPedido);
+  Result := TRepositoryDuplicata.New(FParent);
 end;
 
 function TFactoryCommand.Emitente: iCommand;
 begin
-  Result := TRepositoryEmitente.New(FParent, FPedido);
+  Result := TRepositoryEmitente.New(FParent);
 end;
 
 function TFactoryCommand.Exporta: iCommand;
@@ -107,12 +106,12 @@ end;
 
 function TFactoryCommand.GerarNFe(var Retorno: TResponseNFe): iCommand;
 begin
-  Result := TRespositoryGerarNFe.New(FParent, FRetorno);
+  Result := TRespositoryGerarNFe.New(FParent);
 end;
 
 function TFactoryCommand.Ide: iCommand;
 begin
-  Result := TRepositoryIde.New(FParent, FPedido);
+  Result := TRepositoryIde.New(FParent);
 end;
 
 function TFactoryCommand.InfAdic: iCommand;
@@ -130,9 +129,9 @@ begin
 
 end;
 
-class function TFactoryCommand.New (Parent: iActionNFe; Pedido: TPedido) : iFactoryCommand;
+class function TFactoryCommand.New (Parent: iActionNFe) : iFactoryCommand;
 begin
-  Result := Self.Create(Parent, Pedido);
+  Result := Self.Create(Parent);
 end;
 
 function TFactoryCommand.ObsFisco: iCommand;
@@ -142,7 +141,7 @@ end;
 
 function TFactoryCommand.Pagamento: iCommand;
 begin
-  Result := TRepositoryPagamento.New(FParent, FPedido);
+  Result := TRepositoryPagamento.New(FParent);
 end;
 
 function TFactoryCommand.ProdImpCOFINS: iCommand;
@@ -187,7 +186,7 @@ end;
 
 function TFactoryCommand.Produto: iCommand;
 begin
-  Result := TRepositoryProd.New(FParent, FPedido);
+  Result := TRepositoryProd.New(FParent);
 end;
 
 function TFactoryCommand.ProdVeiculo: iCommand;
@@ -197,7 +196,7 @@ end;
 
 function TFactoryCommand.Total: iCommand;
 begin
-  Result := TRepositoryTotal.New(FParent, FPedido);
+  Result := TRepositoryTotal.New(FParent);
 end;
 
 function TFactoryCommand.Transportadora: iCommand;

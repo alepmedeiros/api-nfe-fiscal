@@ -5,13 +5,15 @@ interface
 uses
   ACBrNFe.Component.interfaces,
   ACBrNFe.entity.pedidos,
-  ACBrNFe.entity.ResponseNFe;
+  ACBrNFe.entity.ResponseNFe,
+  ACBrNFe.entity.interfaces;
 
 type
 
   iActionNFe = interface
     function Clear: iActionNFe;
     function Component: iComponentFactory;
+    function Entity: iEntityFactory;
     function Gerar: iActionNFe; overload;
     function Gerar(Pedido: TPedido): TResponseNFe; overload;
   end;

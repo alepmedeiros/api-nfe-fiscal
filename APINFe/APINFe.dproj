@@ -245,6 +245,10 @@
         <DCCReference Include="src\component\impl\ACBrNFe.Component.impl.AWSS3.pas"/>
         <DCCReference Include="src\usecase\impl\ACBrNFe.usecase.ActionNFe.pas"/>
         <DCCReference Include="src\usecase\impl\repository\ACBrNFe.usecase.RepositoryFactory.pas"/>
+        <DCCReference Include="src\entity\ACBrNFe.entity.interfaces.pas">
+            <Form>/  ACBrNFe.entity.impl.entityfactory in &apos;src\entity\impl\ACBrNFe.entity.impl.entityfactory.pas&apos;;</Form>
+        </DCCReference>
+        <DCCReference Include="src\entity\impl\ACBrNFe.entity.impl.entityfactory.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

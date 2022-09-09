@@ -12,20 +12,18 @@ type
   TRepositoryEmitente = class(TInterfacedObject, iCommand)
   private
     FConf: iActionNFe;
-    FPedido: TPedido;
   public
-    constructor Create(Conf: iActionNFe; Pedido: TPedido);
+    constructor Create(Conf: iActionNFe);
     destructor Destroy; override;
-    class function New(Conf: iActionNFe; Pedido: TPedido): iCommand;
+    class function New(Conf: iActionNFe): iCommand;
     function Execute: iCommand;
   end;
 
 implementation
 
-constructor TRepositoryEmitente.Create(Conf: iActionNFe; Pedido: TPedido);
+constructor TRepositoryEmitente.Create(Conf: iActionNFe);
 begin
   FConf := Conf;
-  FPedido := Pedido;
 end;
 
 destructor TRepositoryEmitente.Destroy;
@@ -59,9 +57,9 @@ begin
   FConf.Component.ACBr.NotaFiscal.NFe.Emit.IM := '2648800';
 end;
 
-class function TRepositoryEmitente.New(Conf: iActionNFe; Pedido: TPedido): iCommand;
+class function TRepositoryEmitente.New(Conf: iActionNFe): iCommand;
 begin
-  Result := Self.Create(Conf, Pedido);
+  Result := Self.Create(Conf);
 end;
 
 end.

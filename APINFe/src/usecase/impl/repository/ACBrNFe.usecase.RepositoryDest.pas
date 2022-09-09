@@ -11,20 +11,18 @@ type
   TRepositoryDest = class(TInterfacedObject, iCommand)
   private
     FConf: iActionNFe;
-    FPedido: TPedido;
   public
-    constructor Create(Conf: iActionNFe; Pedido: TPedido);
+    constructor Create(Conf: iActionNFe);
     destructor Destroy; override;
-    class function New(Conf: iActionNFe; Pedido: TPedido): iCommand;
+    class function New(Conf: iActionNFe): iCommand;
     function Execute: iCommand;
   end;
 
 implementation
 
-constructor TRepositoryDest.Create(Conf: iActionNFe; Pedido: TPedido);
+constructor TRepositoryDest.Create(Conf: iActionNFe);
 begin
   FConf := Conf;
-  FPedido := Pedido;
 end;
 
 destructor TRepositoryDest.Destroy;
@@ -38,35 +36,35 @@ begin
   Result := Self;
 
   FConf.Component.ACBr.NotaFiscal.NFe.Dest.CNPJCPF :=
-    FPedido.Destinatario.CNPJCPF;
-  FConf.Component.ACBr.NotaFiscal.NFe.Dest.IE := FPedido.Destinatario.IE;
-  FConf.Component.ACBr.NotaFiscal.NFe.Dest.ISUF := FPedido.Destinatario.ISUF;
-  FConf.Component.ACBr.NotaFiscal.NFe.Dest.xNome := FPedido.Destinatario.Nome;
+    FConf.Entity.Pedido.Destinatario.CNPJCPF;
+  FConf.Component.ACBr.NotaFiscal.NFe.Dest.IE := FConf.Entity.Pedido.Destinatario.IE;
+  FConf.Component.ACBr.NotaFiscal.NFe.Dest.ISUF := FConf.Entity.Pedido.Destinatario.ISUF;
+  FConf.Component.ACBr.NotaFiscal.NFe.Dest.xNome := FConf.Entity.Pedido.Destinatario.Nome;
   FConf.Component.ACBr.NotaFiscal.NFe.Dest.EnderDest.fone :=
-    FPedido.Destinatario.Endereco.fone;
+    FConf.Entity.Pedido.Destinatario.Endereco.fone;
   FConf.Component.ACBr.NotaFiscal.NFe.Dest.EnderDest.CEP :=
-    FPedido.Destinatario.Endereco.CEP;
+    FConf.Entity.Pedido.Destinatario.Endereco.CEP;
   FConf.Component.ACBr.NotaFiscal.NFe.Dest.EnderDest.xLgr :=
-    FPedido.Destinatario.Endereco.Logradouro;
+    FConf.Entity.Pedido.Destinatario.Endereco.Logradouro;
   FConf.Component.ACBr.NotaFiscal.NFe.Dest.EnderDest.nro :=
-    FPedido.Destinatario.Endereco.Numero;
+    FConf.Entity.Pedido.Destinatario.Endereco.Numero;
   FConf.Component.ACBr.NotaFiscal.NFe.Dest.EnderDest.xCpl :=
-    FPedido.Destinatario.Endereco.Complemento;
+    FConf.Entity.Pedido.Destinatario.Endereco.Complemento;
   FConf.Component.ACBr.NotaFiscal.NFe.Dest.EnderDest.xBairro :=
-    FPedido.Destinatario.Endereco.Bairro;
-  FConf.Component.ACBr.NotaFiscal.NFe.Dest.EnderDest.cMun := TAcbrUtils.UFtoCUF(FPedido.Destinatario.Endereco.Cidade);
+    FConf.Entity.Pedido.Destinatario.Endereco.Bairro;
+  FConf.Component.ACBr.NotaFiscal.NFe.Dest.EnderDest.cMun := TAcbrUtils.UFtoCUF(FConf.Entity.Pedido.Destinatario.Endereco.Cidade);
   FConf.Component.ACBr.NotaFiscal.NFe.Dest.EnderDest.xMun :=
-    FPedido.Destinatario.Endereco.Cidade;
+    FConf.Entity.Pedido.Destinatario.Endereco.Cidade;
   FConf.Component.ACBr.NotaFiscal.NFe.Dest.EnderDest.UF :=
-    FPedido.Destinatario.Endereco.Estado;
+    FConf.Entity.Pedido.Destinatario.Endereco.Estado;
   FConf.Component.ACBr.NotaFiscal.NFe.Dest.EnderDest.cPais := 1058;
   FConf.Component.ACBr.NotaFiscal.NFe.Dest.EnderDest.xPais :=
-    FPedido.Destinatario.Endereco.Pais;
+    FConf.Entity.Pedido.Destinatario.Endereco.Pais;
 end;
 
-class function TRepositoryDest.New(Conf: iActionNFe; Pedido: TPedido): iCommand;
+class function TRepositoryDest.New(Conf: iActionNFe): iCommand;
 begin
-  Result := Self.Create(Conf, Pedido);
+  Result := Self.Create(Conf);
 end;
 
 end.
