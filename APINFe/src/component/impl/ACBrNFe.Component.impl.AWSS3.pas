@@ -19,10 +19,10 @@ type
 implementation
 
 const
-  AccountKey = 'FjI7Ytui0SAphmcT5SJmprLXGKbISolCZCV1DGP5';
-  AccountName = 'AKIAX6GPXNIQ53ZMHVX2';
+  AccountKey = '';
+  AccountName = '';
   StorageEndPoint = 's3.sa-east-1.amazonaws.com';
-  Bucket = 'testeacbrnfe';
+  Bucket = '';
 
 constructor TAWSS3.Create;
 begin
