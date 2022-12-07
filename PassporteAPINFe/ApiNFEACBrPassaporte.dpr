@@ -59,7 +59,19 @@ uses
   passaporteacbrapinfe.usecase.impl.Fatura in 'src\usecase\impl\passaporteacbrapinfe.usecase.impl.Fatura.pas',
   passaporteacbrapinfe.usecase.impl.duplicata in 'src\usecase\impl\passaporteacbrapinfe.usecase.impl.duplicata.pas',
   passaporteacbrapinfe.usecase.impl.Pagamento in 'src\usecase\impl\passaporteacbrapinfe.usecase.impl.Pagamento.pas',
-  passaporteacbrapinfe.usecase.impl.gerarnfe in 'src\usecase\impl\passaporteacbrapinfe.usecase.impl.gerarnfe.pas';
+  passaporteacbrapinfe.usecase.impl.gerarnfe in 'src\usecase\impl\passaporteacbrapinfe.usecase.impl.gerarnfe.pas',
+  passaporteacbrapinfe.adapter.interfaces in 'src\adpter\passaporteacbrapinfe.adapter.interfaces.pas',
+  passaporteacbrapinfe.adapter.impl.elementos in 'src\adpter\impl\passaporteacbrapinfe.adapter.impl.elementos.pas',
+  passaporteacbrapinfe.adapter.impl.CalculosICMS00 in 'src\adpter\impl\passaporteacbrapinfe.adapter.impl.CalculosICMS00.pas',
+  passaporteacbrapinfe.adapter.impl.FactotyCalculos in 'src\adpter\impl\passaporteacbrapinfe.adapter.impl.FactotyCalculos.pas',
+  passaporteacbrapinfe.adapter.impl.CalculosICMS20 in 'src\adpter\impl\passaporteacbrapinfe.adapter.impl.CalculosICMS20.pas',
+  passaporteacbrapinfe.usecase.acoesnfe in 'src\usecase\passaporteacbrapinfe.usecase.acoesnfe.pas',
+  passaporteacbrapinfe.usecase.impl.facotoryacoes in 'src\usecase\impl\passaporteacbrapinfe.usecase.impl.facotoryacoes.pas',
+  ACBrNFe.entity.interfaces in 'src\entity\ACBrNFe.entity.interfaces.pas',
+  ACBrNFe.entity.impl.entity in 'src\entity\impl\ACBrNFe.entity.impl.entity.pas',
+  passaporteacbrapinfe.usecase.impl.regrasfiscais.helpers in 'src\usecase\impl\passaporteacbrapinfe.usecase.impl.regrasfiscais.helpers.pas',
+  passaporteacbrapinfe.usecase.impl.regrasicmssimples in 'src\usecase\impl\passaporteacbrapinfe.usecase.impl.regrasicmssimples.pas',
+  passaporteacbrapinfe.usecase.impl.regrasicmsnormal in 'src\usecase\impl\passaporteacbrapinfe.usecase.impl.regrasicmsnormal.pas';
 
 procedure IniciarHorse;
 begin

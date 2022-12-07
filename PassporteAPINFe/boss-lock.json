@@ -34,6 +34,14 @@
 			"failed": false,
 			"changed": false
 		},
+		"https://github.com/alepmedeiros/delphiscal": {
+			"name": "delphiscal",
+			"version": "master",
+			"hash": "840dc450a233dc0b882caa01f8cd93cc",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		},
 		"https://github.com/gabrielbaltazar/gbjson": {
 			"name": "gbjson",
 			"version": "1.0.10",

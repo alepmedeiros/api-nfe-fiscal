@@ -28,9 +28,16 @@ type
     FCEST: String;
     FInfAdProd: String;
     FCodBarra: String;
-    FVeiculo: TVeiculo;
-    FCombustivel: TCombustivel;
-    FImposto: TProdImposto;
+    FCST: String;
+    FOrig: String;
+    FValorDespesa: Currency;
+    FValorIPI: Currency;
+    FAliquotaIPI: Currency;
+    FAliquotaICMS: Currency;
+    FPercentualReducao: Currency;
+//    FVeiculo: TVeiculo;
+//    FCombustivel: TCombustivel;
+//    FImposto: TProdImposto;
   public
     constructor Create;
     destructor Destroy;
@@ -49,12 +56,19 @@ type
     property ValorFrete: Currency read FValorFrete write FValorFrete;
     property ValorSeguro: Currency read FValorSeguro write FValorSeguro;
     property ValorDesconto: Currency read FValorDesconto write FValorDesconto;
+    property ValorDespesa: Currency read FValorDespesa write FValorDespesa;
+    property ValorIPI: Currency read FValorIPI write FValorIPI;
+    property AliquotaIPI: Currency read FAliquotaIPI write FAliquotaIPI;
+    property AliquotaICMS: Currency read FAliquotaICMS write FAliquotaICMS;
+    property PercentualReducao: Currency read FPercentualReducao write FPercentualReducao;
     property CEST: String read FCEST write FCEST;
     property InfAdProd: String read FInfAdProd write FInfAdProd;
     property CodBarra: String read FCodBarra write FCodBarra;
+    property CST: String read FCST write FCST;
+    property Orig: String read FOrig write FOrig;
 //    property Veiculo: TVeiculo read FVeiculo write FVeiculo;
 //    property Combustivel: TCombustivel read FCombustivel write FCombustivel;
-    property Imposto: TProdImposto read FImposto write FImposto;
+//    property Imposto: TProdImposto read FImposto write FImposto;
   end;
 
 implementation
@@ -63,12 +77,12 @@ implementation
 
 constructor TProduto.Create;
 begin
-  FImposto := TProdImposto.Create;
+//  FImposto := TProdImposto.Create;
 end;
 
 destructor TProduto.Destroy;
 begin
-  FImposto.DisposeOf;
+//  FImposto.DisposeOf;
 end;
 
 end.

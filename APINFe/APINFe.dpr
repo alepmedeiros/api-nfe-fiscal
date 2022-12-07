@@ -82,7 +82,7 @@ uses
   ACBrNFe.Component.impl.AWSS3 in 'src\component\impl\ACBrNFe.Component.impl.AWSS3.pas',
   ACBrNFe.usecase.ActionNFe in 'src\usecase\impl\ACBrNFe.usecase.ActionNFe.pas',
   ACBrNFe.usecase.RepositoryFactory in 'src\usecase\impl\repository\ACBrNFe.usecase.RepositoryFactory.pas',
-  ACBrNFe.entity.interfaces in 'src\entity\ACBrNFe.entity.interfaces.pas',
+  ACBrNFe.entity.interfaces in 'src\entity\ACBrNFe.entity.interfaces.pas' {/  ACBrNFe.entity.impl.entityfactory in 'src\entity\impl\ACBrNFe.entity.impl.entityfactory.pas';},
   ACBrNFe.entity.impl.entityfactory in 'src\entity\impl\ACBrNFe.entity.impl.entityfactory.pas';
 
 procedure IniciaHorse;

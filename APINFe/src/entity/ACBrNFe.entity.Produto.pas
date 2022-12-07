@@ -28,8 +28,8 @@ type
     FCEST: String;
     FInfAdProd: String;
     FCodBarra: String;
-    FVeiculo: TVeiculo;
-    FCombustivel: TCombustivel;
+//    FVeiculo: TVeiculo;
+//    FCombustivel: TCombustivel;
     FImposto: TProdImposto;
   public
     constructor Create;
@@ -63,12 +63,12 @@ implementation
 
 constructor TProduto.Create;
 begin
-  FImposto := TProdImposto.Create;
+//  FImposto := TProdImposto.Create;
 end;
 
 destructor TProduto.Destroy;
 begin
-  FImposto.DisposeOf;
+//  FImposto.DisposeOf;
 end;
 
 end.

@@ -8,18 +8,19 @@ uses
 type
   TIde = class(TInterfacedObject, iCommand)
     private
+      FAcoes: iAcoesNfe;
     public
-      constructor Create;
+      constructor Create(Acoes: iAcoesNfe);
       destructor Destroy; override;
-      class function New : iCommand;
+      class function New(Acoes: iAcoesNfe) : iCommand;
       function Execute: iCommand;
   end;
 
 implementation
 
-constructor TIde.Create;
+constructor TIde.Create(Acoes: iAcoesNfe);
 begin
-
+  FAcoes:= Acoes;
 end;
 
 destructor TIde.Destroy;
@@ -33,9 +34,9 @@ begin
   Result := Self;
 end;
 
-class function TIde.New : iCommand;
+class function TIde.New (Acoes: iAcoesNfe) : iCommand;
 begin
-  Result := Self.Create;
+  Result := Self.Create(Acoes);
 end;
 
 end.
