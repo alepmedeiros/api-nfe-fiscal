@@ -29,7 +29,7 @@
 		"https://github.com/academiadocodigo/aws4d": {
 			"name": "aws4d",
 			"version": "1.0.7",
-			"hash": "12e19c045cd2dc38cc483e2c3cd7c47b",
+			"hash": "94f74ed4cf8a708d0ece4ebee878d18e",
 			"artifacts": {},
 			"failed": false,
 			"changed": false
@@ -46,6 +46,14 @@
 			"name": "gbswagger",
 			"version": "3.0.3",
 			"hash": "a196098d0c5460808f2cf278a0c0b4e5",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		},
+		"https://github.com/sacfiscal/delphiscal": {
+			"name": "delphiscal",
+			"version": "master",
+			"hash": "840dc450a233dc0b882caa01f8cd93cc",
 			"artifacts": {},
 			"failed": false,
 			"changed": false

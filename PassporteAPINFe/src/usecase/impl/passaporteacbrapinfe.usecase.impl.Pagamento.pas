@@ -8,18 +8,19 @@ uses
 type
   TPagamento = class(TInterfacedObject, iCommand)
     private
+      FAcoes: iAcoesNfe;
     public
-      constructor Create;
+      constructor Create(Acoes: iAcoesNfe);
       destructor Destroy; override;
-      class function New : iCommand;
+      class function New(Acoes: iAcoesNfe) : iCommand;
       function Execute: iCommand;
   end;
 
 implementation
 
-constructor TPagamento.Create;
+constructor TPagamento.Create(Acoes: iAcoesNfe);
 begin
-
+  FAcoes := Acoes;
 end;
 
 destructor TPagamento.Destroy;
@@ -33,9 +34,9 @@ begin
   Result := Self;
 end;
 
-class function TPagamento.New : iCommand;
+class function TPagamento.New (Acoes: iAcoesNfe) : iCommand;
 begin
-  Result := Self.Create;
+  Result := Self.Create(Acoes);
 end;
 
 end.

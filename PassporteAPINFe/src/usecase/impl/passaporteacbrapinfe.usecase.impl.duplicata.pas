@@ -8,18 +8,19 @@ uses
 type
   TDuplicata = class(TInterfacedObject, iCommand)
     private
+      FAcoes: iAcoesNfe;
     public
-      constructor Create;
+      constructor Create(Acoes: iAcoesNfe);
       destructor Destroy; override;
-      class function New : iCommand;
+      class function New(Acoes: iAcoesNfe) : iCommand;
       function Execute: iCommand;
   end;
 
 implementation
 
-constructor TDuplicata.Create;
+constructor TDuplicata.Create(Acoes: iAcoesNfe);
 begin
-
+  FAcoes:= Acoes;
 end;
 
 destructor TDuplicata.Destroy;
@@ -33,9 +34,9 @@ begin
   Result := Self;
 end;
 
-class function TDuplicata.New : iCommand;
+class function TDuplicata.New (Acoes: iAcoesNfe) : iCommand;
 begin
-  Result := Self.Create;
+  Result := Self.Create(Acoes);
 end;
 
 end.

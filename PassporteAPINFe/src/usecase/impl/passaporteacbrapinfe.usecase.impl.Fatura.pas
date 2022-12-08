@@ -8,18 +8,19 @@ uses
 type
   TFatura = class(TInterfacedObject, iCommand)
     private
+      FAcoes: iAcoesNfe;
     public
-      constructor Create;
+      constructor Create(Acoes: iAcoesNfe);
       destructor Destroy; override;
-      class function New : iCommand;
+      class function New(Acoes: iAcoesNfe) : iCommand;
       function Execute: iCommand;
   end;
 
 implementation
 
-constructor TFatura.Create;
+constructor TFatura.Create(Acoes: iAcoesNfe);
 begin
-
+  FAcoes := Acoes;
 end;
 
 destructor TFatura.Destroy;
@@ -33,9 +34,9 @@ begin
   Result := Self;
 end;
 
-class function TFatura.New : iCommand;
+class function TFatura.New (Acoes: iAcoesNfe) : iCommand;
 begin
-  Result := Self.Create;
+  Result := Self.Create(Acoes);
 end;
 
 end.

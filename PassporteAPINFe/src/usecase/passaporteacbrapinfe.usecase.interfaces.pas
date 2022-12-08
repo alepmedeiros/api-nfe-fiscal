@@ -4,15 +4,17 @@ interface
 
 uses
   passaporteacbrapinfe.component.interfaces,
-  pcnNFe,
-  ACBrNFe.entity.ResponseNFe;
+  ACBrNFe.entity.ResponseNFe,
+  ACBrNFe.entity.pedidos,
+  ACBrNFe.entity.interfaces,
+  ACBrNFe.entity.Produto;
 
 type
   iAcoesNfe = interface
     function Clear: iAcoesNfe;
     function component: iComponentFactory;
-    function Gerar: iAcoesNfe; overload;
-    function Gerar(Value: TNfe): TResponseNFe; overload;
+    function entity: iEntity;
+    function Gerar(Nfe: TNfe): TResponseNFe;
   end;
 
   iCommand = interface
@@ -35,6 +37,20 @@ type
     function Duplicata: iCommand;
     function Pagamento: iCommand;
     function GerarNFe: iCommand;
+  end;
+
+  iRegras = interface
+    function ImpostoICMS(Value: TProduto): iRegras;
+    function Visit(Value: iAcoesNfe): iRegras;
+  end;
+
+  iRegrasImposto = interface
+    function CalculoImpostos: iRegrasImposto;
+    function Visit(Value: iAcoesNfe): iRegrasImposto;
+  end;
+
+  iVisitable = interface
+    function Accept(Value: iRegras): iRegras;
   end;
 
 implementation

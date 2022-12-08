@@ -19,7 +19,7 @@ uses
   ACBrDFeSSL,
   blcksock,
   pcnAuxiliar,
-//  ActiveX,
+  ActiveX,
   ACBrDFeUtil,
   pcnNfe,
   horseacbrrad.model.pedido,
@@ -40,10 +40,10 @@ type
 implementation
 
 const
-  AccountKey = '';
-  AccountName = '2';
+  AccountKey = '7dYd2e2hyJ8SKqc8/d+td5PUNQJ8Dz8kfc6E+7Sh';
+  AccountName = 'AKIAX6GPXNIQR72V2NMM';
   StorageEndPoint = 's3.sa-east-1.amazonaws.com';
-  Bucket = '';
+  Bucket = 'acbrnfepdf';
 
 {%CLASSGROUP 'System.Classes.TPersistent'}
 {$R *.dfm}
@@ -58,7 +58,7 @@ var
   lPathSchemas: String;
   lPathTmp: String;
 begin
-  // CoInitialize(nil);
+   CoInitialize(nil);
   // caminho das pastas gerais
   lPathApp := IncludeTrailingPathDelimiter(ExtractFilePath(ParamStr(0)));
 

@@ -11,6 +11,7 @@
 		"github.com/hashload/jhonson": "^1.1.4",
 		"https://github.com/academiadocodigo/aws4d": "^1.0.7",
 		"https://github.com/gabrielbaltazar/gbjson": "^1.0.10",
-		"https://github.com/gabrielbaltazar/gbswagger": "^3.0.3"
+		"https://github.com/gabrielbaltazar/gbswagger": "^3.0.3",
+		"https://github.com/sacfiscal/delphiscal": ">0.0.0"
 	}
 }

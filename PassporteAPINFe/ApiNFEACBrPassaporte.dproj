@@ -79,7 +79,7 @@
         <DCC_K>false</DCC_K>
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;$(DCC_Namespace)</DCC_Namespace>
         <SanitizedProjectName>ApiNFEACBrPassaporte</SanitizedProjectName>
-        <DCC_UnitSearchPath>modules\.dcp;modules\.dcu;modules;modules\aws4d\src;modules\gbjson\Source;modules\gbswagger\Source\Core;modules\gbswagger\Source\Datasnap;modules\gbswagger\Source\Horse;modules\gbswagger\Source\Validator;modules\horse\src;modules\horse-cors\src;modules\jhonson\src;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+        <DCC_UnitSearchPath>modules\.dcp;modules\.dcu;modules;modules\aws4d\src;modules\delphiscal\samples\delphi\src;modules\delphiscal\src;modules\delphiscal\tests\src;modules\gbjson\Source;modules\gbswagger\Source\Core;modules\gbswagger\Source\Datasnap;modules\gbswagger\Source\Horse;modules\gbswagger\Source\Validator;modules\horse\src;modules\horse-cors\src;modules\jhonson\src;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Android)'!=''">
         <DCC_UsePackage>DBXSqliteDriver;tethering;FireDACDBXDriver;RESTBackendComponents;bindengine;CloudService;DataSnapClient;bindcompdbx;IndyIPServer;IndySystem;fmxFireDAC;FMXTee;soaprtl;DbxCommonDriver;xmlrtl;DataSnapNativeClient;soapmidas;rtl;DbxClientDriver;IndyIPClient;DataSnapProviderClient;RESTComponents;DBXInterBaseDriver;emsclientfiredac;DataSnapFireDAC;bindcompfmx;FmxTeeUI;FireDACIBDriver;fmx;dbexpress;IndyCore;dsnap;DataSnapCommon;emsclient;FireDACCommon;soapserver;FireDACCommonDriver;inet;IndyIPCommon;FireDAC;FireDACSqliteDriver;ibmonitor;ibxpress;ibxbindings;FireDACDSDriver;CustomIPTransport;bindcomp;GridSystem;dbxcds;dsnapxml;dbrtl;IndyProtocols;$(DCC_UsePackage)</DCC_UsePackage>
@@ -219,6 +219,18 @@
         <DCCReference Include="src\usecase\impl\passaporteacbrapinfe.usecase.impl.duplicata.pas"/>
         <DCCReference Include="src\usecase\impl\passaporteacbrapinfe.usecase.impl.Pagamento.pas"/>
         <DCCReference Include="src\usecase\impl\passaporteacbrapinfe.usecase.impl.gerarnfe.pas"/>
+        <DCCReference Include="src\adpter\passaporteacbrapinfe.adapter.interfaces.pas"/>
+        <DCCReference Include="src\adpter\impl\passaporteacbrapinfe.adapter.impl.elementos.pas"/>
+        <DCCReference Include="src\adpter\impl\passaporteacbrapinfe.adapter.impl.CalculosICMS00.pas"/>
+        <DCCReference Include="src\adpter\impl\passaporteacbrapinfe.adapter.impl.FactotyCalculos.pas"/>
+        <DCCReference Include="src\adpter\impl\passaporteacbrapinfe.adapter.impl.CalculosICMS20.pas"/>
+        <DCCReference Include="src\usecase\passaporteacbrapinfe.usecase.acoesnfe.pas"/>
+        <DCCReference Include="src\usecase\impl\passaporteacbrapinfe.usecase.impl.facotoryacoes.pas"/>
+        <DCCReference Include="src\entity\ACBrNFe.entity.interfaces.pas"/>
+        <DCCReference Include="src\entity\impl\ACBrNFe.entity.impl.entity.pas"/>
+        <DCCReference Include="src\usecase\impl\passaporteacbrapinfe.usecase.impl.regrasfiscais.helpers.pas"/>
+        <DCCReference Include="src\usecase\impl\passaporteacbrapinfe.usecase.impl.regrasicmssimples.pas"/>
+        <DCCReference Include="src\usecase\impl\passaporteacbrapinfe.usecase.impl.regrasicmsnormal.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

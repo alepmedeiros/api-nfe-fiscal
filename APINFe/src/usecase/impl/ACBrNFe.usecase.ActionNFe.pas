@@ -71,7 +71,8 @@ begin
     .Add(TFactoryCommand.New(Self).CobFat)
     .Add(TFactoryCommand.New(Self).Duplicata)
     .Add(TFactoryCommand.New(Self).Pagamento)
-    .Add(TFactoryCommand.New(Self).GerarNFe(Result)).Execute;
+    .Add(TFactoryCommand.New(Self).GerarNFe(Result))
+  .Execute;
   Result := FEntity.ResponseNFE;
 end;
 
