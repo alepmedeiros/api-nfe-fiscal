@@ -22,8 +22,8 @@ type
 implementation
 
 const
-  AccountKey = '7dYd2e2hyJ8SKqc8/d+td5PUNQJ8Dz8kfc6E+7Sh';
-  AccountName = 'AKIAX6GPXNIQR72V2NMM';
+  AccountKey = '';
+  AccountName = '';
   StorageEndPoint = 's3.sa-east-1.amazonaws.com';
   Bucket = 'acbrnfepdf';
 
