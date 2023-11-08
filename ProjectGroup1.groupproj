@@ -3,9 +3,6 @@
         <ProjectGuid>{01EA8C42-08B1-4BC4-B39F-26261C077A0A}</ProjectGuid>
     </PropertyGroup>
     <ItemGroup>
-        <Projects Include="APIACBrNFe\test\APIACBrNFeTest.dproj">
-            <Dependencies/>
-        </Projects>
         <Projects Include="horseacbrRad\horseacbrRad.dproj">
             <Dependencies/>
         </Projects>
@@ -15,16 +12,13 @@
         <Projects Include="APINFe\APINFe.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="APIACBr_NFe\APIACBr_NFe.dproj">
+            <Dependencies/>
+        </Projects>
         <Projects Include="..\ACBr\Exemplos\ACBrDFe\ACBrNFe\Delphi\ACBrNFe_Exemplo.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="C:\Users\Criacao\Documents\outrosNFEACBR\Boas Praticas para Arquivos Fiscais - Part3\WorkshopNfe.dproj">
-            <Dependencies/>
-        </Projects>
-        <Projects Include="APINFe\modules\delphiscal\samples\delphi\Delphiscal.dproj">
-            <Dependencies/>
-        </Projects>
-        <Projects Include="C:\lixo\PassporteAPINFe\ApiNFEACBrPassaporte.dproj">
+        <Projects Include="APIACBr_NFe\modules\gbswagger\Samples\Horse\PetStore\HorsePetStore.dproj">
             <Dependencies/>
         </Projects>
     </ItemGroup>
@@ -35,15 +29,6 @@
             <Default.Personality/>
         </BorlandProject>
     </ProjectExtensions>
-    <Target Name="APIACBrNFeTest">
-        <MSBuild Projects="APIACBrNFe\test\APIACBrNFeTest.dproj"/>
-    </Target>
-    <Target Name="APIACBrNFeTest:Clean">
-        <MSBuild Projects="APIACBrNFe\test\APIACBrNFeTest.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="APIACBrNFeTest:Make">
-        <MSBuild Projects="APIACBrNFe\test\APIACBrNFeTest.dproj" Targets="Make"/>
-    </Target>
     <Target Name="horseacbrRad">
         <MSBuild Projects="horseacbrRad\horseacbrRad.dproj"/>
     </Target>
@@ -71,6 +56,15 @@
     <Target Name="APINFe:Make">
         <MSBuild Projects="APINFe\APINFe.dproj" Targets="Make"/>
     </Target>
+    <Target Name="APIACBr_NFe">
+        <MSBuild Projects="APIACBr_NFe\APIACBr_NFe.dproj"/>
+    </Target>
+    <Target Name="APIACBr_NFe:Clean">
+        <MSBuild Projects="APIACBr_NFe\APIACBr_NFe.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="APIACBr_NFe:Make">
+        <MSBuild Projects="APIACBr_NFe\APIACBr_NFe.dproj" Targets="Make"/>
+    </Target>
     <Target Name="ACBrNFe_Exemplo">
         <MSBuild Projects="..\ACBr\Exemplos\ACBrDFe\ACBrNFe\Delphi\ACBrNFe_Exemplo.dproj"/>
     </Target>
@@ -80,41 +74,23 @@
     <Target Name="ACBrNFe_Exemplo:Make">
         <MSBuild Projects="..\ACBr\Exemplos\ACBrDFe\ACBrNFe\Delphi\ACBrNFe_Exemplo.dproj" Targets="Make"/>
     </Target>
-    <Target Name="WorkshopNfe">
-        <MSBuild Projects="C:\Users\Criacao\Documents\outrosNFEACBR\Boas Praticas para Arquivos Fiscais - Part3\WorkshopNfe.dproj"/>
+    <Target Name="HorsePetStore">
+        <MSBuild Projects="APIACBr_NFe\modules\gbswagger\Samples\Horse\PetStore\HorsePetStore.dproj"/>
     </Target>
-    <Target Name="WorkshopNfe:Clean">
-        <MSBuild Projects="C:\Users\Criacao\Documents\outrosNFEACBR\Boas Praticas para Arquivos Fiscais - Part3\WorkshopNfe.dproj" Targets="Clean"/>
+    <Target Name="HorsePetStore:Clean">
+        <MSBuild Projects="APIACBr_NFe\modules\gbswagger\Samples\Horse\PetStore\HorsePetStore.dproj" Targets="Clean"/>
     </Target>
-    <Target Name="WorkshopNfe:Make">
-        <MSBuild Projects="C:\Users\Criacao\Documents\outrosNFEACBR\Boas Praticas para Arquivos Fiscais - Part3\WorkshopNfe.dproj" Targets="Make"/>
-    </Target>
-    <Target Name="Delphiscal">
-        <MSBuild Projects="APINFe\modules\delphiscal\samples\delphi\Delphiscal.dproj"/>
-    </Target>
-    <Target Name="Delphiscal:Clean">
-        <MSBuild Projects="APINFe\modules\delphiscal\samples\delphi\Delphiscal.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="Delphiscal:Make">
-        <MSBuild Projects="APINFe\modules\delphiscal\samples\delphi\Delphiscal.dproj" Targets="Make"/>
-    </Target>
-    <Target Name="ApiNFEACBrPassaporte">
-        <MSBuild Projects="C:\lixo\PassporteAPINFe\ApiNFEACBrPassaporte.dproj"/>
-    </Target>
-    <Target Name="ApiNFEACBrPassaporte:Clean">
-        <MSBuild Projects="C:\lixo\PassporteAPINFe\ApiNFEACBrPassaporte.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="ApiNFEACBrPassaporte:Make">
-        <MSBuild Projects="C:\lixo\PassporteAPINFe\ApiNFEACBrPassaporte.dproj" Targets="Make"/>
+    <Target Name="HorsePetStore:Make">
+        <MSBuild Projects="APIACBr_NFe\modules\gbswagger\Samples\Horse\PetStore\HorsePetStore.dproj" Targets="Make"/>
     </Target>
     <Target Name="Build">
-        <CallTarget Targets="APIACBrNFeTest;horseacbrRad;APIACBrNFe;APINFe;ACBrNFe_Exemplo;WorkshopNfe;Delphiscal;ApiNFEACBrPassaporte"/>
+        <CallTarget Targets="horseacbrRad;APIACBrNFe;APINFe;APIACBr_NFe;ACBrNFe_Exemplo;HorsePetStore"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="APIACBrNFeTest:Clean;horseacbrRad:Clean;APIACBrNFe:Clean;APINFe:Clean;ACBrNFe_Exemplo:Clean;WorkshopNfe:Clean;Delphiscal:Clean;ApiNFEACBrPassaporte:Clean"/>
+        <CallTarget Targets="horseacbrRad:Clean;APIACBrNFe:Clean;APINFe:Clean;APIACBr_NFe:Clean;ACBrNFe_Exemplo:Clean;HorsePetStore:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="APIACBrNFeTest:Make;horseacbrRad:Make;APIACBrNFe:Make;APINFe:Make;ACBrNFe_Exemplo:Make;WorkshopNfe:Make;Delphiscal:Make;ApiNFEACBrPassaporte:Make"/>
+        <CallTarget Targets="horseacbrRad:Make;APIACBrNFe:Make;APINFe:Make;APIACBr_NFe:Make;ACBrNFe_Exemplo:Make;HorsePetStore:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>

@@ -63,12 +63,12 @@ implementation
 
 constructor TProduto.Create;
 begin
-//  FImposto := TProdImposto.Create;
+  FImposto := TProdImposto.Create;
 end;
 
 destructor TProduto.Destroy;
 begin
-//  FImposto.DisposeOf;
+  FImposto.DisposeOf;
 end;
 
 end.

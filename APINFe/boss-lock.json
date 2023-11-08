@@ -29,7 +29,7 @@
 		"https://github.com/academiadocodigo/aws4d": {
 			"name": "aws4d",
 			"version": "1.0.7",
-			"hash": "94f74ed4cf8a708d0ece4ebee878d18e",
+			"hash": "12e19c045cd2dc38cc483e2c3cd7c47b",
 			"artifacts": {},
 			"failed": false,
 			"changed": false
@@ -52,8 +52,8 @@
 		},
 		"https://github.com/sacfiscal/delphiscal": {
 			"name": "delphiscal",
-			"version": "master",
-			"hash": "840dc450a233dc0b882caa01f8cd93cc",
+			"version": "1.0.2",
+			"hash": "038139509440ba494561bd33f08439fb",
 			"artifacts": {},
 			"failed": false,
 			"changed": false
