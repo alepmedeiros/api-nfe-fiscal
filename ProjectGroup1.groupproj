@@ -1,0 +1,96 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{01EA8C42-08B1-4BC4-B39F-26261C077A0A}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="horseacbrRad\horseacbrRad.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="APIACBrNFe\APIACBrNFe.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="APINFe\APINFe.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="APIACBr_NFe\APIACBr_NFe.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\ACBr\Exemplos\ACBrDFe\ACBrNFe\Delphi\ACBrNFe_Exemplo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="APIACBr_NFe\modules\gbswagger\Samples\Horse\PetStore\HorsePetStore.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="horseacbrRad">
+        <MSBuild Projects="horseacbrRad\horseacbrRad.dproj"/>
+    </Target>
+    <Target Name="horseacbrRad:Clean">
+        <MSBuild Projects="horseacbrRad\horseacbrRad.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="horseacbrRad:Make">
+        <MSBuild Projects="horseacbrRad\horseacbrRad.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="APIACBrNFe">
+        <MSBuild Projects="APIACBrNFe\APIACBrNFe.dproj"/>
+    </Target>
+    <Target Name="APIACBrNFe:Clean">
+        <MSBuild Projects="APIACBrNFe\APIACBrNFe.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="APIACBrNFe:Make">
+        <MSBuild Projects="APIACBrNFe\APIACBrNFe.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="APINFe">
+        <MSBuild Projects="APINFe\APINFe.dproj"/>
+    </Target>
+    <Target Name="APINFe:Clean">
+        <MSBuild Projects="APINFe\APINFe.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="APINFe:Make">
+        <MSBuild Projects="APINFe\APINFe.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="APIACBr_NFe">
+        <MSBuild Projects="APIACBr_NFe\APIACBr_NFe.dproj"/>
+    </Target>
+    <Target Name="APIACBr_NFe:Clean">
+        <MSBuild Projects="APIACBr_NFe\APIACBr_NFe.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="APIACBr_NFe:Make">
+        <MSBuild Projects="APIACBr_NFe\APIACBr_NFe.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ACBrNFe_Exemplo">
+        <MSBuild Projects="..\ACBr\Exemplos\ACBrDFe\ACBrNFe\Delphi\ACBrNFe_Exemplo.dproj"/>
+    </Target>
+    <Target Name="ACBrNFe_Exemplo:Clean">
+        <MSBuild Projects="..\ACBr\Exemplos\ACBrDFe\ACBrNFe\Delphi\ACBrNFe_Exemplo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ACBrNFe_Exemplo:Make">
+        <MSBuild Projects="..\ACBr\Exemplos\ACBrDFe\ACBrNFe\Delphi\ACBrNFe_Exemplo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="HorsePetStore">
+        <MSBuild Projects="APIACBr_NFe\modules\gbswagger\Samples\Horse\PetStore\HorsePetStore.dproj"/>
+    </Target>
+    <Target Name="HorsePetStore:Clean">
+        <MSBuild Projects="APIACBr_NFe\modules\gbswagger\Samples\Horse\PetStore\HorsePetStore.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="HorsePetStore:Make">
+        <MSBuild Projects="APIACBr_NFe\modules\gbswagger\Samples\Horse\PetStore\HorsePetStore.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="horseacbrRad;APIACBrNFe;APINFe;APIACBr_NFe;ACBrNFe_Exemplo;HorsePetStore"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="horseacbrRad:Clean;APIACBrNFe:Clean;APINFe:Clean;APIACBr_NFe:Clean;ACBrNFe_Exemplo:Clean;HorsePetStore:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="horseacbrRad:Make;APIACBrNFe:Make;APINFe:Make;APIACBr_NFe:Make;ACBrNFe_Exemplo:Make;HorsePetStore:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

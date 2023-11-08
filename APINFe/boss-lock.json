@@ -1,0 +1,62 @@
+{
+	"hash": "80c9aec0ce4d5f3371f75648f48dd338",
+	"updated": "2022-09-02T09:13:21.7321531-03:00",
+	"installedModules": {
+		"github.com/hashload/horse": {
+			"name": "horse",
+			"version": "3.0.2",
+			"hash": "929cb417c573af469c997a7e1fda5dbb",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		},
+		"github.com/hashload/horse-cors": {
+			"name": "horse-cors",
+			"version": "1.0.5",
+			"hash": "655dbd17159adb9d87d36f3aa56be5a5",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		},
+		"github.com/hashload/jhonson": {
+			"name": "jhonson",
+			"version": "1.1.4",
+			"hash": "7f48e0509b98505a12fa80ee39b53aea",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		},
+		"https://github.com/academiadocodigo/aws4d": {
+			"name": "aws4d",
+			"version": "1.0.7",
+			"hash": "12e19c045cd2dc38cc483e2c3cd7c47b",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		},
+		"https://github.com/gabrielbaltazar/gbjson": {
+			"name": "gbjson",
+			"version": "1.0.10",
+			"hash": "e3b3e50212b8d5417f63aad438550798",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		},
+		"https://github.com/gabrielbaltazar/gbswagger": {
+			"name": "gbswagger",
+			"version": "3.0.3",
+			"hash": "a196098d0c5460808f2cf278a0c0b4e5",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		},
+		"https://github.com/sacfiscal/delphiscal": {
+			"name": "delphiscal",
+			"version": "1.0.2",
+			"hash": "038139509440ba494561bd33f08439fb",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		}
+	}
+}
