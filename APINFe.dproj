@@ -64,7 +64,7 @@
         <DCC_K>false</DCC_K>
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;$(DCC_Namespace)</DCC_Namespace>
         <SanitizedProjectName>APINFe</SanitizedProjectName>
-        <DCC_UnitSearchPath>modules\.dcp;modules\.dcu;modules;modules\delphiscal\samples\delphi\src;modules\delphiscal\src;modules\delphiscal\tests\src;modules\gbjson\Source;modules\gbswagger\Source\Core;modules\gbswagger\Source\Datasnap;modules\gbswagger\Source\Horse;modules\gbswagger\Source\Validator;modules\horse\src;modules\horse-cors\src;modules\jhonson\src;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+        <DCC_UnitSearchPath>$(DCC_UnitSearchPath);modules\.dcp;modules\.dcu;modules;modules\gbjson\Source;modules\gbswagger\Source\Core;modules\gbswagger\Source\Datasnap;modules\gbswagger\Source\Horse;modules\gbswagger\Source\Validator;modules\horse\src;modules\horse-cors\src;modules\jhonson\src</DCC_UnitSearchPath>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Android)'!=''">
         <DCC_UsePackage>DBXSqliteDriver;tethering;FireDACDBXDriver;RESTBackendComponents;bindengine;CloudService;DataSnapClient;bindcompdbx;IndyIPServer;IndySystem;fmxFireDAC;FMXTee;soaprtl;DbxCommonDriver;xmlrtl;DataSnapNativeClient;soapmidas;rtl;DbxClientDriver;IndyIPClient;DataSnapProviderClient;RESTComponents;DBXInterBaseDriver;emsclientfiredac;DataSnapFireDAC;bindcompfmx;FmxTeeUI;FireDACIBDriver;fmx;dbexpress;IndyCore;dsnap;DataSnapCommon;emsclient;FireDACCommon;soapserver;FireDACCommonDriver;inet;IndyIPCommon;FireDAC;FireDACSqliteDriver;ibmonitor;ibxpress;ibxbindings;FireDACDSDriver;CustomIPTransport;bindcomp;GridSystem;dbxcds;dsnapxml;dbrtl;IndyProtocols;$(DCC_UsePackage)</DCC_UsePackage>
@@ -220,7 +220,7 @@
         <DCCReference Include="src\usecase\impl\ACBrNFe.usecase.ActionNFe.pas"/>
         <DCCReference Include="src\usecase\impl\repository\ACBrNFe.usecase.RepositoryFactory.pas"/>
         <DCCReference Include="src\entity\ACBrNFe.entity.interfaces.pas">
-            <Form>/  ACBrNFe.entity.impl.entityfactory in &apos;src\entity\impl\ACBrNFe.entity.impl.entityfactory.pas&apos;;</Form>
+            <Form>/  ACBrNFe.entity.impl.entityfactory in 'src\entity\impl\ACBrNFe.entity.impl.entityfactory.pas';</Form>
         </DCCReference>
         <DCCReference Include="src\entity\impl\ACBrNFe.entity.impl.entityfactory.pas"/>
         <BuildConfiguration Include="Base">
