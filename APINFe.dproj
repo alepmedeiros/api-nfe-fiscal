@@ -1,14 +1,14 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
-        <ProjectGuid>{45F3B5B6-E183-404D-82AF-BF846CC4525B}</ProjectGuid>
+        <ProjectGuid>{725C2194-5203-429D-8155-A9D299F0A5E9}</ProjectGuid>
         <ProjectVersion>19.5</ProjectVersion>
         <FrameworkType>None</FrameworkType>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Debug</Config>
-        <Platform Condition="'$(Platform)'==''">Linux64</Platform>
-        <TargetedPlatforms>129</TargetedPlatforms>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+        <TargetedPlatforms>1</TargetedPlatforms>
         <AppType>Console</AppType>
-        <MainSource>apinfefiscal.dpr</MainSource>
+        <MainSource>APINFe.dpr</MainSource>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
         <Base>true</Base>
@@ -63,11 +63,11 @@
         <DCC_F>false</DCC_F>
         <DCC_K>false</DCC_K>
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;$(DCC_Namespace)</DCC_Namespace>
-        <SanitizedProjectName>apinfefiscal</SanitizedProjectName>
+        <SanitizedProjectName>APINFe</SanitizedProjectName>
         <DCC_UnitSearchPath>modules\.dcp;modules\.dcu;modules;modules\delphiscal\samples\delphi\src;modules\delphiscal\src;modules\delphiscal\tests\src;modules\gbjson\Source;modules\gbswagger\Source\Core;modules\gbswagger\Source\Datasnap;modules\gbswagger\Source\Horse;modules\gbswagger\Source\Validator;modules\horse\src;modules\horse-cors\src;modules\jhonson\src;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Android)'!=''">
-        <DCC_UsePackage>fmx;DbxCommonDriver;bindengine;IndyIPCommon;emsclient;FireDACCommonDriver;IndyProtocols;IndyIPClient;dbxcds;Skia.Package.RTL;bindcompfmx;ibmonitor;FireDACSqliteDriver;DbxClientDriver;soapmidas;fmxFireDAC;dbexpress;inet;DataSnapCommon;fmxase;dbrtl;FireDACDBXDriver;Skia.Package.FMX;CustomIPTransport;DBXInterBaseDriver;IndySystem;ibxbindings;bindcomp;FireDACCommon;IndyCore;RESTBackendComponents;bindcompdbx;rtl;RESTComponents;DBXSqliteDriver;IndyIPServer;dsnapxml;DataSnapClient;DataSnapProviderClient;DataSnapFireDAC;emsclientfiredac;FireDAC;FireDACDSDriver;xmlrtl;tethering;ibxpress;dsnap;CloudService;DataSnapNativeClient;soaprtl;soapserver;FireDACIBDriver;$(DCC_UsePackage)</DCC_UsePackage>
+        <DCC_UsePackage>DBXSqliteDriver;tethering;FireDACDBXDriver;RESTBackendComponents;bindengine;CloudService;DataSnapClient;bindcompdbx;IndyIPServer;IndySystem;fmxFireDAC;FMXTee;soaprtl;DbxCommonDriver;xmlrtl;DataSnapNativeClient;soapmidas;rtl;DbxClientDriver;IndyIPClient;DataSnapProviderClient;RESTComponents;DBXInterBaseDriver;emsclientfiredac;DataSnapFireDAC;bindcompfmx;FmxTeeUI;FireDACIBDriver;fmx;dbexpress;IndyCore;dsnap;DataSnapCommon;emsclient;FireDACCommon;soapserver;FireDACCommonDriver;inet;IndyIPCommon;FireDAC;FireDACSqliteDriver;ibmonitor;ibxpress;ibxbindings;FireDACDSDriver;CustomIPTransport;bindcomp;GridSystem;dbxcds;dsnapxml;dbrtl;IndyProtocols;$(DCC_UsePackage)</DCC_UsePackage>
         <Android_LauncherIcon36>$(BDS)\bin\Artwork\Android\FM_LauncherIcon_36x36.png</Android_LauncherIcon36>
         <Android_LauncherIcon48>$(BDS)\bin\Artwork\Android\FM_LauncherIcon_48x48.png</Android_LauncherIcon48>
         <Android_LauncherIcon72>$(BDS)\bin\Artwork\Android\FM_LauncherIcon_72x72.png</Android_LauncherIcon72>
@@ -83,10 +83,10 @@
         <Android_NotificationIcon48>$(BDS)\bin\Artwork\Android\FM_NotificationIcon_48x48.png</Android_NotificationIcon48>
         <Android_NotificationIcon72>$(BDS)\bin\Artwork\Android\FM_NotificationIcon_72x72.png</Android_NotificationIcon72>
         <Android_NotificationIcon96>$(BDS)\bin\Artwork\Android\FM_NotificationIcon_96x96.png</Android_NotificationIcon96>
-        <EnabledSysJars>activity-1.1.0.dex.jar;annotation-1.2.0.dex.jar;appcompat-1.2.0.dex.jar;appcompat-resources-1.2.0.dex.jar;asynclayoutinflater-1.0.0.dex.jar;billing-4.0.0.dex.jar;biometric-1.1.0.dex.jar;browser-1.0.0.dex.jar;cloud-messaging.dex.jar;collection-1.1.0.dex.jar;coordinatorlayout-1.0.0.dex.jar;core-1.5.0-rc02.dex.jar;core-common-2.1.0.dex.jar;core-runtime-2.1.0.dex.jar;cursoradapter-1.0.0.dex.jar;customview-1.0.0.dex.jar;documentfile-1.0.0.dex.jar;drawerlayout-1.0.0.dex.jar;firebase-annotations-16.0.0.dex.jar;firebase-common-20.0.0.dex.jar;firebase-components-17.0.0.dex.jar;firebase-datatransport-18.0.0.dex.jar;firebase-encoders-17.0.0.dex.jar;firebase-encoders-json-18.0.0.dex.jar;firebase-iid-interop-17.1.0.dex.jar;firebase-installations-17.0.0.dex.jar;firebase-installations-interop-17.0.0.dex.jar;firebase-measurement-connector-19.0.0.dex.jar;firebase-messaging-22.0.0.dex.jar;fmx.dex.jar;fragment-1.2.5.dex.jar;google-play-licensing.dex.jar;interpolator-1.0.0.dex.jar;javax.inject-1.dex.jar;legacy-support-core-ui-1.0.0.dex.jar;legacy-support-core-utils-1.0.0.dex.jar;lifecycle-common-2.2.0.dex.jar;lifecycle-livedata-2.0.0.dex.jar;lifecycle-livedata-core-2.2.0.dex.jar;lifecycle-runtime-2.2.0.dex.jar;lifecycle-service-2.0.0.dex.jar;lifecycle-viewmodel-2.2.0.dex.jar;lifecycle-viewmodel-savedstate-2.2.0.dex.jar;listenablefuture-1.0.dex.jar;loader-1.0.0.dex.jar;localbroadcastmanager-1.0.0.dex.jar;play-services-ads-20.1.0.dex.jar;play-services-ads-base-20.1.0.dex.jar;play-services-ads-identifier-17.0.0.dex.jar;play-services-ads-lite-20.1.0.dex.jar;play-services-base-17.5.0.dex.jar;play-services-basement-17.6.0.dex.jar;play-services-cloud-messaging-16.0.0.dex.jar;play-services-drive-17.0.0.dex.jar;play-services-games-21.0.0.dex.jar;play-services-location-18.0.0.dex.jar;play-services-maps-17.0.1.dex.jar;play-services-measurement-base-18.0.0.dex.jar;play-services-measurement-sdk-api-18.0.0.dex.jar;play-services-places-placereport-17.0.0.dex.jar;play-services-stats-17.0.0.dex.jar;play-services-tasks-17.2.0.dex.jar;print-1.0.0.dex.jar;room-common-2.1.0.dex.jar;room-runtime-2.1.0.dex.jar;savedstate-1.0.0.dex.jar;slidingpanelayout-1.0.0.dex.jar;sqlite-2.0.1.dex.jar;sqlite-framework-2.0.1.dex.jar;swiperefreshlayout-1.0.0.dex.jar;transport-api-3.0.0.dex.jar;transport-backend-cct-3.0.0.dex.jar;transport-runtime-3.0.0.dex.jar;user-messaging-platform-1.0.0.dex.jar;vectordrawable-1.1.0.dex.jar;vectordrawable-animated-1.1.0.dex.jar;versionedparcelable-1.1.1.dex.jar;viewpager-1.0.0.dex.jar;work-runtime-2.1.0.dex.jar</EnabledSysJars>
+        <EnabledSysJars>android-support-v4.dex.jar;cloud-messaging.dex.jar;com-google-android-gms.play-services-ads-base.17.2.0.dex.jar;com-google-android-gms.play-services-ads-identifier.16.0.0.dex.jar;com-google-android-gms.play-services-ads-lite.17.2.0.dex.jar;com-google-android-gms.play-services-ads.17.2.0.dex.jar;com-google-android-gms.play-services-analytics-impl.16.0.8.dex.jar;com-google-android-gms.play-services-analytics.16.0.8.dex.jar;com-google-android-gms.play-services-base.16.0.1.dex.jar;com-google-android-gms.play-services-basement.16.2.0.dex.jar;com-google-android-gms.play-services-gass.17.2.0.dex.jar;com-google-android-gms.play-services-identity.16.0.0.dex.jar;com-google-android-gms.play-services-maps.16.1.0.dex.jar;com-google-android-gms.play-services-measurement-base.16.4.0.dex.jar;com-google-android-gms.play-services-measurement-sdk-api.16.4.0.dex.jar;com-google-android-gms.play-services-stats.16.0.1.dex.jar;com-google-android-gms.play-services-tagmanager-v4-impl.16.0.8.dex.jar;com-google-android-gms.play-services-tasks.16.0.1.dex.jar;com-google-android-gms.play-services-wallet.16.0.1.dex.jar;com-google-firebase.firebase-analytics.16.4.0.dex.jar;com-google-firebase.firebase-common.16.1.0.dex.jar;com-google-firebase.firebase-iid-interop.16.0.1.dex.jar;com-google-firebase.firebase-iid.17.1.1.dex.jar;com-google-firebase.firebase-measurement-connector.17.0.1.dex.jar;com-google-firebase.firebase-messaging.17.5.0.dex.jar;fmx.dex.jar;google-play-billing.dex.jar;google-play-licensing.dex.jar</EnabledSysJars>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Android64)'!=''">
-        <DCC_UsePackage>fmx;DbxCommonDriver;bindengine;IndyIPCommon;emsclient;FireDACCommonDriver;IndyProtocols;IndyIPClient;dbxcds;Skia.Package.RTL;bindcompfmx;ibmonitor;FireDACSqliteDriver;DbxClientDriver;soapmidas;ACBr_PagFor;fmxFireDAC;dbexpress;inet;DataSnapCommon;dbrtl;FireDACDBXDriver;Skia.Package.FMX;CustomIPTransport;ACBr_NFSeX;DBXInterBaseDriver;IndySystem;ACBr_NFSeXDanfseRL;ibxbindings;bindcomp;FireDACCommon;IndyCore;RESTBackendComponents;bindcompdbx;rtl;frce;RESTComponents;DBXSqliteDriver;IndyIPServer;dsnapxml;DataSnapClient;DataSnapProviderClient;DataSnapFireDAC;emsclientfiredac;FireDAC;FireDACDSDriver;xmlrtl;tethering;ACBr_Boleto;ibxpress;dsnap;ACBr_GTIN;CloudService;ACBr_OFX;DataSnapNativeClient;ACBr_DebitoAutomatico;soaprtl;soapserver;FireDACIBDriver;$(DCC_UsePackage)</DCC_UsePackage>
+        <DCC_UsePackage>DBXSqliteDriver;tethering;ACBr_OFX;FireDACDBXDriver;ACBr_GTIN;RESTBackendComponents;bindengine;CloudService;DataSnapClient;bindcompdbx;IndyIPServer;IndySystem;ACBr_PagFor;fmxFireDAC;FMXTee;soaprtl;DbxCommonDriver;xmlrtl;DataSnapNativeClient;soapmidas;rtl;DbxClientDriver;IndyIPClient;ACBr_Boleto;DataSnapProviderClient;RESTComponents;DBXInterBaseDriver;emsclientfiredac;DataSnapFireDAC;LabeledControls;bindcompfmx;FmxTeeUI;FireDACIBDriver;fmx;dbexpress;IndyCore;dsnap;DataSnapCommon;emsclient;FireDACCommon;ACBr_NFSeX;soapserver;FireDACCommonDriver;inet;IndyIPCommon;FireDAC;FireDACSqliteDriver;ibmonitor;ibxpress;ibxbindings;FireDACDSDriver;CustomIPTransport;bindcomp;ACBr_NFSeXDanfseRL;dbxcds;dsnapxml;dbrtl;IndyProtocols;$(DCC_UsePackage)</DCC_UsePackage>
         <Android_LauncherIcon36>$(BDS)\bin\Artwork\Android\FM_LauncherIcon_36x36.png</Android_LauncherIcon36>
         <Android_LauncherIcon48>$(BDS)\bin\Artwork\Android\FM_LauncherIcon_48x48.png</Android_LauncherIcon48>
         <Android_LauncherIcon72>$(BDS)\bin\Artwork\Android\FM_LauncherIcon_72x72.png</Android_LauncherIcon72>
@@ -102,13 +102,13 @@
         <Android_NotificationIcon48>$(BDS)\bin\Artwork\Android\FM_NotificationIcon_48x48.png</Android_NotificationIcon48>
         <Android_NotificationIcon72>$(BDS)\bin\Artwork\Android\FM_NotificationIcon_72x72.png</Android_NotificationIcon72>
         <Android_NotificationIcon96>$(BDS)\bin\Artwork\Android\FM_NotificationIcon_96x96.png</Android_NotificationIcon96>
-        <EnabledSysJars>activity-1.1.0.dex.jar;annotation-1.2.0.dex.jar;appcompat-1.2.0.dex.jar;appcompat-resources-1.2.0.dex.jar;asynclayoutinflater-1.0.0.dex.jar;billing-4.0.0.dex.jar;biometric-1.1.0.dex.jar;browser-1.0.0.dex.jar;cloud-messaging.dex.jar;collection-1.1.0.dex.jar;coordinatorlayout-1.0.0.dex.jar;core-1.5.0-rc02.dex.jar;core-common-2.1.0.dex.jar;core-runtime-2.1.0.dex.jar;cursoradapter-1.0.0.dex.jar;customview-1.0.0.dex.jar;documentfile-1.0.0.dex.jar;drawerlayout-1.0.0.dex.jar;firebase-annotations-16.0.0.dex.jar;firebase-common-20.0.0.dex.jar;firebase-components-17.0.0.dex.jar;firebase-datatransport-18.0.0.dex.jar;firebase-encoders-17.0.0.dex.jar;firebase-encoders-json-18.0.0.dex.jar;firebase-iid-interop-17.1.0.dex.jar;firebase-installations-17.0.0.dex.jar;firebase-installations-interop-17.0.0.dex.jar;firebase-measurement-connector-19.0.0.dex.jar;firebase-messaging-22.0.0.dex.jar;fmx.dex.jar;fragment-1.2.5.dex.jar;google-play-licensing.dex.jar;interpolator-1.0.0.dex.jar;javax.inject-1.dex.jar;legacy-support-core-ui-1.0.0.dex.jar;legacy-support-core-utils-1.0.0.dex.jar;lifecycle-common-2.2.0.dex.jar;lifecycle-livedata-2.0.0.dex.jar;lifecycle-livedata-core-2.2.0.dex.jar;lifecycle-runtime-2.2.0.dex.jar;lifecycle-service-2.0.0.dex.jar;lifecycle-viewmodel-2.2.0.dex.jar;lifecycle-viewmodel-savedstate-2.2.0.dex.jar;listenablefuture-1.0.dex.jar;loader-1.0.0.dex.jar;localbroadcastmanager-1.0.0.dex.jar;play-services-ads-20.1.0.dex.jar;play-services-ads-base-20.1.0.dex.jar;play-services-ads-identifier-17.0.0.dex.jar;play-services-ads-lite-20.1.0.dex.jar;play-services-base-17.5.0.dex.jar;play-services-basement-17.6.0.dex.jar;play-services-cloud-messaging-16.0.0.dex.jar;play-services-drive-17.0.0.dex.jar;play-services-games-21.0.0.dex.jar;play-services-location-18.0.0.dex.jar;play-services-maps-17.0.1.dex.jar;play-services-measurement-base-18.0.0.dex.jar;play-services-measurement-sdk-api-18.0.0.dex.jar;play-services-places-placereport-17.0.0.dex.jar;play-services-stats-17.0.0.dex.jar;play-services-tasks-17.2.0.dex.jar;print-1.0.0.dex.jar;room-common-2.1.0.dex.jar;room-runtime-2.1.0.dex.jar;savedstate-1.0.0.dex.jar;slidingpanelayout-1.0.0.dex.jar;sqlite-2.0.1.dex.jar;sqlite-framework-2.0.1.dex.jar;swiperefreshlayout-1.0.0.dex.jar;transport-api-3.0.0.dex.jar;transport-backend-cct-3.0.0.dex.jar;transport-runtime-3.0.0.dex.jar;user-messaging-platform-1.0.0.dex.jar;vectordrawable-1.1.0.dex.jar;vectordrawable-animated-1.1.0.dex.jar;versionedparcelable-1.1.1.dex.jar;viewpager-1.0.0.dex.jar;work-runtime-2.1.0.dex.jar</EnabledSysJars>
+        <EnabledSysJars>android-support-v4.dex.jar;cloud-messaging.dex.jar;com-google-android-gms.play-services-ads-base.17.2.0.dex.jar;com-google-android-gms.play-services-ads-identifier.16.0.0.dex.jar;com-google-android-gms.play-services-ads-lite.17.2.0.dex.jar;com-google-android-gms.play-services-ads.17.2.0.dex.jar;com-google-android-gms.play-services-analytics-impl.16.0.8.dex.jar;com-google-android-gms.play-services-analytics.16.0.8.dex.jar;com-google-android-gms.play-services-base.16.0.1.dex.jar;com-google-android-gms.play-services-basement.16.2.0.dex.jar;com-google-android-gms.play-services-gass.17.2.0.dex.jar;com-google-android-gms.play-services-identity.16.0.0.dex.jar;com-google-android-gms.play-services-maps.16.1.0.dex.jar;com-google-android-gms.play-services-measurement-base.16.4.0.dex.jar;com-google-android-gms.play-services-measurement-sdk-api.16.4.0.dex.jar;com-google-android-gms.play-services-stats.16.0.1.dex.jar;com-google-android-gms.play-services-tagmanager-v4-impl.16.0.8.dex.jar;com-google-android-gms.play-services-tasks.16.0.1.dex.jar;com-google-android-gms.play-services-wallet.16.0.1.dex.jar;com-google-firebase.firebase-analytics.16.4.0.dex.jar;com-google-firebase.firebase-common.16.1.0.dex.jar;com-google-firebase.firebase-iid-interop.16.0.1.dex.jar;com-google-firebase.firebase-iid.17.1.1.dex.jar;com-google-firebase.firebase-measurement-connector.17.0.1.dex.jar;com-google-firebase.firebase-messaging.17.5.0.dex.jar;fmx.dex.jar;google-play-billing.dex.jar;google-play-licensing.dex.jar</EnabledSysJars>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Linux64)'!=''">
-        <DCC_UsePackage>DataSnapServer;fmx;emshosting;DbxCommonDriver;bindengine;FireDACCommonODBC;emsclient;FireDACCommonDriver;IndyProtocols;dbxcds;Skia.Package.RTL;emsedge;inetdb;FireDACSqliteDriver;DbxClientDriver;FireDACASADriver;soapmidas;ACBr_PagFor;dbexpress;FireDACInfxDriver;inet;DataSnapCommon;dbrtl;FireDACOracleDriver;Skia.Package.FMX;CustomIPTransport;FireDACMSSQLDriver;ACBr_NFSeX;DataSnapIndy10ServerTransport;DataSnapConnectors;FireDACMongoDBDriver;IndySystem;FireDACTDataDriver;ACBr_NFSeXDanfseRL;bindcomp;FireDACCommon;DataSnapServerMidas;FireDACODBCDriver;emsserverresource;IndyCore;RESTBackendComponents;rtl;FireDACMySQLDriver;FireDACADSDriver;frce;RESTComponents;dsnapxml;DataSnapClient;DataSnapFireDAC;emsclientfiredac;FireDACPgDriver;FireDAC;xmlrtl;ACBr_Boleto;dsnap;ACBr_GTIN;CloudService;FireDACDb2Driver;ACBr_OFX;DataSnapNativeClient;ACBr_DebitoAutomatico;DatasnapConnectorsFreePascal;soaprtl;soapserver;FireDACIBDriver;$(DCC_UsePackage)</DCC_UsePackage>
+        <DCC_UsePackage>FireDACADSDriver;FireDACMSSQLDriver;ACBr_OFX;ACBr_GTIN;RESTBackendComponents;bindengine;CloudService;FireDACMySQLDriver;DataSnapClient;IndySystem;ACBr_PagFor;FireDACInfxDriver;emshosting;FireDACTDataDriver;soaprtl;DbxCommonDriver;xmlrtl;DataSnapNativeClient;soapmidas;rtl;emsserverresource;DbxClientDriver;FireDACODBCDriver;DataSnapIndy10ServerTransport;ACBr_Boleto;FireDACMongoDBDriver;RESTComponents;emsclientfiredac;DataSnapFireDAC;LabeledControls;DatasnapConnectorsFreePascal;inetdb;emsedge;FireDACIBDriver;fmx;dbexpress;IndyCore;dsnap;DataSnapCommon;emsclient;FireDACCommon;ACBr_NFSeX;DataSnapConnectors;soapserver;FireDACOracleDriver;FireDACCommonODBC;FireDACCommonDriver;inet;FireDACDb2Driver;FireDAC;FireDACSqliteDriver;FireDACPgDriver;FireDACASADriver;DataSnapServer;CustomIPTransport;bindcomp;ACBr_NFSeXDanfseRL;dbxcds;dsnapxml;dbrtl;IndyProtocols;$(DCC_UsePackage)</DCC_UsePackage>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
-        <DCC_UsePackage>vclwinx;DataSnapServer;ACBr_BPeDabpeESCPOS;ACBr_PAF;ACBr_TCP;ACBr_ONE;ACBr_NF3e;ACBr_OpenDelivery;ACBr_SPEDImportar;fmx;emshosting;vclie;DbxCommonDriver;bindengine;IndyIPCommon;VCLRESTComponents;DBXMSSQLDriver;FireDACCommonODBC;emsclient;FireDACCommonDriver;ACBr_OpenSSL;appanalytics;IndyProtocols;vclx;ACBr_ADRCST;ACBr_MTER;IndyIPClient;dbxcds;vcledge;Skia.Package.RTL;bindcompvclwinx;ACBr_Convenio115;ACBr_BoletoRL;emsedge;bindcompfmx;DBXFirebirdDriver;inetdb;ACBr_NFCeECFVirtual;ibmonitor;FireDACSqliteDriver;DbxClientDriver;FireDACASADriver;ACBr_LFD;soapmidas;SVGIconImageListFMX;ACBr_NF3eDANF3eESCPOS;vclactnband;ACBr_PagFor;fmxFireDAC;dbexpress;FireDACInfxDriver;ACBr_Reinf;DBXMySQLDriver;VclSmp;inet;DataSnapCommon;ACBr_Ponto;ACBr_BoletoFPDF;vcltouch;fmxase;DBXOdbcDriver;dbrtl;FireDACDBXDriver;FireDACOracleDriver;ACBr_NFSeDanfseRL;fmxdae;ACBr_NFSe;ACBre_Social;Skia.Package.FMX;FireDACMSAccDriver;CustomIPTransport;FireDACMSSQLDriver;ACBr_NFSeX;DataSnapIndy10ServerTransport;ACBr_NFe;DataSnapConnectors;ACBr_ANe;ACBr_CTeDacteRL;vcldsnap;DBXInterBaseDriver;ACBr_SATExtratoRL;FireDACMongoDBDriver;IndySystem;ACBr_Diversos;ACBR_DeSTDA;ACBr_GNREGuiaRL;ACBr_GNRE;ACBr_EDI;FireDACTDataDriver;ACBr_NFSeXDanfseRL;ACBr_SAT;Skia.Package.VCL;vcldb;ACBr_Integrador;ibxbindings;ACBr_PIXCD;ACBr_CIOT;ACBr_TEFD;vclFireDAC;ACBr_SPED;ACBr_CTe;bindcomp;FireDACCommon;DataSnapServerMidas;FireDACODBCDriver;emsserverresource;ACBr_SEF2;ACBr_LCDPR;IndyCore;RESTBackendComponents;ACBr_SATWS;bindcompdbx;rtl;FireDACMySQLDriver;FireDACADSDriver;frce;ACBr_BPe;RESTComponents;DBXSqliteDriver;vcl;IndyIPServer;dsnapxml;dsnapcon;DataSnapClient;DataSnapProviderClient;adortl;ACBr_Sintegra;ACBr_MDFeDamdfeRL;DBXSybaseASEDriver;ACBr_Serial;DBXDb2Driver;ACBr_Comum;ACBr_MDFe;ACBr_NFeDanfeESCPOS;vclimg;DataSnapFireDAC;emsclientfiredac;FireDACPgDriver;FireDAC;FireDACDSDriver;inetdbxpress;xmlrtl;tethering;ACBr_Boleto;ibxpress;ACBr_SATExtratoESCPOS;ACBr_BlocoX;bindcompvcl;dsnap;ACBr_GTIN;CloudService;DBXSybaseASADriver;DBXOracleDriver;FireDACDb2Driver;DBXInformixDriver;ACBr_OFX;vclib;ACBr_SATECFVirtual;fmxobj;bindcompvclsmp;DataSnapNativeClient;ACBr_DebitoAutomatico;ACBr_PAFNFCe;ACBr_NFeDanfeRL;DatasnapConnectorsFreePascal;soaprtl;SVGIconImageList;soapserver;FireDACIBDriver;$(DCC_UsePackage)</DCC_UsePackage>
+        <DCC_UsePackage>DBXSqliteDriver;DBXDb2Driver;vclactnband;TPComponent;vclFireDAC;tethering;FireDACADSDriver;ACBr_BPeDabpeESCPOS;JvPluginSystem;frx27;ACBr_BPe;FireDACMSSQLDriver;vcltouch;JvBands;ACBr_NFe;vcldb;svn;JvJans;ACBr_NFeDanfeESCPOS;fs27;ACBr_OFX;JvDotNetCtrls;vclib;FireDACDBXDriver;vclx;frxTee27;ACBr_SATExtratoRL;ACBr_GTIN;RESTBackendComponents;ACBr_Reinf;VCLRESTComponents;vclie;bindengine;CloudService;JvHMI;FireDACMySQLDriver;ACBr_PAF;ACBr_SATECFVirtual;DataSnapClient;bindcompdbx;frxDB27;ACBr_TCP;ACBr_CTeDacteRL;DBXSybaseASEDriver;IndyIPServer;ACBr_CTe;TBGWebCharts;IndySystem;bindcompvclwinx;ACBr_PagFor;dsnapcon;ACBre_Social;FireDACMSAccDriver;FireDACInfxDriver;fmxFireDAC;vclimg;ACBr_SPEDImportar;Jcl;fsIBX27;ACBr_SPED;ACBr_MDFe;emshosting;frxIntIO27;ACBr_BoletoRL;ACBr_LFD;DBXOdbcDriver;FireDACTDataDriver;FMXTee;soaprtl;DbxCommonDriver;ACBr_CIOT;JvManagedThreads;ACBr_NFSeDanfseRL;xmlrtl;DataSnapNativeClient;soapmidas;fmxobj;JvTimeFramework;rtl;emsserverresource;DbxClientDriver;DBXSybaseASADriver;JvSystem;JvStdCtrls;ACBr_Convenio115;appanalytics;IndyIPClient;bindcompvcl;TeeUI;JvDocking;JvPascalInterpreter;VclSmp;FireDACODBCDriver;JclVcl;DataSnapIndy10ServerTransport;frxcs27;ACBr_Boleto;DataSnapProviderClient;ACBr_SEF2;FireDACMongoDBDriver;JvControls;JvPrintPreview;ACBr_NFSe;RESTComponents;DBXInterBaseDriver;fsDB27;ACBr_NF3e;ACBr_TEFD;bindcompvclsmp;emsclientfiredac;DataSnapFireDAC;svnui;JvGlobus;LabeledControls;ACBr_SATWS;DBXMSSQLDriver;JvMM;fsTee27;ACBr_MDFeDamdfeRL;DatasnapConnectorsFreePascal;ACBr_EDI;ACBr_ONE;frxIBX27;bindcompfmx;JvNet;DBXOracleDriver;inetdb;JvAppFrm;ACBr_Diversos;FmxTeeUI;emsedge;ACBr_LCDPR;FireDACIBDriver;fmx;fmxdae;vcledge;JvWizards;ACBr_Ponto;dbexpress;IndyCore;JvPageComps;dsnap;DataSnapCommon;emsclient;FireDACCommon;JvDB;ACBr_NFSeX;DataSnapConnectors;ACBR_DeSTDA;soapserver;ACBr_SAT;JclDeveloperTools;FireDACOracleDriver;DBXMySQLDriver;JvCmp;DBXFirebirdDriver;ACBr_Sintegra;FireDACCommonODBC;FireDACCommonDriver;ACBr_GNRE;ACBr_ADRCST;inet;IndyIPCommon;JvCustom;vcl;ACBr_NFeDanfeRL;JvXPCtrls;ACBr_SATExtratoESCPOS;FireDACDb2Driver;ACBr_Integrador;frxIntIOIndy27;TeeDB;FireDAC;JvCore;ACBr_Comum;JvCrypt;FireDACSqliteDriver;FireDACPgDriver;ibmonitor;FireDACASADriver;ACBr_GNREGuiaRL;JvDlgs;JvRuntimeDesign;ibxpress;Tee;DataSnapServer;ibxbindings;FireDACDSDriver;vclwinx;ACBr_OpenSSL;CustomIPTransport;vcldsnap;ACBr_PIXCD;bindcomp;frxADO27;DBXInformixDriver;ACBr_Serial;fsADO27;frce;GridSystem;frxe27;ACBr_NFSeXDanfseRL;ACBr_BlocoX;dbxcds;frxDBX27;ACBr_NFCeECFVirtual;adortl;ACBr_ANe;dsnapxml;dbrtl;IndyProtocols;inetdbxpress;JclContainers;ACBr_NF3eDANF3eESCPOS;ACBr_MTER;fmxase;$(DCC_UsePackage)</DCC_UsePackage>
         <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
         <BT_BuildType>Debug</BT_BuildType>
         <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
@@ -118,7 +118,7 @@
         <UWP_DelphiLogo150>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_150.png</UWP_DelphiLogo150>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win64)'!=''">
-        <DCC_UsePackage>vclwinx;DataSnapServer;fmx;emshosting;vclie;DbxCommonDriver;bindengine;IndyIPCommon;VCLRESTComponents;DBXMSSQLDriver;FireDACCommonODBC;emsclient;FireDACCommonDriver;appanalytics;IndyProtocols;vclx;IndyIPClient;dbxcds;vcledge;Skia.Package.RTL;bindcompvclwinx;emsedge;bindcompfmx;DBXFirebirdDriver;inetdb;ibmonitor;FireDACSqliteDriver;DbxClientDriver;FireDACASADriver;soapmidas;SVGIconImageListFMX;vclactnband;fmxFireDAC;dbexpress;FireDACInfxDriver;DBXMySQLDriver;VclSmp;inet;DataSnapCommon;vcltouch;fmxase;DBXOdbcDriver;dbrtl;FireDACDBXDriver;FireDACOracleDriver;fmxdae;Skia.Package.FMX;FireDACMSAccDriver;CustomIPTransport;FireDACMSSQLDriver;DataSnapIndy10ServerTransport;DataSnapConnectors;vcldsnap;DBXInterBaseDriver;FireDACMongoDBDriver;IndySystem;FireDACTDataDriver;Skia.Package.VCL;vcldb;ibxbindings;vclFireDAC;bindcomp;FireDACCommon;DataSnapServerMidas;FireDACODBCDriver;emsserverresource;IndyCore;RESTBackendComponents;bindcompdbx;rtl;FireDACMySQLDriver;FireDACADSDriver;RESTComponents;DBXSqliteDriver;vcl;IndyIPServer;dsnapxml;dsnapcon;DataSnapClient;DataSnapProviderClient;adortl;DBXSybaseASEDriver;DBXDb2Driver;vclimg;DataSnapFireDAC;emsclientfiredac;FireDACPgDriver;FireDAC;FireDACDSDriver;inetdbxpress;xmlrtl;tethering;ibxpress;bindcompvcl;dsnap;CloudService;DBXSybaseASADriver;DBXOracleDriver;FireDACDb2Driver;DBXInformixDriver;vclib;fmxobj;bindcompvclsmp;DataSnapNativeClient;DatasnapConnectorsFreePascal;soaprtl;SVGIconImageList;soapserver;FireDACIBDriver;$(DCC_UsePackage)</DCC_UsePackage>
+        <DCC_UsePackage>DBXSqliteDriver;DBXDb2Driver;vclactnband;vclFireDAC;tethering;FireDACADSDriver;FireDACMSSQLDriver;vcltouch;vcldb;vclib;FireDACDBXDriver;vclx;RESTBackendComponents;VCLRESTComponents;vclie;bindengine;CloudService;FireDACMySQLDriver;DataSnapClient;bindcompdbx;DBXSybaseASEDriver;IndyIPServer;IndySystem;bindcompvclwinx;dsnapcon;FireDACMSAccDriver;FireDACInfxDriver;fmxFireDAC;vclimg;emshosting;DBXOdbcDriver;FireDACTDataDriver;FMXTee;soaprtl;DbxCommonDriver;xmlrtl;DataSnapNativeClient;soapmidas;fmxobj;rtl;emsserverresource;DbxClientDriver;DBXSybaseASADriver;appanalytics;IndyIPClient;bindcompvcl;TeeUI;VclSmp;FireDACODBCDriver;DataSnapIndy10ServerTransport;DataSnapProviderClient;FireDACMongoDBDriver;RESTComponents;DBXInterBaseDriver;bindcompvclsmp;emsclientfiredac;DataSnapFireDAC;DBXMSSQLDriver;DatasnapConnectorsFreePascal;bindcompfmx;DBXOracleDriver;inetdb;FmxTeeUI;emsedge;FireDACIBDriver;fmx;fmxdae;vcledge;dbexpress;IndyCore;dsnap;DataSnapCommon;emsclient;FireDACCommon;DataSnapConnectors;soapserver;FireDACOracleDriver;DBXMySQLDriver;DBXFirebirdDriver;FireDACCommonODBC;FireDACCommonDriver;inet;IndyIPCommon;vcl;FireDACDb2Driver;TeeDB;FireDAC;FireDACSqliteDriver;FireDACPgDriver;ibmonitor;FireDACASADriver;ibxpress;Tee;DataSnapServer;ibxbindings;FireDACDSDriver;vclwinx;CustomIPTransport;vcldsnap;bindcomp;DBXInformixDriver;GridSystem;dbxcds;adortl;dsnapxml;dbrtl;IndyProtocols;inetdbxpress;fmxase;$(DCC_UsePackage)</DCC_UsePackage>
         <DCC_ConsoleTarget>true</DCC_ConsoleTarget>
         <UWP_DelphiLogo44>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_44.png</UWP_DelphiLogo44>
         <UWP_DelphiLogo150>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_150.png</UWP_DelphiLogo150>
@@ -130,8 +130,6 @@
         <DCC_GenerateStackFrames>true</DCC_GenerateStackFrames>
         <DCC_DebugInfoInExe>true</DCC_DebugInfoInExe>
         <DCC_RemoteDebug>true</DCC_RemoteDebug>
-        <DCC_IntegerOverflowCheck>true</DCC_IntegerOverflowCheck>
-        <DCC_RangeChecking>true</DCC_RangeChecking>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
         <DCC_RemoteDebug>false</DCC_RemoteDebug>
@@ -139,7 +137,6 @@
         <DCC_DcuOutput>.\lib</DCC_DcuOutput>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <Manifest_File>(None)</Manifest_File>
-        <AppDPIAwarenessMode>none</AppDPIAwarenessMode>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
         <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
@@ -151,6 +148,81 @@
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
+        <DCCReference Include="src\entity\ACBrNFe.entity.CobrancaDuplicata.pas"/>
+        <DCCReference Include="src\entity\ACBrNFe.entity.CobrancaFat.pas"/>
+        <DCCReference Include="src\entity\ACBrNFe.entity.CombCIDE.pas"/>
+        <DCCReference Include="src\entity\ACBrNFe.entity.CombICMS.pas"/>
+        <DCCReference Include="src\entity\ACBrNFe.entity.CombICMSCons.pas"/>
+        <DCCReference Include="src\entity\ACBrNFe.entity.CombICMSInter.pas"/>
+        <DCCReference Include="src\entity\ACBrNFe.entity.Combustivel.pas"/>
+        <DCCReference Include="src\entity\ACBrNFe.entity.Compra.pas"/>
+        <DCCReference Include="src\entity\ACBrNFe.entity.Destinatario.pas"/>
+        <DCCReference Include="src\entity\ACBrNFe.entity.EndDest.pas"/>
+        <DCCReference Include="src\entity\ACBrNFe.entity.exporta.pas"/>
+        <DCCReference Include="src\entity\ACBrNFe.entity.ImpostoCOFINS.pas"/>
+        <DCCReference Include="src\entity\ACBrNFe.entity.ImpostoCOFINSST.pas"/>
+        <DCCReference Include="src\entity\ACBrNFe.entity.ImpostoICMS.pas"/>
+        <DCCReference Include="src\entity\ACBrNFe.entity.ImpostoICMSUFDest.pas"/>
+        <DCCReference Include="src\entity\ACBrNFe.entity.ImpostoII.pas"/>
+        <DCCReference Include="src\entity\ACBrNFe.entity.ImpostoPIS.pas"/>
+        <DCCReference Include="src\entity\ACBrNFe.entity.ImpostoPISST.pas"/>
+        <DCCReference Include="src\entity\ACBrNFe.entity.InfAdicionais.pas"/>
+        <DCCReference Include="src\entity\ACBrNFe.entity.InfIntermed.pas"/>
+        <DCCReference Include="src\entity\ACBrNFe.entity.ObsComplementar.pas"/>
+        <DCCReference Include="src\entity\ACBrNFe.entity.ObsFisco.pas"/>
+        <DCCReference Include="src\entity\ACBrNFe.entity.pagamentos.pas"/>
+        <DCCReference Include="src\entity\ACBrNFe.entity.pedidos.pas"/>
+        <DCCReference Include="src\entity\ACBrNFe.entity.ProdImposto.pas"/>
+        <DCCReference Include="src\entity\ACBrNFe.entity.Produto.pas"/>
+        <DCCReference Include="src\entity\ACBrNFe.entity.RetTrasnportadora.pas"/>
+        <DCCReference Include="src\entity\ACBrNFe.entity.Total.pas"/>
+        <DCCReference Include="src\entity\ACBrNFe.entity.TotalICMS.pas"/>
+        <DCCReference Include="src\entity\ACBrNFe.entity.TotalRetTrib.pas"/>
+        <DCCReference Include="src\entity\ACBrNFe.entity.Transportadora.pas"/>
+        <DCCReference Include="src\entity\ACBrNFe.entity.Veiculo.pas"/>
+        <DCCReference Include="src\entity\ACBrNFe.entity.VolumeTransportadora.pas"/>
+        <DCCReference Include="src\utils\ACBrNFe.utils.acbrhelper.pas"/>
+        <DCCReference Include="src\component\ACBrNFe.Component.interfaces.pas"/>
+        <DCCReference Include="src\component\impl\ACBrNFe.Component.impl.FactoryNFe.pas"/>
+        <DCCReference Include="src\component\impl\ACBrNFe.Component.impl.NFe.pas"/>
+        <DCCReference Include="src\usecase\ACBrNFe.usecase.interfaces.pas"/>
+        <DCCReference Include="src\usecase\impl\ACBrNFe.usecase.invoker.pas"/>
+        <DCCReference Include="src\usecase\impl\repository\ACBrNFe.usecase.RepositoryCobFat.pas"/>
+        <DCCReference Include="src\usecase\impl\repository\ACBrNFe.usecase.RepositoryCompra.pas"/>
+        <DCCReference Include="src\usecase\impl\repository\ACBrNFe.usecase.RepositoryConf.pas"/>
+        <DCCReference Include="src\usecase\impl\repository\ACBrNFe.usecase.RepositoryDest.pas"/>
+        <DCCReference Include="src\usecase\impl\repository\ACBrNFe.usecase.RepositoryDuplicata.pas"/>
+        <DCCReference Include="src\usecase\impl\repository\ACBrNFe.usecase.RepositoryEmitente.pas"/>
+        <DCCReference Include="src\usecase\impl\repository\ACBrNFe.usecase.RepositoryExporta.pas"/>
+        <DCCReference Include="src\usecase\impl\repository\ACBrNFe.usecase.RepositoryIde.pas"/>
+        <DCCReference Include="src\usecase\impl\repository\ACBrNFe.usecase.RepositoryInfAdic.pas"/>
+        <DCCReference Include="src\usecase\impl\repository\ACBrNFe.usecase.RepositoryInfAdicObsComp.pas"/>
+        <DCCReference Include="src\usecase\impl\repository\ACBrNFe.usecase.RepositoryInfIntermed.pas"/>
+        <DCCReference Include="src\usecase\impl\repository\ACBrNFe.usecase.RepositoryObsFisco.pas"/>
+        <DCCReference Include="src\usecase\impl\repository\ACBrNFe.usecase.RepositoryPagamento.pas"/>
+        <DCCReference Include="src\usecase\impl\repository\ACBrNFe.usecase.RepositoryProd.pas"/>
+        <DCCReference Include="src\usecase\impl\repository\ACBrNFe.usecase.RepositoryProdCombustivel.pas"/>
+        <DCCReference Include="src\usecase\impl\repository\ACBrNFe.usecase.RepositoryProdImpCOFINS.pas"/>
+        <DCCReference Include="src\usecase\impl\repository\ACBrNFe.usecase.RepositoryProdImpCOFINSST.pas"/>
+        <DCCReference Include="src\usecase\impl\repository\ACBrNFe.usecase.RepositoryProdImposto.pas"/>
+        <DCCReference Include="src\usecase\impl\repository\ACBrNFe.usecase.RepositoryProdImpostoICMS.pas"/>
+        <DCCReference Include="src\usecase\impl\repository\ACBrNFe.usecase.RepositoryProdImpostoICMSUFDest.pas"/>
+        <DCCReference Include="src\usecase\impl\repository\ACBrNFe.usecase.RepositoryProdImpostoII.pas"/>
+        <DCCReference Include="src\usecase\impl\repository\ACBrNFe.usecase.RepositoryProdImpPIS.pas"/>
+        <DCCReference Include="src\usecase\impl\repository\ACBrNFe.usecase.RepositoryProdImpPISST.pas"/>
+        <DCCReference Include="src\usecase\impl\repository\ACBrNFe.usecase.RepositoryTotal.pas"/>
+        <DCCReference Include="src\usecase\impl\repository\ACBrNFe.usecase.RepositoryTransp.pas"/>
+        <DCCReference Include="src\usecase\impl\repository\ACBrNFe.usecase.RepositoryTranspVol.pas"/>
+        <DCCReference Include="src\usecase\impl\repository\ACBrNFe.usecase.RepositoryVeicProd.pas"/>
+        <DCCReference Include="src\entity\ACBrNFe.entity.ResponseNFe.pas"/>
+        <DCCReference Include="src\controller\ACBrNFe.controller.notasfiscais.pas"/>
+        <DCCReference Include="src\usecase\impl\repository\ACBrNFe.usecase.RepositoryGerarNFe.pas"/>
+        <DCCReference Include="src\usecase\impl\ACBrNFe.usecase.ActionNFe.pas"/>
+        <DCCReference Include="src\usecase\impl\repository\ACBrNFe.usecase.RepositoryFactory.pas"/>
+        <DCCReference Include="src\entity\ACBrNFe.entity.interfaces.pas">
+            <Form>/  ACBrNFe.entity.impl.entityfactory in &apos;src\entity\impl\ACBrNFe.entity.impl.entityfactory.pas&apos;;</Form>
+        </DCCReference>
+        <DCCReference Include="src\entity\impl\ACBrNFe.entity.impl.entityfactory.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
@@ -169,12 +241,12 @@
         <BorlandProject>
             <Delphi.Personality>
                 <Source>
-                    <Source Name="MainSource">apinfefiscal.dpr</Source>
+                    <Source Name="MainSource">APINFe.dpr</Source>
                 </Source>
                 <Excluded_Packages>
-                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k280.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
-                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp280.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Program Files (x86)\FastReports\LibD28\dclfrxtee28.bpl">FastReport VCL Tee Components</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclDataSnapNativeServer270.bpl">Embarcadero DBExpress DataSnap Native Server Components</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k270.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp270.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
                 </Excluded_Packages>
             </Delphi.Personality>
             <Deployment Version="4">
@@ -193,9 +265,10 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="Win32\Debug\apinfefiscal.exe" Configuration="Debug" Class="ProjectOutput">
+                <DeployFile LocalName="bin\APINFe.exe" Configuration="Debug" Class="ProjectOutput"/>
+                <DeployFile LocalName="bin\APINFe.exe" Configuration="Debug" Class="ProjectOutput">
                     <Platform Name="Win32">
-                        <RemoteName>apinfefiscal.exe</RemoteName>
+                        <RemoteName>APINFe.exe</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -1015,6 +1088,7 @@
                 <ProjectRoot Platform="iOSDevice32" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="iOSDevice64" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="iOSSimARM64" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="iOSSimulator" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="Linux64" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="OSX32" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="OSX64" Name="$(PROJECTNAME).app"/>
@@ -1025,11 +1099,10 @@
             <Platforms>
                 <Platform value="Android">False</Platform>
                 <Platform value="Android64">False</Platform>
-                <Platform value="Linux64">True</Platform>
+                <Platform value="Linux64">False</Platform>
                 <Platform value="Win32">True</Platform>
                 <Platform value="Win64">False</Platform>
             </Platforms>
-            <ModelSupport>False</ModelSupport>
         </BorlandProject>
         <ProjectFileVersion>12</ProjectFileVersion>
     </ProjectExtensions>
